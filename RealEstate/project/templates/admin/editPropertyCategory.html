@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update Property Category | Admin</title>
+
+        <!-- plugins:css -->
+
+    <link rel="stylesheet" href="../../static/adminResources/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/simple-line-icons.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/perfect-scrollbar.min.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="../../static/adminResources/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../static/adminResources/css/fontawesome-stars.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../../static/adminResources/css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="../../static/adminResources/images/favicon.png"/>
+
+
+</head>
+<body>
+
+
+{% include 'admin/header.html' %}}
+
+    <div class="container-fluid page-body-wrapper">
+        <div class="row row-offcanvas row-offcanvas-right">
+            {% include 'admin/menu.html' %}
+
+            {% include 'admin/setting-panel.html' %}
+            <div class="content-wrapper">
+                <div class="row grid-margin">
+                    <div class="col-12">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Edit Category : "{{ propertyCategoryDict[0].propertyCategoryName }}"</h2>
+                                <form class="cmxform" id="commentForm" method="POST" action="/updatePropertyCategory">
+                                <fieldset>
+
+                                    <input class="form-control" minlength="2" maxlength="20" name="propertyCategoryId"
+                                               id="defaultconfig" type="hidden" placeholder="Type Something.." value={{ propertyCategoryDict[0].propertyCategoryId }}>
+
+
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Property Category Name</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input class="form-control" minlength="2" maxlength="20" name="propertyCategoryName"
+                                               id="defaultconfig" type="text" value={{ propertyCategoryDict[0].propertyCategoryName }} required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Description</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <textarea id="maxlength-textarea" class="form-control" maxlength="255" rows="2" name="propertyCategoryDescription"
+                                                   required>{{ propertyCategoryDict[0].propertyCategoryDescription }}</textarea>
+                                    </div>
+                                </div>
+                                <input class="btn btn-primary" type="submit" value="Save">
+                                </fieldset>
+                                </form>
+                                </div>
+                        </div>
+
+                    </div>
+            </div>
+        </div>
+        {% include 'admin/footer.html' %}
+    </div>
+</div>
+</div>
+
+<!-- plugins:js -->
+<script src="../../static/adminResources/js/jquery.min.js"></script>
+<script src="../../static/adminResources/js/popper.min.js"></script>
+<script src="../../static/adminResources/js/bootstrap.min.js"></script>
+<script src="../../static/adminResources/js/perfect-scrollbar.jquery.min.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page-->
+<script src="../../static/adminResources/js/jquery.barrating.min.js"></script>
+<script src="../../static/adminResources/js/Chart.min.js"></script>
+<script src="../../static/adminResources/js/raphael.min.js"></script>
+<script src="../../static/adminResources/js/morris.min.js"></script>
+<script src="../../static/adminResources/js/jquery.sparkline.min.js"></script>
+<!-- End plugin js for this page-->
+<!-- inject:js -->
+<script src="../../static/adminResources/js/off-canvas.js"></script>
+<script src="../../static/adminResources/js/hoverable-collapse.js"></script>
+<script src="../../static/adminResources/js/misc.js"></script>
+<script src="../../static/adminResources/js/settings.js"></script>
+<script src="../../static/adminResources/js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="../../static/adminResources/js/dashboard.js"></script>
+<!-- End custom js for this page-->
+
+
+</body>
+</html>

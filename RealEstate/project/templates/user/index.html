@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- set the encoding of your site -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- set the page title -->
+    <title>LemanHouse - Real Estate HTML Template</title>
+    <!-- include google roboto font cdn link -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <!-- include the site bootstrap stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/bootstrap.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/fancybox.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/style.css">
+
+</head>
+<body>
+<!-- pageWrapper -->
+<div id="pageWrapper">
+    <!-- pageMenuPushWrap -->
+    <div class="pageMenuPushWrap pageMenuPushWrap2">
+        <!-- bgBaseWrap -->
+        <div class="bgBaseWrap">
+            <!-- pageHeader -->
+            {% include "user/header.html" %}
+            <!-- main -->
+            <main class="bgWhite">
+                <!-- introBanner -->
+                <section class="introBanner">
+                    <div class="container holder text-center textWhite">
+                        <div class="align">
+                            <form action="#" class="findFormBlock">
+                                <h1 class="fontNeuron">FIND YOUR PROPERTY</h1>
+                                <p class="fontNeuron fwBold">We’ve 1000 properties for you!</p>
+                                <div class="formBoxRow bgWhite hasShadow">
+                                    <div class="form-group">
+                                        <input type="search" class="elemenBlock form-control"
+                                               placeholder="What are you looking for?">
+                                    </div>
+                                    <div class="form-group">
+                                        <select data-placeholder="For Sale" class="chosen-select">
+                                            <option value="1">For Rent</option>
+                                            <option value="2">For Sale</option>
+                                            <option value="3">House</option>
+                                            <option value="4">Property</option>
+                                            <option value="5">Real Estate</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <select data-placeholder="Property Types" class="chosen-select">
+                                            <option value="1">For Rent</option>
+                                            <option value="2">For Sale</option>
+                                            <option value="3">House</option>
+                                            <option value="4">Property</option>
+                                            <option value="5">Real Estate</option>
+                                        </select>
+                                    </div>
+                                    <button type="button" class="btn btn-success text-uppercase fontNeuron noShrink">
+                                        SEARCH
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- bannerImageSlideshow -->
+                    <div class="bannerImageSlideshow bg-primary slickSlider">
+                        <div>
+                            <span class="bgCover elemenBlock"
+                                  style="background-image: url(../../static/userResources/images/img24.jpg);"></span>
+                        </div>
+                        <div>
+                            <span class="bgCover elemenBlock"
+                                  style="background-image: url(../../static/userResources/images/img25.jpg);"></span>
+                        </div>
+                        <div>
+                            <span class="bgCover elemenBlock"
+                                  style="background-image: url(../../static/userResources/images/img26.jpg);"></span>
+                        </div>
+                        <div>
+                            <span class="bgCover elemenBlock"
+                                  style="background-image: url(../../static/userResources/images/img27.jpg);"></span>
+                        </div>
+                        <div>
+                            <span class="bgCover elemenBlock"
+                                  style="background-image: url(../../static/userResources/images/img25.jpg);"></span>
+                        </div>
+                    </div>
+                </section>
+                <!-- latestPostsBlock -->
+                <section class="latestPostsBlock container">
+                    <!-- rowHead -->
+                    <header class="row rowHead">
+                        <div class="col-xs-12 col-sm-5">
+                            <h1 class="fontNeuron blockH text-uppercase"><span class="bdrBottom">Featured</span> <span
+                                    class="textSecondary">PROPERTY</span></h1>
+                        </div>
+                    </header>
+                    <!-- isoContentHolder -->
+
+                    <div class="row">
+                        <div class="three-slider slickSlider latestPostsSlider slide-v2">
+                            {% for i in propertyDict %}
+                                <div>
+                                    <div class="col-xs-12">
+                                        <!-- postColumn -->
+                                        <article class="postColumn hasOver bgWhite">
+                                            <div class="aligncenter">
+                                                <!-- postColumnImageSlider -->
+                                                <!-- postColumnImageSlider -->
+                                                <div class="slick-carousel slickSlider postColumnImageSlider">
+
+                                                    {% set source = i.propertyGalleryPath+'/coverImages' %}
+                                                    {% for root, dirnames, filenames in walk(source) %}
+                                                        {% for filename in filenames %}
+                                                            <div>
+                                                            <a href="/loadPropertyDetails?propertyId={{ i.propertyId }}">
+                                                                <div class="imgHolder" >
+                                                                        {% set imgPath = '../../static/userResources/propertyGallery/'+i.propertyId|string+'/coverImages/'+filename %}
+                                                                        <img src="{{ imgPath }}" alt="{{ filename }}" style="height:260px; width:360px">
+                                                                </div>
+                                                            </a>
+                                                            </div>
+                                                        {% endfor %}
+                                                    {% endfor %}
+                                                </div>
+                                                    <span class="btn btnSmall btn-success btnDark text-capitalize">{{ i.propertyListFor }}</span>
+                                                    <div class="postion">
+                                                        <h2 class="fontNeuron text-capitalize"><a href="/loadPropertyDetails?propertyId={{ i.propertyId }}">{{ i.propertyName }}</a>
+                                                        </h2>
+                                                        {% if i.propertyListFor == 'sell' %}
+                                                            <h3 class="fontNeuron fwSemi"><span
+                                                                    class="textSecondary">$ {{ i.propertyPrice }}</span>
+                                                            </h3>
+                                                        {% else %}
+                                                            <h3 class="fontNeuron fwSemi"><span
+                                                                    class="textSecondary">$ {{ i.propertyMonthlyRent }}</span>
+                                                                <span class="textUnit fwNormal">/ monthly</span></h3>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                                <address>
+                                                    <span class="icn"><i class="fi flaticon-pin-1"></i></span>
+                                                    <p>{{ i.propertyStreet }},{{ i.cityName }},{{ i.stateName }}</p>
+                                                </address>
+                                                <!-- postColumnFoot -->
+                                                <footer class="postColumnFoot">
+                                                    <ul class="list-unstyled">
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Area</strong>
+                                                            <strong class="fwNormal elemenBlock">{{ i.propertyBuildUpArea }} {{ i.propertyBuildUpAreaUnit }}</strong>
+                                                        </li>
+                                                        {% if i.propertyCategoryName == 'residential' %}
+                                                            <li>
+                                                                <strong class="fwNormal elemenBlock text-primary">Beds</strong>
+                                                                <strong class="fwNormal elemenBlock">3</strong>
+                                                            </li>
+                                                            <li>
+                                                                <strong class="fwNormal elemenBlock text-primary">Baths</strong>
+                                                                <strong class="fwNormal elemenBlock">2</strong>
+                                                            </li>
+                                                            <li>
+                                                                <strong class="fwNormal elemenBlock text-primary">Garages</strong>
+                                                                <strong class="fwNormal elemenBlock">1</strong>
+                                                            </li>
+                                                        {% elif i.propertyCategoryName == 'commercial' %}
+                                                            {% if i.propertySubcategoryName == 'hotel' %}
+                                                                <li>
+                                                                    <strong class="fwNormal elemenBlock text-primary">Washrooms</strong>
+                                                                    <strong class="fwNormal elemenBlock">{{ i.propertyWashrooms }}</strong>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="fwNormal elemenBlock text-primary">TotalRooms</strong>
+                                                                    <strong class="fwNormal elemenBlock">{{ i.propertyTotalRooms }}</strong>
+                                                                </li>
+                                                            {% else %}
+                                                                <li>
+                                                                    <strong class="fwNormal elemenBlock text-primary">Washrooms</strong>
+                                                                    <strong class="fwNormal elemenBlock">{{ i.propertyWashrooms }}</strong>
+                                                                </li>
+                                                            {% endif %}
+                                                        {% endif %}
+                                                    </ul>
+                                                    <!-- postHoverLinskList -->
+                                                    <ul class="list-unstyled postHoverLinskList">
+                                                        <li><a href="#"
+                                                               class="linkToFavourite roundedCircle lightblue textWhite"><i
+                                                                class="fi flaticon-repeat"></i></a></li>
+                                                        <li class="hasOver">
+                                                            <a href="#"
+                                                               class="linkToFavourite roundedCircle lightblue textWhite"><i
+                                                                    class="fi flaticon-share"></i></a>
+                                                            <!-- postColumnSocial -->
+                                                            <ul class="list-unstyled socialNetworks postColumnSocial">
+                                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                                <li><a href="#"><i class="fab fa-instagram"></i></a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fab fa-google"></i></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><a href="#"
+                                                               class="linkToFavourite roundedCircle lightblue textWhite"><i
+                                                                class="far fa-heart"></i></a></li>
+                                                    </ul>
+                                                    <span class="float-right"><i
+                                                            class="far fa-user"></i>{{ i.registerFirstName }}</span>
+                                                </footer>
+                                        </article>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            <div>
+                                <div class="col-xs-12">
+                                    <!-- postColumn -->
+                                    <article class="postColumn bgWhite">
+                                        <div class="aligncenter">
+                                            <!-- postColumnImageSlider -->
+                                            <div class="imgHolder">
+                                                <a href="properties-single1.html">
+                                                    <img src="../../static/userResources/images/img05.jpg"
+                                                         alt="image description">
+                                                </a>
+                                            </div>
+                                            <span class="btn btnSmall btn-success btnDark text-capitalize">For Sale</span>
+                                            <div class="postion">
+                                                <h2 class="fontNeuron text-capitalize"><a
+                                                        href="properties-single1.html">Luxury Family Home</a></h2>
+                                                <h3 class="fontNeuron fwSemi"><span
+                                                        class="textSecondary">$ 490,000</span> <span
+                                                        class="textUnit fwNormal">/ monthly</span></h3>
+                                            </div>
+                                        </div>
+                                        <address>
+                                            <span class="icn"><i class="fi flaticon-pin-1"></i></span>
+                                            <p>The Village, Jersey City, NJ 07302, USA </p>
+                                        </address>
+                                        <!-- postColumnFoot -->
+                                        <footer class="postColumnFoot">
+                                            <ul class="list-unstyled">
+                                                <li>
+                                                    <strong class="fwNormal elemenBlock text-primary">Area</strong>
+                                                    <strong class="fwNormal elemenBlock">2100 m2</strong>
+                                                </li>
+                                                <li>
+                                                    <strong class="fwNormal elemenBlock text-primary">Beds</strong>
+                                                    <strong class="fwNormal elemenBlock">3</strong>
+                                                </li>
+                                                <li>
+                                                    <strong class="fwNormal elemenBlock text-primary">Baths</strong>
+                                                    <strong class="fwNormal elemenBlock">2</strong>
+                                                </li>
+                                                <li>
+                                                    <strong class="fwNormal elemenBlock text-primary">Garages</strong>
+                                                    <strong class="fwNormal elemenBlock">1</strong>
+                                                </li>
+                                            </ul>
+                                            <!-- postHoverLinskList -->
+                                            <ul class="list-unstyled postHoverLinskList">
+                                                <li><a href="#"
+                                                       class="linkToFavourite roundedCircle lightblue textWhite"><i
+                                                        class="fi flaticon-repeat"></i></a></li>
+                                                <li class="hasOver">
+                                                    <a href="#"
+                                                       class="linkToFavourite roundedCircle lightblue textWhite"><i
+                                                            class="fi flaticon-share"></i></a>
+                                                    <!-- postColumnSocial -->
+                                                    <ul class="list-unstyled socialNetworks postColumnSocial">
+                                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="#"><i class="fab fa-google"></i></a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="#"
+                                                       class="linkToFavourite roundedCircle lightblue textWhite"><i
+                                                        class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <span class="float-right"><i class="far fa-user"></i> Harriette Clark</span>
+                                        </footer>
+                                    </article>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-xs-12">
+                                    <!-- postColumn -->
+                                    <article class="postColumn bgWhite">
+                                        <div class="aligncenter">
+                                            <!-- postColumnImageSlider -->
+                                            <div class="imgHolder">
+                                                <a href="properties-single1.html">
+                                                    <img src="../../static/userResources/images/img06.jpg"
+                                                         alt="image description">
+                                                </a>
+                                            </div>
+                                            <span class="btn btnSmall btn-success btnDark text-capitalize">For Sale</span>
+                                            <div class="postion">
+                                                <h2 class="fontNeuron text-capitalize"><a
+                                                        href="properties-single1.html">Luxury Family Home</a></h2>
+                                                <h3 class="fontNeuron fwSemi"><span
+                                                        class="textSecondary">$ 490,000</span> <span
+                                                        class="textUnit fwNormal">/ monthly</span></h3>
+                                            </div>
+                                        </div>
+                                        <address>
+                                            <span class="icn"><i class="fi flaticon-pin-1"></i></span>
+                                            <p>The Village, Jersey City, NJ 07302, USA </p>
+                                        </address>
+                                        <!-- postColumnFoot -->
+                                        <footer class="postColumnFoot">
+                                            <ul class="list-unstyled">
+                                                <li>
+                                                    <strong class="fwNormal elemenBlock text-primary">Area</strong>
+                                                    <strong class="fwNormal elemenBlock">2100 m2</strong>
+                                                </li>
+                                                <li>
+                                                    <strong class="fwNormal elemenBlock text-primary">Beds</strong>
+                                                    <strong class="fwNormal elemenBlock">3</strong>
+                                                </li>
+                                                <li>
+                                                    <strong class="fwNormal elemenBlock text-primary">Baths</strong>
+                                                    <strong class="fwNormal elemenBlock">2</strong>
+                                                </li>
+                                                <li>
+                                                    <strong class="fwNormal elemenBlock text-primary">Garages</strong>
+                                                    <strong class="fwNormal elemenBlock">1</strong>
+                                                </li>
+                                            </ul>
+                                            <!-- postHoverLinskList -->
+                                            <ul class="list-unstyled postHoverLinskList">
+                                                <li><a href="#"
+                                                       class="linkToFavourite roundedCircle lightblue textWhite"><i
+                                                        class="fi flaticon-repeat"></i></a></li>
+                                                <li class="hasOver">
+                                                    <a href="#"
+                                                       class="linkToFavourite roundedCircle lightblue textWhite"><i
+                                                            class="fi flaticon-share"></i></a>
+                                                    <!-- postColumnSocial -->
+                                                    <ul class="list-unstyled socialNetworks postColumnSocial">
+                                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="#"><i class="fab fa-google"></i></a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="#"
+                                                       class="linkToFavourite roundedCircle lightblue textWhite"><i
+                                                        class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <span class="float-right"><i class="far fa-user"></i> Harriette Clark</span>
+                                        </footer>
+                                    </article>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-xs-12">
+                                    <!-- postColumn -->
+                                    <article class="postColumn bgWhite">
+                                        <div class="aligncenter">
+                                            <!-- postColumnImageSlider -->
+                                            <div class="imgHolder">
+                                                <a href="properties-single1.html">
+                                                    <img src="../../static/userResources/images/img04.jpg"
+                                                         alt="image description">
+                                                </a>
+                                            </div>
+                                            <span class="btn btnSmall btn-success btnDark text-capitalize">For Sale</span>
+                                            <div class="postion">
+                                                <h2 class="fontNeuron text-capitalize"><a
+                                                        href="properties-single1.html">Luxury Family Home</a></h2>
+                                                <h3 class="fontNeuron fwSemi"><span
+                                                        class="textSecondary">$ 490,000</span> <span
+                                                        class="textUnit fwNormal">/ monthly</span></h3>
+                                            </div>
+                                        </div>
+                                        <address>
+                                            <span class="icn"><i class="fi flaticon-pin-1"></i></span>
+                                            <p>The Village, Jersey City, NJ 07302, USA </p>
+                                        </address>
+                                        <!-- postColumnFoot -->
+                                        <footer class="postColumnFoot">
+                                            <ul class="list-unstyled">
+                                                <li>
+                                                    <strong class="fwNormal elemenBlock text-primary">Area</strong>
+                                                    <strong class="fwNormal elemenBlock">2100 m2</strong>
+                                                </li>
+                                                <li>
+                                                    <strong class="fwNormal elemenBlock text-primary">Beds</strong>
+                                                    <strong class="fwNormal elemenBlock">3</strong>
+                                                </li>
+                                                <li>
+                                                    <strong class="fwNormal elemenBlock text-primary">Baths</strong>
+                                                    <strong class="fwNormal elemenBlock">2</strong>
+                                                </li>
+                                                <li>
+                                                    <strong class="fwNormal elemenBlock text-primary">Garages</strong>
+                                                    <strong class="fwNormal elemenBlock">1</strong>
+                                                </li>
+                                            </ul>
+                                            <!-- postHoverLinskList -->
+                                            <ul class="list-unstyled postHoverLinskList">
+                                                <li><a href="#"
+                                                       class="linkToFavourite roundedCircle lightblue textWhite"><i
+                                                        class="fi flaticon-repeat"></i></a></li>
+                                                <li class="hasOver">
+                                                    <a href="#"
+                                                       class="linkToFavourite roundedCircle lightblue textWhite"><i
+                                                            class="fi flaticon-share"></i></a>
+                                                    <!-- postColumnSocial -->
+                                                    <ul class="list-unstyled socialNetworks postColumnSocial">
+                                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="#"><i class="fab fa-google"></i></a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="#"
+                                                       class="linkToFavourite roundedCircle lightblue textWhite"><i
+                                                        class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <span class="float-right"><i class="far fa-user"></i> Harriette Clark</span>
+                                        </footer>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- mostPostsBlock -->
+                <section class="mostPostsBlock bgWhite">
+                    <div class="container">
+                        <h1 class="fontNeuron blockH text-uppercase text-center"><span>MOST POPULAR</span> <span
+                                class="textSecondary">PLACES</span></h1>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <!-- visualPostColumn -->
+                                <a href="properties-detial.html"
+                                   class="visualPostColumn v2 hasOver elemenBlock type01 textWhite">
+                                    <span class="bgCover elemenBlock"
+                                          style="background-image: url(../../static/userResources/images/img10.jpg);"></span>
+                                    <div class="captionWrap">
+                                        <h2 class="fontNeuron text-capitalize">Luxury Family Home</h2>
+                                        <address>
+                                            <span class="icn"><i class="fi flaticon-pin-1"></i></span>
+                                            <p>The Village, Jersey City, NJ 07302, USA </p>
+                                        </address>
+                                        <span class="btn btnSmall btn-success text-capitalize">For Sale</span>
+                                        <h3 class="fontNeuron fwSemi"><span class="textSecondary">$ 490,000</span> <span
+                                                class="textUnit fwNormal">/ monthly</span></h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <!-- visualPostColumn -->
+                                <a href="properties-detial.html"
+                                   class="visualPostColumn hasOver elemenBlock v2 type02 textWhite">
+                                    <span class="bgCover elemenBlock"
+                                          style="background-image: url(../../static/userResources/images/img11.jpg);"></span>
+                                    <div class="captionWrap">
+                                        <h2 class="fontNeuron text-capitalize">Villa on Hollywood Boulevard </h2>
+                                        <address>
+                                            <span class="icn"><i class="fi flaticon-pin-1"></i></span>
+                                            <p>The Village, Jersey City, NJ 07302, USA </p>
+                                        </address>
+                                        <span class="btn btnSmall btn-success text-capitalize">For Sale</span>
+                                        <h3 class="fontNeuron fwSemi"><span class="textSecondary">$ 490,000</span> <span
+                                                class="textUnit fwNormal">/ monthly</span></h3>
+                                    </div>
+                                </a>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <a href="#" class="visualPostColumn hasOver elemenBlock v2 type03 textWhite">
+                                            <span class="bgCover elemenBlock"
+                                                  style="background-image: url(../../static/userResources/images/img12.jpg);"></span>
+                                            <div class="captionWrap b-minas">
+                                                <h2 class="fontNeuron text-capitalize">Full Floor Office Condo</h2>
+                                                <address>
+                                                    <span class="icn"><i class="fi flaticon-pin-1"></i></span>
+                                                    <p>San Diego, CA 92101</p>
+                                                </address>
+                                                <span class="btn btnSmall btn-info btn-success text-capitalize">For Sale</span>
+                                                <h3 class="fontNeuron fwSemi"><span
+                                                        class="textSecondary">$ 490,000</span> <span
+                                                        class="textUnit fwNormal">/ monthly</span></h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <a href="properties-detial.html"
+                                           class="visualPostColumn hasOver elemenBlock v2 type03 textWhite">
+                                            <span class="bgCover elemenBlock"
+                                                  style="background-image: url(../../static/userResources/images/img13.jpg);"></span>
+                                            <div class="captionWrap b-minas">
+                                                <h2 class="fontNeuron text-capitalize">Elegant studio fla</h2>
+                                                <address>
+                                                    <span class="icn"><i class="fi flaticon-pin-1"></i></span>
+                                                    <p>San Diego, CA 92101</p>
+                                                </address>
+                                                <span class="btn btnSmall btn-success text-capitalize">For Sale</span>
+                                                <h3 class="fontNeuron fwSemi"><span
+                                                        class="textSecondary">$ 490,000</span> <span
+                                                        class="textUnit fwNormal">/ monthly</span></h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- servicesFetaureBlock -->
+                <section class="servicesFetaureBlock container">
+                    <h1 class="fontNeuron blockH text-uppercase text-center"><span>OUR</span> <span
+                            class="textSecondary">SERVICE</span></h1>
+                    <!-- servicesFetauresList -->
+                    <ul class="servicesFetauresList list-unstyled text-center">
+                        <li>
+                            <a href="#">
+                                <span class="icnHolder roundedCircle"><i class="fi flaticon-house"></i></span>
+                                <h2 class="fontNeuron text-capitalize">Saling Service</h2>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icnHolder roundedCircle"><i class="fi flaticon-rent"></i></span>
+                                <h2 class="fontNeuron text-capitalize">Renting Service</h2>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icnHolder roundedCircle"><i class="fi flaticon-list"></i></span>
+                                <h2 class="fontNeuron text-capitalize">Property Listing</h2>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icnHolder roundedCircle"><i class="fi flaticon-house-1"></i></span>
+                                <h2 class="fontNeuron text-capitalize">Property Management</h2>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- newsNstoriesBlock -->
+                <section class="bgWhite newsNstoriesBlock">
+                    <div class="container">
+                        <h1 class="fontNeuron blockH text-uppercase text-center"><span>NEWS AND</span> <span
+                                class="textSecondary">STORIES</span></h1>
+                        <div class="row">
+                            <!-- newsCarousel -->
+                            <div class="news-posts-carousel slickSlider newsCarousel">
+                                <div>
+                                    <div class="col-xs-12">
+                                        <!-- newsPostColumn -->
+                                        <article class="newsPostColumn">
+                                            <div class="aligncenter">
+                                                <a href="blog-detail.html">
+                                                    <img src="../../static/userResources/images/img19.jpg"
+                                                         alt="image description">
+                                                </a>
+                                            </div>
+                                            <h2 class="fontNeuron"><a href="blog-detail.html">Getting Started Designing
+                                                Apps for the Apple Watch</a></h2>
+                                            <p>
+                                                <a href="#" class="btn btnSmall btn-info">Ali Tufan</a>
+                                                <time datetime="2011-01-12">February 9, 2017</time>
+                                                <a href="#" class="commentsCount">12 comment</a>
+                                            </p>
+                                            <footer class="PostColumnFoot">
+                                                <a href="#" class="elemenBlock readMore text-capitalize">Read Article <i
+                                                        class="fi flaticon-arrows readMoreIcn"></i></a>
+                                            </footer>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="col-xs-12">
+                                        <!-- newsPostColumn -->
+                                        <article class="newsPostColumn">
+                                            <div class="aligncenter">
+                                                <a href="blog-detail.html">
+                                                    <img src="../../static/userResources/images/img20.jpg"
+                                                         alt="image description">
+                                                </a>
+                                            </div>
+                                            <h2 class="fontNeuron"><a href="blog-detail.html">Take Away You Can Get
+                                                From</a></h2>
+                                            <p>
+                                                <a href="#" class="btn btnSmall btn-info">Ali Tufan</a>
+                                                <time datetime="2011-01-12">February 9, 2017</time>
+                                                <a href="#" class="commentsCount">12 comment</a>
+                                            </p>
+                                            <footer class="PostColumnFoot">
+                                                <a href="#" class="elemenBlock readMore text-capitalize">Read Article <i
+                                                        class="fi flaticon-arrows readMoreIcn"></i></a>
+                                            </footer>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="col-xs-12">
+                                        <!-- newsPostColumn -->
+                                        <article class="newsPostColumn">
+                                            <div class="aligncenter">
+                                                <a href="blog-detail.html">
+                                                    <img src="../../static/userResources/images/img19.jpg"
+                                                         alt="image description">
+                                                </a>
+                                            </div>
+                                            <h2 class="fontNeuron"><a href="blog-detail.html">Getting Started Designing
+                                                Apps for the Apple Watch</a></h2>
+                                            <p>
+                                                <a href="#" class="btn btnSmall btn-info">Ali Tufan</a>
+                                                <time datetime="2011-01-12">February 9, 2017</time>
+                                                <a href="#" class="commentsCount">12 comment</a>
+                                            </p>
+                                            <footer class="PostColumnFoot">
+                                                <a href="#" class="elemenBlock readMore text-capitalize">Read Article <i
+                                                        class="fi flaticon-arrows readMoreIcn"></i></a>
+                                            </footer>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="col-xs-12">
+                                        <!-- newsPostColumn -->
+                                        <article class="newsPostColumn">
+                                            <div class="aligncenter">
+                                                <a href="blog-detail.html">
+                                                    <img src="../../static/userResources/images/img20.jpg"
+                                                         alt="image description">
+                                                </a>
+                                            </div>
+                                            <h2 class="fontNeuron"><a href="blog-detail.html">Take Away You Can Get
+                                                From</a></h2>
+                                            <p>
+                                                <a href="#" class="btn btnSmall btn-info">Ali Tufan</a>
+                                                <time datetime="2011-01-12">February 9, 2017</time>
+                                                <a href="#" class="commentsCount">12 comment</a>
+                                            </p>
+                                            <footer class="PostColumnFoot">
+                                                <a href="#" class="elemenBlock readMore text-capitalize">Read Article <i
+                                                        class="fi flaticon-arrows readMoreIcn"></i></a>
+                                            </footer>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- sponsorsBlock -->
+                <section class="homeapp">
+                    <div class="container">
+                        <div class="row">
+                            <div class="appcontent-area">
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <div class="home-img">
+                                        <img src="../../static/userResources/images/app-img.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-8">
+                                    <div class="homeapp-content">
+                                        <h2>LemanHouse App</h2>
+                                        <div class="description">
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                industry. Lorem Ipsum has been
+                                                the industry's standard dummy text ever since the 1500s, when an unknown
+                                                printer took a galley
+                                                of type and scrambled it to make a type specimen book. It has survived
+                                                not only five centuries,
+                                                but also the leap into electronic typesetting, remaining essentially
+                                                unchanged. It was popularised
+                                                in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                                                passages, and more
+                                                recently with desktop publishing software.</p>
+                                        </div>
+                                        <div class="app-btns">
+                                            <a href="#"><img src="../../static/userResources/images/app-store.png"
+                                                             alt="image description"></a>
+                                            <a href="#"><img src="../../static/userResources/images/google-play.jpg"
+                                                             alt="image description"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- sponsorsBlock -->
+                <section class="container sponsorsBlock">
+                    <h1 class="fontNeuron blockH text-uppercase text-center"><span>OUR</span> <span
+                            class="textSecondary">PARTNERS</span></h1>
+                    <!-- LogosCarousel -->
+                    <div class="logos-slider slickSlider LogosCarousel">
+                        <div>
+                            <!-- logoColumn -->
+                            <div class="logoColumn">
+                                <a href="#">
+                                    <img src="../../static/userResources/images/sponsor01.png" alt="helsinki">
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- logoColumn -->
+                            <div class="logoColumn">
+                                <a href="#">
+                                    <img src="../../static/userResources/images/sponsor02.png" alt="norway">
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- logoColumn -->
+                            <div class="logoColumn">
+                                <a href="#">
+                                    <img src="../../static/userResources/images/sponsor03.png" alt="lars grondahl">
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- logoColumn -->
+                            <div class="logoColumn">
+                                <a href="#">
+                                    <img src="../../static/userResources/images/sponsor04.png" alt="kirsten">
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- logoColumn -->
+                            <div class="logoColumn">
+                                <a href="#">
+                                    <img src="../../static/userResources/images/sponsor05.png" alt="only oslo">
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- logoColumn -->
+                            <div class="logoColumn">
+                                <a href="#">
+                                    <img src="../../static/userResources/images/sponsor02.png" alt="norway">
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- logoColumn -->
+                            <div class="logoColumn">
+                                <a href="#">
+                                    <img src="../../static/userResources/images/sponsor03.png" alt="lars grondahl">
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- logoColumn -->
+                            <div class="logoColumn">
+                                <a href="#">
+                                    <img src="../../static/userResources/images/sponsor04.png" alt="kirsten">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- signupFormAside -->
+                <div class="container">
+                    <div class="row">
+                        <form action="#" class="bgWhite signupFormAside m-b-60 border-trbl">
+                            <div class="container signupFormAsideHolder">
+                                <span class="icnAbsolute elemenBlock fi flaticon-message"></span>
+                                <div class="col-xs-12 col-md-offset-1 col-md-7">
+                                    <h3 class="fontNeuron textSecondary">Sign up for our newsletter.</h3>
+                                    <p>Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in
+                                        faucibus.</p>
+                                </div>
+                                <div class="col-xs-12 col-md-4">
+                                    <div class="form-group">
+                                        <input type="email" id="email" class="form-control elemenBlock"
+                                               placeholder="Your email">
+                                        <button type="button" class="buttonReset fi flaticon-navigation"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <!-- pageFooterBlock -->
+        {% include "user/footer.html" %}
+    </div>
+    <!-- pagePopupWrap -->
+    <div class="popup-holder">
+        <div id="popup1" class="lightbox-demo">
+            <!-- popupLoginFrom -->
+            <form action="#" class="popupHolderWrap bgLightDark center-block popupLarge popupLoginFrom">
+                <ul class="list-unstyled popupTabsetList text-center fwBold text-uppercase fontNeuron">
+                    <li class="active"><a href="#tab01">LOGIN</a></li>
+                    <li><a href="#tab02">REGISTER</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="tab01" class="tab-active">
+                        <div class="popupColsHolder">
+                            <div class="col bgWhite">
+                                <div class="form-group">
+                                    <input type="text" class="form-control elemenBlock" placeholder="User Namer">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control elemenBlock" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <label class="fwNormal customLabelCheck">
+                                        <input type="checkbox" class="customFormInputReset">
+                                        <span class="fakeCheckbox"></span>
+                                        <span class="fakeLabel">Remember me</span>
+                                    </label>
+                                </div>
+                                <button type="submit"
+                                        class="btn btnSecondary elemenBlock fontNeuron fwNormal text-uppercase btnSubmit">
+                                    LOGIN
+                                </button>
+                                <a href="#" class="linkForget">Forgot Password?</a>
+                            </div>
+                            <div class="col">
+                                <p>You Can Login using your facebook Profile or Google account</p>
+                                <button type="button" class="btnSocial btnFb elemenBlock"><i
+                                        class="fab fa-facebook-f btnIco"></i> Facebook Connect
+                                </button>
+                                <button type="button" class="btnSocial btnTw elemenBlock"><i
+                                        class="fab fa-twitter btnIco"></i> Twitter Connect
+                                </button>
+                                <button type="button" class="btnSocial btnG elemenBlock"><i
+                                        class="fab fa-google btnIco"></i> Google Connect
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab02">
+                        <div class="popupColsHolder">
+                            <div class="col bgWhite">
+                                <div class="form-group">
+                                    <input type="text" class="form-control elemenBlock" placeholder="Full Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control elemenBlock" placeholder="User Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control elemenBlock" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control elemenBlock"
+                                           placeholder="Confirm Password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control elemenBlock" placeholder="Email Address">
+                                </div>
+                                <div class="form-group">
+                                    <select data-placeholder="Type" class="chosen-select">
+                                        <option value="1">For Rent</option>
+                                        <option value="2">For Sale</option>
+                                        <option value="3">House</option>
+                                        <option value="4">Property</option>
+                                        <option value="5">Real Estate</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="fwNormal customLabelCheck">
+                                        <input type="checkbox" class="customFormInputReset" checked>
+                                        <span class="fakeCheckbox"></span>
+                                        <span class="fakeLabel">I have read and agree to the Term of Service.</span>
+                                    </label>
+                                </div>
+                                <button type="submit"
+                                        class="btn btn-primary elemenBlock fontNeuron fwNormal text-uppercase btnSubmit">
+                                    REGISTER
+                                </button>
+                            </div>
+                            <div class="col">
+                                <p>You Can Login using your facebook Profile or Google account</p>
+                                <button type="button" class="btnSocial btnFb elemenBlock"><i
+                                        class="fab fa-facebook-f btnIco"></i> Facebook Connect
+                                </button>
+                                <button type="button" class="btnSocial btnTw elemenBlock"><i
+                                        class="fab fa-twitter btnIco"></i> Twitter Connect
+                                </button>
+                                <button type="button" class="btnSocial btnG elemenBlock"><i
+                                        class="fab fa-google btnIco"></i> Google Connect
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- include jQuery library -->
+<script src="../../static/userResources/js/jquery.js"></script>
+<script src="../../static/userResources/js/plugins.js"></script>
+<!-- include bootstrap JavaScript -->
+<script src="../../static/userResources/js/bootstrap-slider.min.js"></script>
+<!-- include custom JavaScript -->
+<script src="../../static/userResources/js/jquery.main.js"></script>
+<script type="text/javascript" src="../../static/userResources/js/init.js"></script>
+</body>
+</html>

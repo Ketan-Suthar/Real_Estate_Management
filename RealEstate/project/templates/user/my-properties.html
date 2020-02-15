@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- set the encoding of your site -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- set the page title -->
+    <title>LemanHouse - Real Estate HTML Template</title>
+    <!-- include google roboto font cdn link -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <!-- include the site bootstrap stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/bootstrap.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/fancybox.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/style.css">
+</head>
+<body>
+<!-- pageWrapper -->
+<div id="pageWrapper">
+    <!-- pageMenuPushWrap -->
+    <div class="pageMenuPushWrap pageMenuPushWrap1">
+        <!-- bgBaseWrap -->
+        <div class="bgBaseWrap">
+            <!-- pageHeader -->
+            {% include 'user/header.html' %}
+            <!-- main -->
+            <main>
+                <!-- findFormBlock -->
+                <form action="#" class="findFormBlock findFormBlock2 bgLightDark hasShadowTop offsetHeaderTop">
+                    <div class="container">
+                        <div class="row align-center d-flex">
+                            <div class="col-xs-12 col-sm-5 col-md-4 col-lg-5">
+                                <div class="form-group">
+                                    <input type="text" class="form-control elemenBlock noBdr sizeMedium"
+                                           placeholder="Enter address e.g. street, city and state or zip">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-2">
+                                <div class="form-group">
+                                    <i class="fi flaticon-target icnInput"></i>
+                                    <input type="text" class="form-control elemenBlock noBdr sizeMedium"
+                                           placeholder="All Cities">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-3 col-md-2">
+                                <div class="form-group">
+                                    <select data-placeholder="All Areas" class="chosen-select noBdr sizeMedium">
+                                        <option value="1">All Areas</option>
+                                        <option value="2">All Areas</option>
+                                        <option value="2">All Areas</option>
+                                        <option value="2">All Areas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-4 col-lg-3">
+                                <div class="btnsWrap">
+                                    <!-- otherFeaturesOpener -->
+                                    <a class="btnPlus otherFeaturesOpener text-capitalize noTopBottom" role="button"
+                                       data-toggle="collapse" href="#otherFeaturescollapse" aria-expanded="false"
+                                       aria-controls="otherFeaturescollapse">
+                                        <i class="fas btnIcn fa-plus-circle text-info opener"></i>
+                                        <i class="fas fa-minus-circle closer btnIcn text-info"></i>
+                                        Advanced
+                                    </a>
+                                    <button type="button"
+                                            class="btn btnDark buttonSmall text-uppercase fontNeuron hidden-xs">SEARCH
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- orderRow -->
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <!-- otherFeaturesCollapse -->
+                                <div class="collapse otherFeaturesCollapse" id="otherFeaturescollapse">
+                                    <!-- checkList -->
+                                    <ul class="list-unstyled checkList text-primary">
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Air conditioning</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Cofee pot</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Fan</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Hi-fi</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Balcony</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Computer</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Fridge</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Internet</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Bedding</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Cot</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Grill</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Iron</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Cable TV</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Dishwasher</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Hairdryer</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Juicer</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Cleaning after exit</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">DVD</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Heating</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Lift</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                                <button type="button" class="btn btnDark text-uppercase fontNeuron">SEARCH</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- content -->
+                <section id="content" class="container pabIndent">
+                    <!-- contentFiltersHeadingWrap -->
+                    <header class="contentFiltersHeadingWrap row">
+                        <div class="col-xs-12 col-sm-10">
+                            <!-- breadcrumb -->
+                            <ol class="breadcrumb breadcrumb1">
+                                <li><a href="{{ url_for('home') }}">Home</a></li>
+                                <li><a href="{{ url_for('userProfile') }}" class="active">profile</a></li>
+                            </ol>
+                            <h1 class="fontNeuron">User Profile</h1>
+                        </div>
+                        {#							<div class="col-xs-12 col-sm-2">#}
+                        {#								<!-- viewFilterLinks -->#}
+                        {#								<ul class="list-unstyled viewFilterLinks">#}
+                        {#									<li><a href="#"><i class="fi flaticon-share"></i></a></li>#}
+                        {#									<li><a href="#"><i class="fi flaticon-printer"></i></a></li>#}
+                        {#								</ul>#}
+                        {#							</div>#}
+                    </header>
+                    <!-- userProfile -->
+                    <div class="userProfile">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-lg-3">
+                                <!-- profileSidebar -->
+                                <aside class="profileSidebar">
+                                    <header class="head">
+                                        {#                                <div class="imgProfile">#}
+                                        {#                                  <img src="../../static/userResources/images/img-profile2.jpg" alt="" width="74" height="74">#}
+                                        {#                                </div>#}
+                                        <div class="info">
+                                            <h4><span
+                                                    class="text"><b>{{ loginDict[0].registerFirstName|capitalize }} {{ loginDict[0].registerLastName|capitalize }}</b></span>
+                                            </h4>
+                                            <span class="text"><a href="#changePassword"
+                                                                  class="link">Change Password</a></span>
+                                        </div>
+                                    </header>
+                                    <ul class="navUser list-unstyled">
+                                        <li>
+                                            <a href="{{ url_for('userProfile') }}" class="active">
+                                                <i class="far fa-user"></i>
+                                                <span>Account Settings</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url_for('userProperties') }}">
+                                                <i class="fi flaticon-house"></i>
+                                                <span>My Properties</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url_for('userFavouriteProperties') }}">
+                                                <i class="far fa-heart"></i>
+                                                <span>Favorited Properties</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url_for('loadPostProperty') }}">
+                                                <i class="fa fa-plus"></i>
+                                                <span>Submit Property</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url_for('logout') }}">
+                                                <i class="fa fa-sign-out-alt"></i>
+                                                <span>Logout</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </aside>
+                            </div>
+                            <div class="col-xs-12 col-sm-8 col-lg-9">
+                                <!-- accountData -->
+                                <div class="accountData">
+                                    <div class="head">
+                                        <h4 class="fontNeuron">My Properties</h4>
+{#                                        <div class="sortGroup">#}
+{#                                            <strong class="groupTitle fwNormal">Sort by:</strong>#}
+{#                                            <div class="dropdown">#}
+{#                                                <button aria-expanded="false" aria-haspopup="true"#}
+{#                                                        data-toggle="dropdown" id="sortGroup" type="button"#}
+{#                                                        class="dropdown-toggle buttonReset">Default Order <i#}
+{#                                                        class="icn fas fa-chevron-down"></i></button>#}
+{#                                                <ul aria-labelledby="sortGroup"#}
+{#                                                    class="dropdown-menu dropdown-menu-right">#}
+{#                                                    <li><a href="#">Default Order</a></li>#}
+{#                                                    <li><a href="#">Default Order</a></li>#}
+{#                                                    <li><a href="#">Default Order</a></li>#}
+{#                                                    <li><a href="#">Default Order</a></li>#}
+{#                                                </ul>#}
+{#                                            </div>#}
+{#                                        </div>#}
+                                    </div>
+                                    <!-- propertiesList -->
+
+                                    <div class="propertiesList">
+                                        {% for i in propertyDict %}
+                                        <article class="propertyRow">
+                                            <div class="info">
+{#                                                <div class="imgThumbnail">#}
+{#                                                    <a href="properties-single1.html">#}
+{#                                                        <img src="../../static/userResources/images/img01.jpg" alt=""></a>#}
+{#                                                </div>#}
+                                                <div class="textBox">
+                                                    {% if i.propertyName != None %}
+                                                        <h4 class="fontNeuron"><a href="/loadPropertyDetails?propertyId={{ i.propertyId }}">{{ i.propertyName }}</a></h4>
+                                                    {% else %}
+                                                        <h4 class="fontNeuron"><a href="/loadPropertyDetails?propertyId={{ i.propertyId }}">No Name</a></h4>
+                                                    {% endif %}
+                                                    <address><i class="fi flaticon-pin-1"></i>
+                                                        {{ i.propertyStreet }},{{ i.propertyLocality }},{{ i.cityName }}
+                                                    </address>
+                                                    <div class="priceArea">
+                                                        {% if i.propertyListFor == 'sell' %}
+                                                            <span class="price fontNeuron">{{ i.propertyPrice }}</span>
+                                                        {% else %}
+                                                            <span class="price fontNeuron">{{ i.propertyMonthlyRent }} Monthly</span>
+                                                        {% endif %}
+                                                        <time class="date" datetime="2017-02-27">{{ i.propertyAmenitiesDate }}</time>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="btnArea">
+                                                {% if i.propertyStatus == 'accepted' %}
+                                                    <span class="status fontNeuron">Published</span>
+                                                {% elif i.propertyStatus == 'rejected' %}
+                                                    <span class="status fontNeuron" style="background-color: red">Rejected</span>
+                                                {% elif i.propertyStatus == 'pending' %}
+                                                    <span class="status fontNeuron disabled">Pending</span>
+                                                {% endif %}
+                                                <ul class="links list-unstyled">
+                                                    <li><a href="/loadPropertyDetails?propertyId={{ i.propertyId }}"><i class="fa fa-eye"></i>View</a></li>
+{#                                                    <li><a href="#"><i class="fa fa-edit"></i>Edit</a></li>#}
+                                                    <li><a href="#" class="delete"><i class="far fa-window-close"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </article>
+                                        {% endfor %}
+{#                                        <article class="propertyRow">#}
+{#                                            <div class="info">#}
+{#                                                <div class="imgThumbnail">#}
+{#                                                    <a href="properties-single1.html"><img src="images/properties02.jpg"#}
+{#                                                                                           alt=""></a>#}
+{#                                                </div>#}
+{#                                                <div class="textBox">#}
+{#                                                    <h4 class="fontNeuron"><a href="properties-single1.html">Meridian#}
+{#                                                        Villas</a></h4>#}
+{#                                                    <address><i class="fi flaticon-pin-1"></i>The Village, Jersey City,#}
+{#                                                        NJ 07302, USA#}
+{#                                                    </address>#}
+{#                                                    <div class="priceArea">#}
+{#                                                        <span class="price fontNeuron">$ 490,000</span>#}
+{#                                                        <time class="date" datetime="2017-02-27">2/27/2017</time>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                            <div class="btnArea">#}
+{#                                                <span class="status fontNeuron disabled">Pending</span>#}
+{#                                                <ul class="links list-unstyled">#}
+{#                                                    <li><a href="#"><i class="fa fa-eye"></i>View</a></li>#}
+{#                                                    <li><a href="#"><i class="fa fa-edit"></i>Edit</a></li>#}
+{#                                                    <li><a href="#" class="delete"><i#}
+{#                                                            class="far fa-window-close"></i></a></li>#}
+{#                                                </ul>#}
+{#                                            </div>#}
+{#                                        </article>#}
+{#                                        <article class="propertyRow">#}
+{#                                            <div class="info">#}
+{#                                                <div class="imgThumbnail">#}
+{#                                                    <a href="properties-single1.html"><img src="images/properties03.jpg"#}
+{#                                                                                           alt=""></a>#}
+{#                                                </div>#}
+{#                                                <div class="textBox">#}
+{#                                                    <h4 class="fontNeuron"><a href="properties-single1.html">4 Bedroom#}
+{#                                                        New House For Sale</a></h4>#}
+{#                                                    <address><i class="fi flaticon-pin-1"></i>The Village, Jersey City,#}
+{#                                                        NJ 07302, USA#}
+{#                                                    </address>#}
+{#                                                    <div class="priceArea">#}
+{#                                                        <span class="price fontNeuron">$ 490,000</span>#}
+{#                                                        <time class="date" datetime="2017-02-27">2/27/2017</time>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                            <div class="btnArea">#}
+{#                                                <span class="status fontNeuron">Published</span>#}
+{#                                                <ul class="links list-unstyled">#}
+{#                                                    <li><a href="#"><i class="fa fa-eye"></i>View</a></li>#}
+{#                                                    <li><a href="#"><i class="fa fa-edit"></i>Edit</a></li>#}
+{#                                                    <li><a href="#" class="delete"><i#}
+{#                                                            class="far fa-window-close"></i></a></li>#}
+{#                                                </ul>#}
+{#                                            </div>#}
+{#                                        </article>#}
+{#                                        <article class="propertyRow">#}
+{#                                            <div class="info">#}
+{#                                                <div class="imgThumbnail">#}
+{#                                                    <a href="properties-single1.html"><img src="images/properties04.jpg" alt=""></a>#}
+{#                                                </div>#}
+{#                                                <div class="textBox">#}
+{#                                                    <h4 class="fontNeuron"><a href="properties-single1.html">Villa on#}
+{#                                                        Hollywood Boulevard</a></h4>#}
+{#                                                    <address><i class="fi flaticon-pin-1"></i>The Village, Jersey City,#}
+{#                                                        NJ 07302, USA#}
+{#                                                    </address>#}
+{#                                                    <div class="priceArea">#}
+{#                                                        <span class="price fontNeuron">$ 490,000</span>#}
+{#                                                        <time class="date" datetime="2017-02-27">2/27/2017</time>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                            <div class="btnArea">#}
+{#                                                <span class="status fontNeuron">Published</span>#}
+{#                                                <ul class="links list-unstyled">#}
+{#                                                    <li><a href="#"><i class="fa fa-eye"></i>View</a></li>#}
+{#                                                    <li><a href="#"><i class="fa fa-edit"></i>Edit</a></li>#}
+{#                                                    <li><a href="#" class="delete"><i#}
+{#                                                            class="far fa-window-close"></i></a></li>#}
+{#                                                </ul>#}
+{#                                            </div>#}
+{#                                        </article>#}
+                                    </div>
+                                </div>
+                                <!-- pagination -->
+                                <nav role="navigation" class="navigation pagination pagination1 fontNeuron">
+                                    <div class="nav-links">
+                                        <a href="#" class="prev page-numbers">Previous</a>
+                                        <a href="#" class="page-numbers">1</a>
+                                        <span class="page-numbers current">2</span>
+                                        <a href="#" class="page-numbers">3</a>
+                                        <span class="page-numbers dots">…</span>
+                                        <a href="#" class="page-numbers">22</a>
+                                        <a href="#" class="next page-numbers">Next</a>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- signupFormAside -->
+{#                <form action="#" class="bgWhite signupFormAside">#}
+{#                    <div class="container signupFormAsideHolder">#}
+{#                        <span class="icnAbsolute elemenBlock fi flaticon-message"></span>#}
+{#                        <div class="col-xs-12 col-md-offset-2 col-md-6">#}
+{#                            <h3 class="fontNeuron textSecondary">Sign up for our newsletter.</h3>#}
+{#                            <p>Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>#}
+{#                        </div>#}
+{#                        <div class="col-xs-12 col-md-4">#}
+{#                            <div class="form-group">#}
+{#                                <input type="email" id="email" class="form-control elemenBlock"#}
+{#                                       placeholder="Your email">#}
+{#                                <button type="button" class="buttonReset fi flaticon-navigation"></button>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </form>#}
+            </main>
+        </div>
+        <!-- pageFooterBlock -->
+        <div class="pageFooterBlock">
+            <!-- pageAside -->
+            <aside class="pageAside textWhite">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4 col">
+                            <h2 class="fontNeuron fwSemi text-uppercase">LemanHouse</h2>
+                            <p>Lorem ipsum dolor amet, consectetur adipiscing elit. Sed ut purus eget nunc ut dignissim
+                                cursus.</p>
+                            <address>
+                                <dl>
+                                    <dt><i class="fi flaticon-navigation"></i></dt>
+                                    <dd>Collins Street West, Victoria 8007, Australia.</dd>
+                                    <dt><i class="fi flaticon-24-hours"></i></dt>
+                                    <dd><a href="tel:+12463450695">+1 246-345-0695</a></dd>
+                                    <dt><i class="fi flaticon-mail"></i></dt>
+                                    <dd>
+                                        <a href="mailto:&#105;&#110;&#102;&#111;&#064;&#104;&#111;&#109;&#101;&#115;&#119;&#101;&#101;&#116;&#046;&#099;&#111;&#109;">&#105;&#110;&#102;&#111;&#064;&#104;&#111;&#109;&#101;&#115;&#119;&#101;&#101;&#116;&#046;&#099;&#111;&#109;</a>
+                                    </dd>
+                                </dl>
+                            </address>
+                        </div>
+                        <!-- ftNav -->
+                        <nav class="col-xs-12 ftNav col-sm-4 col">
+                            <h2 class="fontNeuron fwSemi text-uppercase">Useful Links</h2>
+                            <div class="ftNavListsHolder">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Terms of Use</a></li>
+                                    <li><a href="#">About US</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Contact Support</a></li>
+                                    <li><a href="#">Careers</a></li>
+                                    <li><a href="#">FAQs</a></li>
+                                </ul>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Our Agents</a></li>
+                                    <li><a href="#">How It Works</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <div class="col-xs-12 col-sm-4 col">
+                            <h2 class="fontNeuron fwSemi text-uppercase">LATEST PROPERTIES</h2>
+                            <!-- postsWidgetList -->
+                            <ul class="list-unstyled postsWidgetList">
+                                <li>
+                                    <div class="alignleft">
+                                        <a href="blog-detail.html">
+                                            <img src="images/img22.jpg" alt="image description">
+                                        </a>
+                                    </div>
+                                    <div class="descrWrap">
+                                        <h3 class="fwNormal"><a href="blog-detail.html">Do what you love and tomorrow
+                                            will pay</a></h3>
+                                        <h4 class="fwSemi">$ 1,27,000</h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="alignleft">
+                                        <a href="blog-detail.html">
+                                            <img src="images/img23.jpg" alt="image description">
+                                        </a>
+                                    </div>
+                                    <div class="descrWrap">
+                                        <h3 class="fwNormal"><a href="blog-detail.html">We’re ready for the TRID
+                                            rules!</a></h3>
+                                        <h4 class="fwSemi">$ 527,000</h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- pageFooter -->
+            <footer id="pageFooter">
+                <div class="container pageFooterHolder">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-push-6 col-sm-6">
+                            <!-- pageFooterSocial -->
+                            <ul class="socialNetworks list-unstyled pageFooterSocial">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                                <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-pull-6 col-sm-6">
+                            <p>2018 <a href="#">LemanHouse</a> - All rights reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- btnScrollToTop -->
+            <a href="#pageWrapper" class="btnScrollToTop smooth textWhite">Scroll Top <i
+                    class="fi flaticon-arrows btnScrollIcn"></i></a>
+            <span class="bgCover elemenBlock" style="background-image: url(images/img21.jpg);"></span>
+        </div>
+    </div>
+    <!-- pagePopupWrap -->
+    <div class="popup-holder">
+        <div id="popup1" class="lightbox-demo">
+            <!-- popupLoginFrom -->
+            <form action="#" class="popupHolderWrap bgLightDark center-block popupLarge popupLoginFrom">
+                <ul class="list-unstyled popupTabsetList text-center fwBold text-uppercase fontNeuron">
+                    <li class="active"><a href="#tab01">LOGIN</a></li>
+                    <li><a href="#tab02">REGISTER</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="tab01" class="tab-active">
+                        <div class="popupColsHolder">
+                            <div class="col bgWhite">
+                                <div class="form-group">
+                                    <input type="text" class="form-control elemenBlock" placeholder="User Namer">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control elemenBlock" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <label class="fwNormal customLabelCheck">
+                                        <input type="checkbox" class="customFormInputReset">
+                                        <span class="fakeCheckbox"></span>
+                                        <span class="fakeLabel">Remember me</span>
+                                    </label>
+                                </div>
+                                <button type="submit"
+                                        class="btn btnSecondary elemenBlock fontNeuron fwNormal text-uppercase btnSubmit">
+                                    LOGIN
+                                </button>
+                                <a href="#" class="linkForget">Forgot Password?</a>
+                            </div>
+                            <div class="col">
+                                <p>You Can Login using your facebook Profile or Google account</p>
+                                <button type="button" class="btnSocial btnFb elemenBlock"><i
+                                        class="fab fa-facebook-f btnIco"></i> Facebook Connect
+                                </button>
+                                <button type="button" class="btnSocial btnTw elemenBlock"><i
+                                        class="fab fa-twitter btnIco"></i> Twitter Connect
+                                </button>
+                                <button type="button" class="btnSocial btnG elemenBlock"><i
+                                        class="fab fa-google btnIco"></i> Google Connect
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab02">
+                        <div class="popupColsHolder">
+                            <div class="col bgWhite">
+                                <div class="form-group">
+                                    <input type="text" class="form-control elemenBlock" placeholder="Full Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control elemenBlock" placeholder="User Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control elemenBlock" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control elemenBlock"
+                                           placeholder="Confirm Password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control elemenBlock" placeholder="Email Address">
+                                </div>
+                                <div class="form-group">
+                                    <select data-placeholder="Type" class="chosen-select">
+                                        <option value="1">For Rent</option>
+                                        <option value="2">For Sale</option>
+                                        <option value="3">House</option>
+                                        <option value="4">Property</option>
+                                        <option value="5">Real Estate</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="fwNormal customLabelCheck">
+                                        <input type="checkbox" class="customFormInputReset" checked>
+                                        <span class="fakeCheckbox"></span>
+                                        <span class="fakeLabel">I have read and agree to the Term of Service.</span>
+                                    </label>
+                                </div>
+                                <button type="submit"
+                                        class="btn btn-primary elemenBlock fontNeuron fwNormal text-uppercase btnSubmit">
+                                    REGISTER
+                                </button>
+                            </div>
+                            <div class="col">
+                                <p>You Can Login using your facebook Profile or Google account</p>
+                                <button type="button" class="btnSocial btnFb elemenBlock"><i
+                                        class="fab fa-facebook-f btnIco"></i> Facebook Connect
+                                </button>
+                                <button type="button" class="btnSocial btnTw elemenBlock"><i
+                                        class="fab fa-twitter btnIco"></i> Twitter Connect
+                                </button>
+                                <button type="button" class="btnSocial btnG elemenBlock"><i
+                                        class="fab fa-google btnIco"></i> Google Connect
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- include jQuery library -->
+<script src="../../static/userResources/js/jquery.js"></script>
+<script src="../../static/userResources/js/plugins.js"></script>
+<!-- include bootstrap JavaScript -->
+<script src="../../static/userResources/js/bootstrap-slider.min.js"></script>
+<!-- include custom JavaScript -->
+<script src="../../static/userResources/js/jquery.main.js"></script>
+<script type="text/javascript" src="../../static/userResources/js/init.js"></script>
+</body>
+</html>

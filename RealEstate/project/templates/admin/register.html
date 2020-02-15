@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Victory Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../../static/adminResources/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/simple-line-icons.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/perfect-scrollbar.min.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../../static/adminResources/css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="../../static/adminResources/images/favicon.png"/>
+</head>
+
+<body>
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper">
+        <div class="row">
+            <div class="content-wrapper full-page-wrapper d-flex align-items-center auth register-full-bg">
+                <div class="row w-100">
+                    <div class="col-lg-4 mx-auto">
+                        <div class="auth-form-light text-left p-5">
+                            <h2>Register</h2>
+                            <h4 class="font-weight-light">Hello! let's get started</h4>
+
+                            <form class="pt-5" action="/insertRegister" method="post" onsubmit="return validation()">
+
+                                {#                                {{ registerVO.hidden_tag() }}#}
+                                {#                  <div class="form-group">#}
+                                {##}
+                                {#                    <label for="exampleInputEmail1">Role</label>#}
+                                {##}
+                                {#                    <select class="form-control" name="loginRole">#}
+                                {#                      <option value="seller">seller</option>#}
+                                {#                      <option value="buyer">buyer</option>#}
+                                {#                    </select>#}
+                                {#                    <!--<i class="mdi mdi-account"></i>-->#}
+                                {##}
+                                {#                  </div>#}
+                                {#                                <div class="form-group">#}
+                                {#                                    {{ registerVO.registerFirstName.label(for="exampleInputEmail1",placeholder="your first name") }}#}
+                                {##}
+                                {#                                    {% if registerVO.registerFirstName.errors %}#}
+                                {#                                        {{ registerVO.registerFirstName(class="form-control form-control-danger") }}#}
+                                {#<input id="cname" class="form-control form-control-danger" name="name" minlength="2" type="text" required="" aria-invalid="true">#}
+                                {#<label id="cname-error" class="error mt-2 text-danger" for="cname">This field is required.</label>#}
+                                {#                                        <div class="invalid-feedback">#}
+                                {#                                            {% for error in registerVO.registerFirstName.errors %}#}
+                                {#                                                <label id="cname-error" class="error mt-2 text-danger"#}
+                                {#                                                       for="cname">{{ error }}</label>#}
+                                {#                                            {% endfor %}#}
+                                {#                                        </div>#}
+                                {#                                    {% else %}#}
+                                {#                                        {{ registerVO.registerFirstName(class="form-control") }}#}
+                                {#                                        <i class="mdi mdi-account"></i>#}
+                                {#                                    {% endif %}#}
+                                {#                                </div>#}
+                                {% with messages = get_flashed_messages(with_categories=true) %}
+                                    {% if messages %}
+                                        {% for category, message in messages %}
+                                            <h5 class="font-weight-light" style="color: red">{{ message }}</h5>
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endwith %}
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">First Name</label>
+                                    <input type="text" name="registerFirstName" class="form-control"
+                                           id="registerFirstName" placeholder="your first name" onkeydown="validation()">
+                                    {#                                    <i class="mdi mdi-account"></i>#}
+                                    <span id="fn_error" style="color: red"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Last Name</label>
+                                    <input type="test" name="registerLastName" class="form-control"
+                                           id="registerLastName" placeholder="your last name" onkeydown="validation()">
+                                    {#                                    <i class="mdi mdi-account"></i>#}
+                                    <span id="ln_error" style="color: red"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email Address</label>
+                                    <input type="email" name="registerEmailId" class="form-control" id="registerEmailId" placeholder="Email Address" onkeydown="validation()">
+                                    {#                               <i class="mdi mdi-account"></i>#}
+                                    <span id="email_error" style="color: red"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Mobile Number</label>
+                                    <input type="text" name="registerContact" class="form-control"
+                                           id="registerContact" placeholder="your mobile number" onkeydown="validation()">
+                                    {#                                    <i class="mdi mdi-account"></i>#}
+                                    <span id="contact_error" style="color: red"></span>
+                                </div>
+
+                                <div class="mt-5">
+                                    <input type="submit" class="btn btn-block btn-warning btn-lg font-weight-medium"
+                                           value="Register">
+                                </div>
+                                {#                                <div class="mt-5">#}
+                                {#                                    {{ registerVO.registerSubmit(class="btn btn-block btn-warning btn-lg font-weight-medium") }}#}
+                                {#                                </div>#}
+                                <div class="mt-3 text-center">
+                                    Already Have Account? <a href="/loadLogin" class="auth-link text-black">Login</a>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+        </div>
+        <!-- row ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script src="../../static/adminResources/js/jquery.min.js"></script>
+<script src="../../static/adminResources/js/popper.min.js"></script>
+<script src="../../static/adminResources/js/bootstrap.min.js"></script>
+<script src="../../static/adminResources/js/perfect-scrollbar.jquery.min.js"></script>
+<!-- endinject -->
+<!-- inject:js -->
+<script src="../../static/adminResources/js/off-canvas.js"></script>
+<script src="../../static/adminResources/js/hoverable-collapse.js"></script>
+<script src="../../static/adminResources/js/misc.js"></script>
+<script src="../../static/adminResources/js/settings.js"></script>
+<script src="../../static/adminResources/js/todolist.js"></script>
+<!-- endinject -->
+</body>
+<script type="text/javascript">
+    function validation() {
+        var rfn = document.getElementById('registerFirstName').value;
+        var rln = document.getElementById('registerLastName').value;
+        var remail = document.getElementById('registerEmailId').value;
+        var rcontact = document.getElementById('registerContact').value;
+
+        var fne = document.getElementById('fn_error').value;
+        var lne = document.getElementById('ln_error').value;
+        var emaile = document.getElementById('email_error').value;
+        var contacte = document.getElementById('contact_error').value;
+
+        if (rfn == "") {
+            document.getElementById('fn_error').innerHTML = "*Please enter First Name";
+            return false;
+        }
+        else {
+            document.getElementById("fn_error").innerHTML = "";
+        }
+        if (rln == "") {
+            document.getElementById('ln_error').innerHTML = "*Please enter Last Name";
+            return false;
+        }
+        else {
+            document.getElementById("ln_error").innerHTML = "";
+        }
+        if (remail == "") {
+            document.getElementById('email_error').innerHTML = "*Please enter Email Address";
+            return false;
+        }
+        else {
+            document.getElementById("email_error").innerHTML = "";
+        }
+        if (rcontact == "")
+        {
+            document.getElementById('contact_error').innerHTML = "*Please enter Contact Number";
+            return false;
+        }
+        else if (isNaN(rcontact))
+        {
+            document.getElementById('contact_error').innerHTML = "*Please enter only digits";
+            return false;
+        }
+        else if (rcontact.length != 10)
+        {
+            document.getElementById('contact_error').innerHTML = "*Please enter 10 digits";
+            return false;
+        }
+        else if ((rcontact.charAt(0) != '9' ) && (rcontact.charAt(0) != '8') && (rcontact.charAt(0) != '7' ) && (rcontact.charAt(0) != '6'))
+        {
+            document.getElementById('contact_error').innerHTML = "*Please Enter Valid Contact Number";
+            return false;
+        }
+        else
+        {
+            document.getElementById('contact_error').innerHTML = "";
+        }
+
+        if (remail.indexOf('@') <= 0) {
+            document.getElementById('email_error').innerHTML = "*Please enter correct emailid";
+            return false;
+        }
+        else
+        {
+            document.getElementById("email_error").innerHTML = "";
+        }
+
+        if ((remail.charAt(remail.length - 4) != '.')) {
+            document.getElementById('email_error').innerHTML = "*Please enter correct emailid";
+            return false;
+        }
+        else {
+            document.getElementById("email_error").innerHTML = "";
+        }
+    }
+</script>
+</html>
+{##}
+{#<form class="pt-4">#}
+{#                  <div class="form-group">#}
+{#                    <label for="exampleInputEmail1">Username</label>#}
+{#                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Username">#}
+{#                    <i class="mdi mdi-account"></i>#}
+{#                  </div>#}
+{#                  <div class="form-group">#}
+{#                    <label for="exampleInputPassword1">Password</label>#}
+{#                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">#}
+{#                    <i class="mdi mdi-eye"></i>#}
+{#                  </div>#}
+{#                  <div class="form-group">#}
+{#                    <label for="exampleInputPassword2">Password</label>#}
+{#                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm password">#}
+{#                    <i class="mdi mdi-eye"></i>#}
+{#                  </div>#}
+{#                  <div class="mt-5">#}
+{#                    <a class="btn btn-block btn-primary btn-lg font-weight-medium" href="index.html">Register</a>#}
+{#                  </div>#}
+{#                  <div class="mt-2 w-75 mx-auto">#}
+{#                    <div class="form-check form-check-flat">#}
+{#                      <label class="form-check-label">#}
+{#                        <input type="checkbox" class="form-check-input">#}
+{#                        I accept terms and conditions#}
+{#                      </label>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                  <div class="mt-2 text-center">#}
+{#                    <a href="login.html" class="auth-link text-black">Already have an account? <span class="font-weight-medium">Sign in</span></a>#}
+{#                  </div>#}
+{#                </form>#}

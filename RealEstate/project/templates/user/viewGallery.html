@@ -1,0 +1,196 @@
+<section id="FloorPlans" class="accountData floorplan">
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <div class="tabSetholder tabschanges">
+                {% set source = propertyDict[0].propertyGalleryPath%}
+
+                <ul class="list-unstyled popupTabsetList text-center fwBold text-uppercase fontNeuron">
+                    {% set ci=0%}
+                    {% set ii=0 %}
+                    {% set oi=0 %}
+                    {% set fpi=0 %}
+                    {% set i360=0 %}
+                    {% if path.isdir(source+'/coverImages') %}
+                        <li class="active"><a href="#coverImages">coverImages</a></li>
+                        {% set ci = 1 %}
+                    {% endif %}
+                    {% if path.isdir(source+'/insideImages') %}
+                        <li><a href="#insideImages">insideImages</a></li>
+                        {% set ii=1 %}
+                    {% endif %}
+                    {% if path.isdir(source+'/outsideImages') %}
+                        <li><a href="#outsideImages">outsideImages</a></li>
+                        {% set oi=1 %}
+                    {% endif %}
+                    {% if path.isdir(source+'/floorPlanImages') %}
+                        <li><a href="#floorPlanImages">floorPlanImages</a></li>
+                        {% set fpi=1 %}
+                    {% endif %}
+                    {% if propertyDict[0].property360Image != None %}
+                        <li><a href="#image360">360°Virtual</a></li>
+                        {% set i360=1 %}
+                    {% endif %}
+                </ul>
+                <div class="tab-content">
+                    {% if ci %}
+                    <div id="coverImages">
+                        <div class="slick-thumbnailslider slickSlider postColumnImageSlider">
+                            {% set source = propertyDict[0].propertyGalleryPath+'/coverImages' %}
+                            {% for root, dirnames, filenames in walk(source) %}
+                                {% for filename in filenames %}
+                                    <div>
+                                        <div class="imgHolder">
+                                            {% set imgPath = '../../static/userResources/propertyGallery/'+propertyDict[0].propertyId|string+'/coverImages/'+filename %}
+                                            <img src="{{ imgPath }}"
+                                                 alt="{{ filename }}">
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+
+                        </div>
+                        <div class="slick-carouselnav slickSlider postColumnImageSlider">
+                            {% set source = propertyDict[0].propertyGalleryPath+'/coverImages' %}
+                            {% for root, dirnames, filenames in walk(source) %}
+                                {% for filename in filenames %}
+                                    <div>
+                                        <div class="imgHolder">
+
+                                            {% set imgPath = '../../static/userResources/propertyGallery/'+propertyDict[0].propertyId|string+'/coverImages/'+filename %}
+                                            <img src="{{ imgPath }}"
+                                                 alt="{{ filename }}">
+
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if fpi %}
+                    <div id="floorPlanImages">
+                        <div class="slick-thumbnailslider slickSlider postColumnImageSlider">
+                            {% set source = propertyDict[0].propertyGalleryPath+'/floorPlanImages' %}
+                            {% for root, dirnames, filenames in walk(source) %}
+                                {% for filename in filenames %}
+                                    <div>
+                                        <div class="imgHolder">
+
+                                            {% set imgPath = '../../static/userResources/propertyGallery/'+propertyDict[0].propertyId|string+'/floorPlanImages/'+filename %}
+
+                                            <img src="{{ imgPath }}"
+                                                 alt="{{ filename }}">
+
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+
+                        </div>
+                        <div class="slick-carouselnav slickSlider postColumnImageSlider">
+                            {% set source = propertyDict[0].propertyGalleryPath+'/floorPlanImages' %}
+                            {% for root, dirnames, filenames in walk(source) %}
+                                {% for filename in filenames %}
+                                    <div>
+                                        <div class="imgHolder">
+
+                                            {% set imgPath = '../../static/userResources/propertyGallery/'+propertyDict[0].propertyId|string+'/floorPlanImages/'+filename %}
+                                            <img src="{{ imgPath }}"
+                                                 alt="{{ filename }}">
+
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if oi %}
+                    <div id="outsideImages">
+                        <div class="slick-thumbnailslider slickSlider postColumnImageSlider">
+                            {% set source = propertyDict[0].propertyGalleryPath+'/outsideImages' %}
+                            {% for root, dirnames, filenames in walk(source) %}
+                                {% for filename in filenames %}
+                                    <div>
+                                        <div class="imgHolder">
+
+                                            {% set imgPath = '../../static/userResources/propertyGallery/'+propertyDict[0].propertyId|string+'/outsideImages/'+filename %}
+
+                                            <img src="{{ imgPath }}"
+                                                 alt="{{ filename }}">
+
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+
+                        </div>
+                        <div class="slick-carouselnav slickSlider postColumnImageSlider">
+                            {% set source = propertyDict[0].propertyGalleryPath+'/outsideImages' %}
+                            {% for root, dirnames, filenames in walk(source) %}
+                                {% for filename in filenames %}
+                                    <div>
+                                        <div class="imgHolder">
+
+                                            {% set imgPath = '../../static/userResources/propertyGallery/'+propertyDict[0].propertyId|string+'/outsideImages/'+filename %}
+                                            <img src="{{ imgPath }}"
+                                                 alt="{{ filename }}">
+
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if ii %}
+                    <div id="insideImages">
+                        <div class="slick-thumbnailslider slickSlider postColumnImageSlider">
+                            {% set source = propertyDict[0].propertyGalleryPath+'/insideImages' %}
+                            {% for root, dirnames, filenames in walk(source) %}
+                                {% for filename in filenames %}
+                                    <div>
+                                        <div class="imgHolder">
+                                            {% set imgPath = '../../static/userResources/propertyGallery/'+propertyDict[0].propertyId|string+'/insideImages/'+filename %}
+                                            <img src="{{ imgPath }}"
+                                                 alt="{{ filename }}">
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
+                        <div class="slick-carouselnav slickSlider postColumnImageSlider">
+                            {% set source = propertyDict[0].propertyGalleryPath+'/insideImages' %}
+                            {% for root, dirnames, filenames in walk(source) %}
+                                {% for filename in filenames %}
+                                    <div>
+                                        <div class="imgHolder">
+                                            {% set imgPath = '../../static/userResources/propertyGallery/'+propertyDict[0].propertyId|string+'/insideImages/'+filename %}
+                                            <img src="{{ imgPath }}"
+                                                 alt="{{ filename }}">
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if i360 %}
+                    <div id="image360">
+                        <div class="imgHolder">
+                            <iframe src="{{ propertyDict[0].property360Image }}"
+                                    width="100%" height="400px" frameborder="0"
+                                    style="border:0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>

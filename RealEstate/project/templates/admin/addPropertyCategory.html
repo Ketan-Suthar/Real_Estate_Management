@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Property Category | Admin</title>
+
+    <!-- plugins:css -->
+
+    <link rel="stylesheet" href="../../static/adminResources/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/simple-line-icons.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/perfect-scrollbar.min.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="../../static/adminResources/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../static/adminResources/css/fontawesome-stars.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../../static/adminResources/css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="../../static/adminResources/images/favicon.png"/>
+
+
+</head>
+<body>
+<div class="container-scroller">
+    {% include 'admin/header.html' %}}
+
+    <div class="container-fluid page-body-wrapper">
+        <div class="row row-offcanvas row-offcanvas-right">
+            {% include 'admin/menu.html' %}
+
+            {% include 'admin/setting-panel.html' %}
+            <div class="content-wrapper">
+                <div class="row grid-margin">
+                    <div class="col-12">
+
+                        <div  class="open">
+
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                                {% for category, message in messages %}
+                                    <div class="alert alert-{{ category }}" role="alert">
+                                        <button type="button" class="close" aria-label="Close">
+                                            <i class="settings-close mdi mdi-close"></i>
+                                        </button>
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Manage Property Category</h2>
+                                <form class="cmxform" id="commentForm" method="post" action="/insertPropertyCategory">
+                                <fieldset>
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Property Category Name</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input class="form-control" maxlength="25" name="propertyCategoryName" id="propertyCategoryName"
+                                               id="defaultconfig" type="text" placeholder="Type Something.." required>
+                                        <span id="category_error" style="color: red"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Description</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <textarea id="maxlength-textarea" class="form-control" maxlength="100" rows="2" name="propertyCategoryDescription"
+                                                  placeholder="This textarea has a limit of 100 chars." required></textarea>
+                                    </div>
+                                </div>
+                                <input class="btn btn-primary" type="submit" value="Add">
+                                </fieldset>
+                                </form>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include 'admin/footer.html' %}
+    </div>
+</div>
+</div>
+
+<!-- plugins:js -->
+<script src="../../static/adminResources/js/jquery.min.js"></script>
+<script src="../../static/adminResources/js/popper.min.js"></script>
+<script src="../../static/adminResources/js/bootstrap.min.js"></script>
+<script src="../../static/adminResources/js/perfect-scrollbar.jquery.min.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page-->
+<script src="../../static/adminResources/js/jquery.barrating.min.js"></script>
+<script src="../../static/adminResources/js/Chart.min.js"></script>
+<script src="../../static/adminResources/js/raphael.min.js"></script>
+<script src="../../static/adminResources/js/morris.min.js"></script>
+<script src="../../static/adminResources/js/jquery.sparkline.min.js"></script>
+<!-- End plugin js for this page-->
+<!-- inject:js -->
+<script src="../../static/adminResources/js/off-canvas.js"></script>
+<script src="../../static/adminResources/js/hoverable-collapse.js"></script>
+<script src="../../static/adminResources/js/misc.js"></script>
+<script src="../../static/adminResources/js/settings.js"></script>
+<script src="../../static/adminResources/js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="../../static/adminResources/js/dashboard.js"></script>
+<!-- End custom js for this page-->
+
+</body>
+</html>

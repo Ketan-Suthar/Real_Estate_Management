@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- set the encoding of your site -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- set the page title -->
+    <title>LemanHouse - Real Estate HTML Template</title>
+    <!-- include google roboto font cdn link -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <!-- include the site bootstrap stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/bootstrap.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/fancybox.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/style.css">
+</head>
+<body>
+<!-- pageWrapper -->
+<div id="pageWrapper">
+    <!-- pageMenuPushWrap -->
+    <div class="pageMenuPushWrap pageMenuPushWrap1">
+        <!-- bgBaseWrap -->
+        <div class="bgBaseWrap">
+            <!-- pageHeader -->
+            {% include 'user/header.html' %}
+            <!-- main -->
+            <main>
+                <!-- findFormBlock -->
+                <form action="#" class="findFormBlock findFormBlock2 bgLightDark hasShadowTop offsetHeaderTop">
+                    <div class="container">
+                        <div class="row align-center d-flex">
+                            <div class="col-xs-12 col-sm-5 col-md-4 col-lg-5">
+                                <div class="form-group">
+                                    <input type="text" class="form-control elemenBlock noBdr sizeMedium"
+                                           placeholder="Enter address e.g. street, city and state or zip">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-2">
+                                <div class="form-group">
+                                    <i class="fi flaticon-target icnInput"></i>
+                                    <input type="text" class="form-control elemenBlock noBdr sizeMedium"
+                                           placeholder="All Cities">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-3 col-md-2">
+                                <div class="form-group">
+                                    <select data-placeholder="All Areas" class="chosen-select noBdr sizeMedium">
+                                        <option value="1">All Areas</option>
+                                        <option value="2">All Areas</option>
+                                        <option value="2">All Areas</option>
+                                        <option value="2">All Areas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-4 col-lg-3">
+                                <div class="btnsWrap">
+                                    <!-- otherFeaturesOpener -->
+                                    <a class="btnPlus otherFeaturesOpener text-capitalize noTopBottom" role="button"
+                                       data-toggle="collapse" href="#otherFeaturescollapse" aria-expanded="false"
+                                       aria-controls="otherFeaturescollapse">
+                                        <i class="fas btnIcn fa-plus-circle text-info opener"></i>
+                                        <i class="fas fa-minus-circle closer btnIcn text-info"></i>
+                                        Advanced
+                                    </a>
+                                    <button type="button"
+                                            class="btn btnDark buttonSmall text-uppercase fontNeuron hidden-xs">SEARCH
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- orderRow -->
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <!-- otherFeaturesCollapse -->
+                                <div class="collapse otherFeaturesCollapse" id="otherFeaturescollapse">
+                                    <!-- checkList -->
+                                    <ul class="list-unstyled checkList text-primary">
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Air conditioning</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Cofee pot</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Fan</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Hi-fi</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Balcony</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Computer</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Fridge</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Internet</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Bedding</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Cot</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Grill</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Iron</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Cable TV</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Dishwasher</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Hairdryer</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Juicer</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Cleaning after exit</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">DVD</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Heating</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Lift</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                                <button type="button" class="btn btnDark text-uppercase fontNeuron">SEARCH</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- twoColumns -->
+                <section class="twoColumns container">
+                    <!-- contentFiltersHeadingWrap -->
+                    <header class="contentFiltersHeadingWrap row">
+                        <div class="col-xs-12 col-sm-10">
+                            <!-- breadcrumb -->
+                            <ol class="breadcrumb breadcrumb1">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Properties</a></li>
+                                <li class="active">Listing Grid View</li>
+                            </ol>
+                            <h1 class="fontNeuron">Listing Grid</h1>
+                        </div>
+                        <div class="col-xs-12 col-sm-2">
+                            <!-- viewFilterLinks -->
+                            <ul class="list-unstyled viewFilterLinks">
+                                <li class="active"><a href="#"><i class="fas fa-th-large"></i></a></li>
+                                <li><a href="#"><i class="fas fa-list"></i></a></li>
+                            </ul>
+                        </div>
+                    </header>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-8 col-md-push-4">
+                            <!-- content -->
+                            <div id="content">
+                                <header class="row rowHead rowHead2">
+                                    <div class="col-xs-12 col-md-8">
+                                        <!-- postsFiltersList -->
+                                        <ul class="list-unstyled postsFiltersList postsFiltersList2 text-capitalize text-center isoFiltersList">
+                                            <li class="active"><a href="#">All</a></li>
+                                            <li><a href="#" data-filter=".rent">For Rent</a></li>
+                                            <li><a href="#" data-filter=".sale">For Sale</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-12 col-md-4">
+                                        <!-- sortGroup -->
+                                        <div class="sortGroup">
+                                            <strong class="groupTitle fwNormal">Sort by:</strong>
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle buttonReset" type="button" id="sortGroup"
+                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Default Order <i
+                                                        class="icn fas fa-chevron-down"></i></button>
+                                                <ul class="dropdown-menu dropdown-menu-right"
+                                                    aria-labelledby="sortGroup">
+                                                    <li><a href="#">Default Order</a></li>
+                                                    <li><a href="#">Default Order</a></li>
+                                                    <li><a href="#">Default Order</a></li>
+                                                    <li><a href="#">Default Order</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </header>
+                                <!-- isoContentHolder -->
+                                <div class="isoContentHolder">
+                                    <div class="row">
+
+                                        {% for i in propertyDict %}
+                                            <div class="col-xs-12 col-sm-6 col isoCol rent">
+                                                <!-- postColumn -->
+                                                <article class="postColumn hasOver bgWhite">
+                                                    <div class="aligncenter">
+                                                        <!-- postColumnImageSlider -->
+														<div class="aligncenter">
+															<div class="slick-carousel slickSlider postColumnImageSlider">
+
+																{% set source = i.propertyGalleryPath+'/coverImages' %}
+																{% for root, dirnames, filenames in walk(source) %}
+																	{% for filename in filenames %}
+																		<div>
+																			<div class="imgHolder">
+																				<a href="properties-single1.html">
+																					{% set imgPath = '../../static/userResources/propertyGallery/'+i.propertyId|string+'/coverImages/'+filename %}
+																					<img height="100px" width="100%" src="{{ imgPath }}" alt="{{ filename }}">
+																				</a>
+																			</div>
+																		</div>
+																	{% endfor %}
+																{% endfor %}
+															</div>
+															<!-- postHoverLinskList -->
+															<ul class="list-unstyled postHoverLinskList">
+																<li><a href="#"><i class="fi flaticon-repeat"></i></a></li>
+																<li class="hasOver">
+																	<a href="#"><i class="fi flaticon-share"></i></a>
+																	<!-- postColumnSocial -->
+																	<ul class="list-unstyled socialNetworks postColumnSocial">
+																		<li><a href="#"><i
+																				class="fab fa-facebook-f"></i></a></li>
+																		<li><a href="#"><i class="fab fa-twitter"></i></a>
+																		</li>
+																		<li><a href="#"><i class="fab fa-instagram"></i></a>
+																		</li>
+																		<li><a href="#"><i class="fab fa-google"></i></a>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+															<!-- linkToFavourite -->
+															<a href="#"
+															   class="linkToFavourite roundedCircle bg-primary textWhite icnHeartBeatAnim"><i
+																	class="far fa-heart"></i></a>
+														</div>
+													</div>			
+                                                    <h2 class="fontNeuron text-capitalize"><a
+                                                            href="properties-single1.html">{{ i.propertyName }}</a></h2>
+                                                    <address>
+                                                        <span class="icn"><i class="fi flaticon-pin-1"></i></span>
+                                                        <p>{{ i.propertyStreet }},{{ i.cityName }},{{ i.stateName }}</p>
+                                                    </address>
+                                                    <span class="btn btnSmall btn-success text-capitalize">{{ i.propertyListFor }}</span>
+                                                    {% if i.propertyListFor == 'sell' %}
+                                                        <h3 class="fontNeuron fwSemi"><span
+                                                                class="textSecondary">$ {{ i.propertyPrice }}</span>
+                                                        </h3>
+                                                    {% else %}
+                                                        <h3 class="fontNeuron fwSemi"><span
+                                                                class="textSecondary">$ {{ i.propertyMonthlyRent }}</span>
+                                                            <span class="textUnit fwNormal">/ monthly</span></h3>
+                                                    {% endif %}
+                                                    <!-- postColumnFoot -->
+
+                                                    <footer class="postColumnFoot">
+                                                        <ul class="list-unstyled">
+                                                            <li>
+                                                                <strong class="fwNormal elemenBlock text-primary">Area</strong>
+                                                                <strong class="fwNormal elemenBlock">{{ i.propertyBuildUpArea }} {{ i.propertyBuildUpAreaUnit }}</strong>
+                                                            </li>
+                                                            {% if i.propertyCategoryName == 'residential' %}
+                                                                <li>
+                                                                    <strong class="fwNormal elemenBlock text-primary">Beds</strong>
+                                                                    <strong class="fwNormal elemenBlock">3</strong>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="fwNormal elemenBlock text-primary">Baths</strong>
+                                                                    <strong class="fwNormal elemenBlock">2</strong>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="fwNormal elemenBlock text-primary">Garages</strong>
+                                                                    <strong class="fwNormal elemenBlock">1</strong>
+                                                                </li>
+                                                            {% elif i.propertyCategoryName == 'commercial' %}
+                                                                {% if i.propertySubcategoryName == 'hotel' %}
+                                                                    <li>
+                                                                        <strong class="fwNormal elemenBlock text-primary">Washrooms</strong>
+                                                                        <strong class="fwNormal elemenBlock">{{ i.propertyWashrooms }}</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <strong class="fwNormal elemenBlock text-primary">TotalRooms</strong>
+                                                                        <strong class="fwNormal elemenBlock">{{ i.propertyTotalRooms }}</strong>
+                                                                    </li>
+                                                                {% else %}
+                                                                    <li>
+                                                                        <strong class="fwNormal elemenBlock text-primary">Washrooms</strong>
+                                                                        <strong class="fwNormal elemenBlock">{{ i.propertyWashrooms }}</strong>
+                                                                    </li>
+                                                                {% endif %}
+                                                            {% endif %}
+                                                        </ul>
+                                                    </footer>
+                                                    <footer class="postColumnFoot">
+                                                        <a href="/loadPropertyDetails?propertyId={{ i.propertyId }}"><span
+                                                                class="btn btnSmall btn-success text-capitalize vd">VIEW DETAILS</span></a>
+                                                    </footer>
+                                                </article>
+                                            </div>
+                                        {% endfor %}
+
+                                        <div class="col-xs-12 col-sm-6 col isoCol rent">
+                                            <!-- postColumn -->
+                                            <article class="postColumn hasOver bgWhite">
+                                                <div class="aligncenter">
+                                                    <!-- postColumnImageSlider -->
+                                                    <div class="slick-carousel slickSlider postColumnImageSlider">
+                                                        <div>
+                                                            <div class="imgHolder">
+                                                                <a href="properties-single1.html">
+                                                                    <img src="../../static/userResources/images/img05.jpg"
+                                                                         alt="image description">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="imgHolder">
+                                                                <a href="properties-single1.html">
+                                                                    <img src="../../static/userResources/images/img05.jpg"
+                                                                         alt="image description">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="imgHolder">
+                                                                <a href="properties-single1.html">
+                                                                    <img src="../../static/userResources/images/img05.jpg"
+                                                                         alt="image description">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- postHoverLinskList -->
+                                                    <ul class="list-unstyled postHoverLinskList">
+                                                        <li><a href="#"><i class="fi flaticon-repeat"></i></a></li>
+                                                        <li class="hasOver">
+                                                            <a href="#"><i class="fi flaticon-share"></i></a>
+                                                            <!-- postColumnSocial -->
+                                                            <ul class="list-unstyled socialNetworks postColumnSocial">
+                                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                                <li><a href="#"><i class="fab fa-instagram"></i></a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fab fa-google"></i></a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                    <!-- linkToFavourite -->
+                                                    <a href="#"
+                                                       class="linkToFavourite roundedCircle bg-primary textWhite icnHeartBeatAnim"><i
+                                                            class="far fa-heart"></i></a>
+                                                </div>
+                                                <h2 class="fontNeuron text-capitalize"><a
+                                                        href="properties-single1.html">Meridian Villas</a></h2>
+                                                <address>
+                                                    <span class="icn"><i class="fi flaticon-pin-1"></i></span>
+                                                    <p>London, United Kingdom</p>
+                                                </address>
+                                                <span class="btn btnSmall btn-info text-capitalize">For Rent</span>
+                                                <h3 class="fontNeuron fwSemi"><span
+                                                        class="textSecondary">$ 920,000</span> <span
+                                                        class="textUnit fwNormal">/ monthly</span></h3>
+                                                <!-- postColumnFoot -->
+                                                <footer class="postColumnFoot">
+                                                    <ul class="list-unstyled">
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Area</strong>
+                                                            <strong class="fwNormal elemenBlock">2100 m2</strong>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Beds</strong>
+                                                            <strong class="fwNormal elemenBlock">3</strong>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Baths</strong>
+                                                            <strong class="fwNormal elemenBlock">2</strong>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Garages</strong>
+                                                            <strong class="fwNormal elemenBlock">1</strong>
+                                                        </li>
+                                                    </ul>
+                                                </footer>
+                                            </article>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col isoCol rent">
+                                            <!-- postColumn -->
+                                            <article class="postColumn hasOver bgWhite">
+                                                <div class="aligncenter">
+                                                    <!-- postColumnImageSlider -->
+                                                    <div class="slick-carousel slickSlider postColumnImageSlider">
+                                                        <div>
+                                                            <div class="imgHolder">
+                                                                <a href="properties-single1.html">
+                                                                    <img src="../../static/userResources/images/img07.jpg"
+                                                                         alt="image description">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="imgHolder">
+                                                                <a href="properties-single1.html">
+                                                                    <img src="../../static/userResources/images/img05.jpg"
+                                                                         alt="image description">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="imgHolder">
+                                                                <a href="properties-single1.html">
+                                                                    <img src="../../static/userResources/images/img07.jpg"
+                                                                         alt="image description">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- postHoverLinskList -->
+                                                    <ul class="list-unstyled postHoverLinskList">
+                                                        <li><a href="#"><i class="fi flaticon-repeat"></i></a></li>
+                                                        <li class="hasOver">
+                                                            <a href="#"><i class="fi flaticon-share"></i></a>
+                                                            <!-- postColumnSocial -->
+                                                            <ul class="list-unstyled socialNetworks postColumnSocial">
+                                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                                <li><a href="#"><i class="fab fa-instagram"></i></a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fab fa-google"></i></a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                    <!-- linkToFavourite -->
+                                                    <a href="#"
+                                                       class="linkToFavourite roundedCircle bg-primary textWhite icnHeartBeatAnim"><i
+                                                            class="far fa-heart"></i></a>
+                                                </div>
+                                                <h2 class="fontNeuron text-capitalize"><a
+                                                        href="properties-single1.html">Elegant studio flat</a></h2>
+                                                <address>
+                                                    <span class="icn"><i class="fi flaticon-pin-1"></i></span>
+                                                    <p>The Village, Jersey City, NJ 07302, USA</p>
+                                                </address>
+                                                <span class="btn btnSmall btn-info text-capitalize">For Rent</span>
+                                                <h3 class="fontNeuron fwSemi"><span
+                                                        class="textSecondary">$ 490,000</span> <span
+                                                        class="textUnit fwNormal">/ monthly</span></h3>
+                                                <!-- postColumnFoot -->
+                                                <footer class="postColumnFoot">
+                                                    <ul class="list-unstyled">
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Area</strong>
+                                                            <strong class="fwNormal elemenBlock">2100 m2</strong>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Beds</strong>
+                                                            <strong class="fwNormal elemenBlock">3</strong>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Baths</strong>
+                                                            <strong class="fwNormal elemenBlock">2</strong>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Garages</strong>
+                                                            <strong class="fwNormal elemenBlock">1</strong>
+                                                        </li>
+                                                    </ul>
+                                                </footer>
+                                            </article>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col isoCol rent">
+                                            <!-- postColumn -->
+                                            <article class="postColumn hasOver bgWhite">
+                                                <div class="aligncenter">
+                                                    <!-- postColumnImageSlider -->
+                                                    <div class="slick-carousel slickSlider postColumnImageSlider">
+                                                        <div>
+                                                            <div class="imgHolder">
+                                                                <a href="properties-single1.html">
+                                                                    <img src="../../static/userResources/images/img08.jpg"
+                                                                         alt="image description">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="imgHolder">
+                                                                <a href="properties-single1.html">
+                                                                    <img src="../../static/userResources/images/img05.jpg"
+                                                                         alt="image description">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="imgHolder">
+                                                                <a href="properties-single1.html">
+                                                                    <img src="../../static/userResources/images/img08.jpg"
+                                                                         alt="image description">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- postHoverLinskList -->
+                                                    <ul class="list-unstyled postHoverLinskList">
+                                                        <li><a href="#"><i class="fi flaticon-repeat"></i></a></li>
+                                                        <li class="hasOver">
+                                                            <a href="#"><i class="fi flaticon-share"></i></a>
+                                                            <!-- postColumnSocial -->
+                                                            <ul class="list-unstyled socialNetworks postColumnSocial">
+                                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                                <li><a href="#"><i class="fab fa-instagram"></i></a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fab fa-google"></i></a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                    <!-- linkToFavourite -->
+                                                    <a href="#"
+                                                       class="linkToFavourite roundedCircle bg-primary textWhite icnHeartBeatAnim"><i
+                                                            class="far fa-heart"></i></a>
+                                                </div>
+                                                <h2 class="fontNeuron text-capitalize"><a
+                                                        href="properties-single1.html">Full Floor Office Condo</a></h2>
+                                                <address>
+                                                    <span class="icn"><i class="fi flaticon-pin-1"></i></span>
+                                                    <p>London, United Kingdom</p>
+                                                </address>
+                                                <span class="btn btnSmall btn-info text-capitalize">For Rent</span>
+                                                <h3 class="fontNeuron fwSemi"><span
+                                                        class="textSecondary">$ 920,000</span> <span
+                                                        class="textUnit fwNormal">/ monthly</span></h3>
+                                                <!-- postColumnFoot -->
+                                                <footer class="postColumnFoot">
+                                                    <ul class="list-unstyled">
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Area</strong>
+                                                            <strong class="fwNormal elemenBlock">2100 m2</strong>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Beds</strong>
+                                                            <strong class="fwNormal elemenBlock">3</strong>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Baths</strong>
+                                                            <strong class="fwNormal elemenBlock">2</strong>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Garages</strong>
+                                                            <strong class="fwNormal elemenBlock">1</strong>
+                                                        </li>
+                                                    </ul>
+                                                </footer>
+                                            </article>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col isoCol rent">
+                                            <!-- postColumn -->
+                                            <article class="postColumn hasOver bgWhite">
+                                                <div class="aligncenter">
+                                                    <!-- postColumnImageSlider -->
+                                                    <div class="slick-carousel slickSlider postColumnImageSlider">
+                                                        <div>
+                                                            <div class="imgHolder">
+                                                                <a href="properties-single1.html">
+                                                                    <img src="../../static/userResources/images/img06.jpg"
+                                                                         alt="image description">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="imgHolder">
+                                                                <a href="properties-single1.html">
+                                                                    <img src="../../static/userResources/images/img05.jpg"
+                                                                         alt="image description">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="imgHolder">
+                                                                <a href="properties-single1.html">
+                                                                    <img src="../../static/userResources/images/img06.jpg"
+                                                                         alt="image description">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- postHoverLinskList -->
+                                                    <ul class="list-unstyled postHoverLinskList">
+                                                        <li><a href="#"><i class="fi flaticon-repeat"></i></a></li>
+                                                        <li class="hasOver">
+                                                            <a href="#"><i class="fi flaticon-share"></i></a>
+                                                            <!-- postColumnSocial -->
+                                                            <ul class="list-unstyled socialNetworks postColumnSocial">
+                                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                                <li><a href="#"><i class="fab fa-instagram"></i></a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fab fa-google"></i></a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                    <!-- linkToFavourite -->
+                                                    <a href="#"
+                                                       class="linkToFavourite roundedCircle bg-primary textWhite icnHeartBeatAnim"><i
+                                                            class="far fa-heart"></i></a>
+                                                </div>
+                                                <h2 class="fontNeuron text-capitalize"><a
+                                                        href="properties-single1.html">4 Bedroom New House For Sale</a>
+                                                </h2>
+                                                <address>
+                                                    <span class="icn"><i class="fi flaticon-pin-1"></i></span>
+                                                    <p>778 Country St. Panama City, FL</p>
+                                                </address>
+                                                <span class="btn btnSmall btn-info text-capitalize">For Rent</span>
+                                                <h3 class="fontNeuron fwSemi"><span
+                                                        class="textSecondary">$ 250,000</span> <span
+                                                        class="textUnit fwNormal">/ monthly</span></h3>
+                                                <!-- postColumnFoot -->
+                                                <footer class="postColumnFoot">
+                                                    <ul class="list-unstyled">
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Area</strong>
+                                                            <strong class="fwNormal elemenBlock">2100 m2</strong>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Beds</strong>
+                                                            <strong class="fwNormal elemenBlock">3</strong>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Baths</strong>
+                                                            <strong class="fwNormal elemenBlock">2</strong>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Garages</strong>
+                                                            <strong class="fwNormal elemenBlock">1</strong>
+                                                        </li>
+                                                    </ul>
+                                                </footer>
+                                            </article>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col isoCol rent">
+                                            <!-- postColumn -->
+                                            <article class="postColumn hasOver bgWhite">
+                                                <div class="aligncenter">
+                                                    <!-- postColumnImageSlider -->
+                                                    <div class="slick-carousel slickSlider postColumnImageSlider">
+                                                        <div>
+                                                            <div class="imgHolder">
+                                                                <a href="properties-single1.html">
+                                                                    <img src="../../static/userResources/images/img09.jpg"
+                                                                         alt="image description">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="imgHolder">
+                                                                <a href="properties-single1.html">
+                                                                    <img src="../../static/userResources/images/img05.jpg"
+                                                                         alt="image description">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="imgHolder">
+                                                                <a href="properties-single1.html">
+                                                                    <img src="../../static/userResources/images/img09.jpg"
+                                                                         alt="image description">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- postHoverLinskList -->
+                                                    <ul class="list-unstyled postHoverLinskList">
+                                                        <li><a href="#"><i class="fi flaticon-repeat"></i></a></li>
+                                                        <li class="hasOver">
+                                                            <a href="#"><i class="fi flaticon-share"></i></a>
+                                                            <!-- postColumnSocial -->
+                                                            <ul class="list-unstyled socialNetworks postColumnSocial">
+                                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                                <li><a href="#"><i class="fab fa-instagram"></i></a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fab fa-google"></i></a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                    <!-- linkToFavourite -->
+                                                    <a href="#"
+                                                       class="linkToFavourite roundedCircle bg-primary textWhite icnHeartBeatAnim"><i
+                                                            class="far fa-heart"></i></a>
+                                                </div>
+                                                <h2 class="fontNeuron text-capitalize"><a
+                                                        href="properties-single1.html">Villa on Hollywood Boulevard</a>
+                                                </h2>
+                                                <address>
+                                                    <span class="icn"><i class="fi flaticon-pin-1"></i></span>
+                                                    <p>778 Country St. Panama City, FL</p>
+                                                </address>
+                                                <span class="btn btnSmall btn-info text-capitalize">For Rent</span>
+                                                <h3 class="fontNeuron fwSemi"><span
+                                                        class="textSecondary">$ 320,000</span> <span
+                                                        class="textUnit fwNormal">/ monthly</span></h3>
+                                                <!-- postColumnFoot -->
+                                                <footer class="postColumnFoot">
+                                                    <ul class="list-unstyled">
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Area</strong>
+                                                            <strong class="fwNormal elemenBlock">2100 m2</strong>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Beds</strong>
+                                                            <strong class="fwNormal elemenBlock">3</strong>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Baths</strong>
+                                                            <strong class="fwNormal elemenBlock">2</strong>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="fwNormal elemenBlock text-primary">Garages</strong>
+                                                            <strong class="fwNormal elemenBlock">1</strong>
+                                                        </li>
+                                                    </ul>
+                                                </footer>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- navigation pagination -->
+                                <nav class="navigation pagination pagination1 fontNeuron" role="navigation">
+                                    <div class="nav-links">
+                                        <a class="prev page-numbers" href="#">Previous</a>
+                                        <a class="page-numbers" href="#">1</a>
+                                        <span class="page-numbers current">2</span>
+                                        <a class="page-numbers" href="#">3</a>
+                                        <span class="page-numbers dots">&hellip;</span>
+                                        <a class="page-numbers" href="#">22</a>
+                                        <a class="next page-numbers" href="#">Next</a>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-4 col-md-pull-8">
+                            <!-- sidebar -->
+                            <aside id="sidebar">
+                                <!-- widgetCalc -->
+                                <section class="widget widgetPadding widgetCalc bgWhite">
+                                    <h3 class="fontNeuron fwBold text-capitalize">Mortgage Calculator</h3>
+                                    <!-- widgetCalcForm -->
+                                    <form action="#" class="widgetCalcForm">
+                                        <div class="form-group">
+                                            <span class="icnInput small fas fa-dollar-sign"></span>
+                                            <input type="text" class="form-control elemenBlock"
+                                                   placeholder="Property price">
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="icnInput small fas fa-dollar-sign"></span>
+                                            <input type="text" class="form-control elemenBlock" placeholder="Deposit">
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="icnInput small fas fa-percent"></span>
+                                            <input type="text" class="form-control elemenBlock"
+                                                   placeholder="Annual Interest">
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="icnInput small far fa-calendar-alt"></span>
+                                            <input type="text" class="form-control elemenBlock" placeholder="Years">
+                                        </div>
+                                        <button type="submit"
+                                                class="elemenBlock btn btnSecondary fontNeuron text-uppercase">CALCULATE
+                                        </button>
+                                        <p><span class="text-primary elemenBlock text-center textCount">Monthly Payment: $969.04</span>
+                                        </p>
+                                    </form>
+                                </section>
+                                <!-- widgetRecentPosts -->
+                                <section class="widget widgetPadding widgetRecentPosts bgWhite">
+                                    <h3 class="fontNeuron fwBold text-capitalize">Recent Properties</h3>
+                                    <!-- widgetRecentPostsList -->
+                                    <ul class="list-unstyled widgetRecentPostsList padlReset">
+                                        <li>
+                                            <div class="alignleft">
+                                                <a href="properties-single1.html"><img
+                                                        src="../../static/userResources/images/img29.jpg"
+                                                        alt="image description"></a>
+                                            </div>
+                                            <div class="descrWrap">
+                                                <h4 class="fontNeuron fwBold"><a href="properties-single1.html">Villa on
+                                                    Hollywood</a></h4>
+                                                <strong class="price elemenBlock fwSemi fontNeuron">$ 920,000</strong>
+                                                <p>778 Country St. Panama City, FL</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="alignleft">
+                                                <a href="properties-single1.html"><img
+                                                        src="../../static/userResources/images/img29.jpg"
+                                                        alt="image description"></a>
+                                            </div>
+                                            <div class="descrWrap">
+                                                <h4 class="fontNeuron fwBold"><a href="properties-single1.html">4
+                                                    Bedroom New House</a></h4>
+                                                <strong class="price elemenBlock fwSemi fontNeuron">$ 467,000</strong>
+                                                <p>London, United Kingdom</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="alignleft">
+                                                <a href="properties-single1.html"><img
+                                                        src="../../static/userResources/images/img30.jpg"
+                                                        alt="image description"></a>
+                                            </div>
+                                            <div class="descrWrap">
+                                                <h4 class="fontNeuron fwBold"><a href="properties-single1.html">Eagle
+                                                    Apartments</a></h4>
+                                                <strong class="price elemenBlock fwSemi fontNeuron">$ 467,000</strong>
+                                                <p>9364 School St. Lynchburg, NY</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </aside>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <!-- pageFooterBlock -->
+        {% include 'user/footer.html' %}
+    </div>
+    <!-- pagePopupWrap -->
+    <div class="popup-holder">
+        <div id="popup1" class="lightbox-demo">
+            <!-- popupLoginFrom -->
+            <form action="#" class="popupHolderWrap bgLightDark center-block popupLarge popupLoginFrom">
+                <ul class="list-unstyled popupTabsetList text-center fwBold text-uppercase fontNeuron">
+                    <li class="active"><a href="#tab01">LOGIN</a></li>
+                    <li><a href="#tab02">REGISTER</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="tab01" class="tab-active">
+                        <div class="popupColsHolder">
+                            <div class="col bgWhite">
+                                <div class="form-group">
+                                    <input type="text" class="form-control elemenBlock" placeholder="User Namer">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control elemenBlock" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <label class="fwNormal customLabelCheck">
+                                        <input type="checkbox" class="customFormInputReset">
+                                        <span class="fakeCheckbox"></span>
+                                        <span class="fakeLabel">Remember me</span>
+                                    </label>
+                                </div>
+                                <button type="submit"
+                                        class="btn btnSecondary elemenBlock fontNeuron fwNormal text-uppercase btnSubmit">
+                                    LOGIN
+                                </button>
+                                <a href="#" class="linkForget">Forgot Password?</a>
+                            </div>
+                            <div class="col">
+                                <p>You Can Login using your facebook Profile or Google account</p>
+                                <button type="button" class="btnSocial btnFb elemenBlock"><i
+                                        class="fab fa-facebook-f btnIco"></i> Facebook Connect
+                                </button>
+                                <button type="button" class="btnSocial btnTw elemenBlock"><i
+                                        class="fab fa-twitter btnIco"></i> Twitter Connect
+                                </button>
+                                <button type="button" class="btnSocial btnG elemenBlock"><i
+                                        class="fab fa-google btnIco"></i> Google Connect
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab02">
+                        <div class="popupColsHolder">
+                            <div class="col bgWhite">
+                                <div class="form-group">
+                                    <input type="text" class="form-control elemenBlock" placeholder="Full Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control elemenBlock" placeholder="User Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control elemenBlock" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control elemenBlock"
+                                           placeholder="Confirm Password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control elemenBlock" placeholder="Email Address">
+                                </div>
+                                <div class="form-group">
+                                    <select data-placeholder="Type" class="chosen-select">
+                                        <option value="1">For Rent</option>
+                                        <option value="2">For Sale</option>
+                                        <option value="3">House</option>
+                                        <option value="4">Property</option>
+                                        <option value="5">Real Estate</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="fwNormal customLabelCheck">
+                                        <input type="checkbox" class="customFormInputReset" checked>
+                                        <span class="fakeCheckbox"></span>
+                                        <span class="fakeLabel">I have read and agree to the Term of Service.</span>
+                                    </label>
+                                </div>
+                                <button type="submit"
+                                        class="btn btn-primary elemenBlock fontNeuron fwNormal text-uppercase btnSubmit">
+                                    REGISTER
+                                </button>
+                            </div>
+                            <div class="col">
+                                <p>You Can Login using your facebook Profile or Google account</p>
+                                <button type="button" class="btnSocial btnFb elemenBlock"><i
+                                        class="fab fa-facebook-f btnIco"></i> Facebook Connect
+                                </button>
+                                <button type="button" class="btnSocial btnTw elemenBlock"><i
+                                        class="fab fa-twitter btnIco"></i> Twitter Connect
+                                </button>
+                                <button type="button" class="btnSocial btnG elemenBlock"><i
+                                        class="fab fa-google btnIco"></i> Google Connect
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- include jQuery library -->
+<script src="../../static/userResources/js/jquery.js"></script>
+<script src="../../static/userResources/js/plugins.js"></script>
+<!-- include bootstrap JavaScript -->
+<script src="../../static/userResources/js/bootstrap-slider.min.js"></script>
+<!-- include custom JavaScript -->
+<script src="../../static/userResources/js/jquery.main.js"></script>
+<script type="text/javascript" src="../../static/userResources/js/init.js"></script>
+</body>
+</html>

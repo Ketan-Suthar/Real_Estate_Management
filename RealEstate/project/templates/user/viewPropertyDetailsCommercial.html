@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+        <style type="text/css">
+
+        /*.rating {
+            float:left;
+        }
+
+         :not(:checked) is a filter, so that browsers that don’t support :checked don’t
+           follow these rules. Every browser that supports :checked also supports :not(), so
+           it doesn’t make the test unnecessarily selective
+        .rating:not(:checked) > input {
+            position:absolute;
+            top:-9999px;
+            clip:rect(0,0,0,0);
+        }
+
+        .rating:not(:checked) > label {
+            float:right;
+            width:1em;
+            padding:0.4em;
+            overflow:hidden;
+            margin: 5px;
+            white-space:nowrap;
+            cursor:pointer;
+            font-size:250%;
+            line-height:1.2;
+            color:#ddd;
+            text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+        }
+
+        .rating:not(:checked) > label:before {
+            content: ' ';
+        }
+
+        .rating > input:checked ~ label {
+            color: #f70;
+            text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+        }
+
+        .rating:not(:checked) > label:hover,
+        .rating:not(:checked) > label:hover ~ label {
+            color: gold;
+            text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+        }
+
+        .rating > input:checked + label:hover,
+        .rating > input:checked + label:hover ~ label,
+        .rating > input:checked ~ label:hover,
+        .rating > input:checked ~ label:hover ~ label,
+        .rating > label:hover ~ input:checked ~ label {
+            color: #ea0;
+            text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+        }
+
+        .rating > label:active {
+            position:relative;
+            top:2px;
+            left:2px;
+        }  */
+        div.stars {
+            width: 270px;
+            display: inline-block;
+        }
+
+        input.star {
+            display: none;
+        }
+
+        label.star {
+            float: right;
+            padding: 10px;
+            font-size: 36px;
+            color: #444;
+            transition: all .2s;
+        }
+
+        input.star:checked ~ label.star:before {
+            content: '\f005';
+            color: #FD4;
+            transition: all .25s;
+        }
+
+        input.star-5:checked ~ label.star:before {
+            color: #FE7;
+            text-shadow: 0 0 20px #952;
+        }
+
+        input.star-1:checked ~ label.star:before {
+            color: #F62;
+        }
+
+        label.star:hover {
+            transform: rotate(-15deg) scale(1.3);
+        }
+
+        label.star:before {
+            content: '\f006';
+            font-family: FontAwesome;
+        }
+
+    </style>
+
+    <!-- set the encoding of your site -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- set the page title -->
+    <title>{{ propertyDict[0].propertyName }} | Details</title>
+    <!-- include google roboto font cdn link -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <!-- include the site bootstrap stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/bootstrap.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/fancybox.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/style.css">
+    <link rel="stylesheet" href="../../static/userResources/css/star.css">
+
+</head>
+<body>
+<!-- pageWrapper -->
+<div id="pageWrapper">
+    <!-- pageMenuPushWrap -->
+    <div class="pageMenuPushWrap pageMenuPushWrap1">
+        <!-- bgBaseWrap -->
+        <div class="bgBaseWrap">
+            <!-- pageHeader -->
+            {% include 'user/header.html' %}
+            <!-- main -->
+            <main>
+                <!-- propertyIntroBlock -->
+                <section class="propertyIntroBlock">
+                    <!-- propertyIntroImageSlider -->
+                    <div class="slick-fade slickSlider introSlider propertyIntroImageSlider">
+
+                        {% set source = propertyDict[0].propertyGalleryPath+'/coverImages' %}
+                        {% for root, dirnames, filenames in walk(source) %}
+                            {% for filename in filenames %}
+                                <div>
+                                    {% set imgPath = '../../static/userResources/propertyGallery/'+propertyDict[0].propertyId|string+'/coverImages/'+filename %}
+                                    <span class="bgCover elemenBlock introSlide"
+                                          style="background-image: url({{ imgPath }});"></span>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+
+                    </div>
+                    <!-- rightPanelList -->
+                    <ul class="list-unstyled rightPanelList hidden-xs">
+                        <li>
+                            <a href="#" class="hasOver">
+                                <span class="fi flaticon-photo icn"></span>
+                                <strong class="fwNormal textCaption"><span
+                                        class="indentWrap elemenBlock">View Photos</span></strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="hasOver">
+                                <span class="fi flaticon-placeholder icn"></span>
+                                <strong class="fwNormal textCaption"><span
+                                        class="indentWrap elemenBlock">Map View</span></strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="hasOver">
+                                <span class="fi flaticon-street-view icn"></span>
+                                <strong class="fwNormal textCaption"><span
+                                        class="indentWrap elemenBlock">Street View</span></strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="hasOver">
+                                <span class="fi flaticon-360-degrees icn"></span>
+                                <strong class="fwNormal textCaption"><span class="indentWrap elemenBlock">360 Virtual Tour</span></strong>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- propertyIntroCaption -->
+                    <div class="container propertyIntroCaption textWhite">
+                        <div class="align">
+                            <div class="row alignEnd">
+                                <div class="col-xs-12 col col-sm-8">
+                                    <!-- breadcrumb -->
+                                    <h1 class="fontNeuron textWhite">{{ propertyDict[0].propertyName.capitalize() }}
+                                        <span class="btn btnSmall btn-success fontBase">{{ propertyDict[0].propertyCategoryName.capitalize() }} {{ propertyDict[0].propertySubcategoryName.capitalize() }}
+                                            For {{ propertyDict[0].propertyListFor.capitalize() }}</span>
+                                    </h1>
+                                    <!-- captionAddress -->
+                                    <address class="captionAddress">
+                                        <span class="icn"><i class="fi flaticon-pin-1"></i></span>
+                                        <p>{{ propertyDict[0].propertyStreet }},{{ propertyDict[0].propertyLocality }},{{ propertyDict[0].propertyCityName }},{{ propertyDict[0].propertyStateName }}</p>
+                                    </address>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 justify-end">
+                                    <!-- captionActionsList -->
+                                    <ul class="list-unstyled captionActionsList w100">
+                                        {#                                        <li><a href="#"><i class="fi flaticon-repeat"></i></a></li>#}
+                                        <li class="hasOver">
+                                            <a href="#">
+                                                <i class="fi flaticon-share"></i>
+                                            </a>
+                                            <!-- postColumnSocial -->
+                                            <ul class="list-unstyled socialNetworks postColumnSocial">
+                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-google"></i></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#"><i class="far fa-heart"></i></a></li>
+                                        {#                                        <li><a href="#"><i class="fi flaticon-printer"></i></a></li>#}
+                                    </ul>
+                                    {% if propertyDict[0].propertyListFor == 'sell' %}
+                                        <strong class="elemenBlock textWhite price textWhite fwSemi fontNeuron w100">Rs. {{ propertyDict[0].propertyPrice }}</strong>
+                                    {% else %}
+                                        <strong class="elemenBlock textWhite price textWhite fwSemi fontNeuron w100">Rs. {{ propertyDict[0].propertyMonthlyRent }}/Monthly</strong>
+                                    {% endif %}
+                                    {#                                    <strong class="elemenBlock fwNormal fontNeuron subtitle w100">$770 / sq ft</strong>#}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- anchorNav -->
+                <nav class="bgWhite hasShadow anchorNav">
+                    <div class="container">
+                        <!-- anchorNavigationList -->
+                        <ul class="list-unstyled anchorNavigationList text-capitalize">
+                            <li><a href="#Detail">Detail</a></li>
+                            <li><a href="#Description">Description</a></li>
+                            <li><a href="#Address">Address</a></li>
+                            <li><a href="#Features">Features</a></li>
+                            <li><a href="#Video">Video</a></li>
+                            <li><a href="#FloorPlans">Floor Plans</a></li>
+                            <li><a href="#WalkScores">Walk Scores</a></li>
+                            <li><a href="#PageViews">Page Views</a></li>
+                            <li><a href="#FilesAttachments">Files Attachments</a></li>
+                            <li><a href="#Reviews">Reviews</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- twoColumns -->
+
+                <div class="twoColumns indentTop container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-8">
+                            <!-- content -->
+                            <article id="content">
+                                <!-- boxPanelBlock -->
+                                <section id="Detail" class="accountData">
+                                    <div class="head">
+                                        <h2 class="fontNeuron">Detail</h2>
+                                    </div>
+                                    <ul class="listpanel-head">
+                                        <b>
+                                            <li>Area
+                                        </b><span>{{ propertyDict[0].propertyBuildUpArea }} {{ propertyDict[0].propertyBuildUpAreaUnit }}</span></li>
+                                    </ul>
+                                    <div class="listpanel-content">
+                                        <ul>
+                                            {% if propertyDict[0].propertyRERANo != null %}
+                                                <li><span>RERA No.</span><span
+                                                        class="righttext">: {{ propertyDict[0].propertyRERANo }}</span>
+                                                </li>
+                                            {% endif %}
+
+                                            <li><span>Property Size</span>
+
+                                                <span class="righttext">: {{ propertyDict[0].propertyBuildUpArea }} {{ propertyDict[0].propertyBuildUpAreaUnit }}</span>
+                                            </li>
+
+                                            <li><span>Wash Rooms</span><span
+                                                    class="righttext">: {{ propertyDict[0].propertyWashrooms }}</span>
+                                            </li>
+
+                                            <li><span>Furniture Status</span><span
+                                                    class="righttext">: {{ propertyDict[0].propertyFurnishing }}</span>
+                                            </li>
+                                            <li><span>On Floor</span><span
+                                                    class="righttext">: {{ propertyDict[0].propertyOnFloor }}</span>
+                                            </li>
+                                            <li><span>Total Floor</span><span
+                                                    class="righttext">: {{ propertyDict[0].propertyTotalFloors }}</span>
+                                            </li>
+                                            <li><span>Parking</span><span
+                                                    class="righttext">: {{ propertyDict[0].propertyParking|capitalize }}</span>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </section>
+                                <section id="Description" class="accountData">
+                                    <div class="head">
+                                        <h4 class="fontNeuron">Description</h4>
+                                    </div>
+                                    <p>{{ propertyDict[0].propertyDescription }}</p>
+                                </section>
+                                <section id="Address" class="accountData address">
+                                    <div class="head">
+                                        <h4 class="fontNeuron">Location</h4>
+                                        <div class="btnArea">
+                                            <a href="#" class="btn btn-info"><i class="fi flaticon-pin-1"></i>Open on
+                                                Google Maps</a>
+                                        </div>
+                                    </div>
+                                    <div class="listpanel-content ">
+                                        <ul>
+                                            <li><span>Address</span><span
+                                                    class="righttext">: {{ propertyDict[0].propertyStreet }},{{ propertyDict[0].propertyLocality }}</span>
+                                            </li>
+                                            <li><span>PinCode</span><span
+                                                    class="righttext">: {{ propertyDict[0].propertyPincode }}</span>
+                                            </li>
+                                            <li><span>City</span><span
+                                                    class="righttext">: {{ propertyDict[0].cityName }}</span></li>
+                                            <li><span>State</span><span
+                                                    class="righttext">: {{ propertyDict[0].stateName }}</span>
+                                        </ul>
+                                    </div>
+                                </section>
+                                <section id="Features" class="addProperty amenities margin-zero">
+                                    <div class="formContent">
+                                        <form>
+                                            <header class="contentHead">
+                                                <h2 class="fontNeuron">Amenities</h2>
+                                            </header>
+                                            <ul class="list-unstyled checkList text-primary">
+                                                {% set amenities = propertyDict[0].propertyAmenities.split(' ') %}
+                                                {% for i in amenities %}
+                                                    <li>
+                                                        <label class="fwNormal customLabelCheck">
+                                                            {% if i != NULL %}
+                                                                <span class="fakeLabel">{{ i }}</span>
+                                                            {% endif %}
+                                                        </label>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </form>
+                                    </div>
+                                </section>
+
+                                {% if propertyDict[0].propertyVideo != NULL %}
+                                    <section id="Video" class="accountData aboutBlock overlaychange">
+                                        <div class="head">
+                                            <h4 class="fontNeuron">Property Video</h4>
+                                        </div>
+                                        <div class="video-holder overlay">
+                                            <img src="../../static/userResources/images/video-img.jpg"
+                                                 alt="image description" class="img-responsive">
+                                            <a href="{{ propertyDict[0].propertyVideo }}" data-fancybox="true"
+                                               class="video-play"><i class="fi flaticon-play-button"></i></a>
+                                        </div>
+                                    </section>
+                                {% endif %}
+
+                                    {% include 'user/viewGallery.html' %}
+
+
+                                <section id="WalkScores" class="accountData walkscores">
+                                    <div class="head">
+                                        <h4 class="fontNeuron">Walk Score</h4>
+                                    </div>
+                                    <div class="walkscores-content">
+		                                	<span class="walkscores-reating">
+		                                		<i class="reating-round">95</i>
+		                                		<span>Walk Scores
+		                                			<em>Very Walkable</em>
+		                                		</span>
+		                                	</span>
+                                        <span class="walkscores-details">
+		                                		<img src="../../static/userResources/images/walksore-img.png"
+                                                     alt="image description">
+		                                		<a href="#">more details here</a>
+		                                	</span>
+                                    </div>
+                                </section>
+                                <section id="PageViews" class="accountData Pageviews">
+                                    <div class="head">
+                                        <h4 class="fontNeuron">Page Views</h4>
+                                    </div>
+                                    <figure>
+                                        <img src="../../static/userResources/images/graph-img.png"
+                                             alt="image description">
+                                    </figure>
+                                </section>
+                                <section id="FilesAttachments" class="accountData filesattachment">
+                                    <div class="head">
+                                        <h4 class="fontNeuron">Broucher/File Attachment</h4>
+                                    </div>
+                                    <ul class="filesattachment-list">
+                                        <li><i><img src="../../static/userResources/images/pdf-img.jpg"
+                                                    alt="iamge description"></i>
+                                            Lease Agreement
+                                        </li>
+                                    </ul>
+                                </section>
+                                <section id="Reviews" class="accountData ratingreviews">
+                                    <div class="head">
+                                        <h4 class="fontNeuron">Ratings & Reviews</h4>
+                                        <div class="btnArea">
+                                            <button type="submit" class="btn btnDark">Write new review</button>
+                                        </div>
+                                    </div>
+                                    <div class="ratingarea">
+                                        <div class="hb-ratingandskillbar">
+                                            <ul class="hb-ratingbox">
+                                                <li>
+			                                			<span class="hb-stars">
+															<span></span>
+														</span>
+                                                    <em>3</em>
+                                                </li>
+                                                <li>
+			                                			<span class="hb-stars">
+															<span></span>
+														</span>
+                                                    <em>4</em>
+                                                </li>
+                                                <li>
+			                                			<span class="hb-stars">
+															<span></span>
+														</span>
+                                                    <em>3</em>
+                                                </li>
+                                                <li>
+			                                			<span class="hb-stars">
+															<span></span>
+														</span>
+                                                    <em>2</em>
+                                                </li>
+                                                <li>
+			                                			<span class="hb-stars">
+															<span></span>
+														</span>
+                                                    <em>0</em>
+                                                </li>
+                                            </ul>
+                                            <div id="hb-ourskill" class="hb-ourskill hb-skillgroup">
+                                                <div class="hb-skill">
+                                                    <div class="hb-skillholder" data-percent="95%">
+                                                        <div class="hb-skillbar"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="hb-skill">
+                                                    <div class="hb-skillholder" data-percent="80%">
+                                                        <div class="hb-skillbar"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="hb-skill">
+                                                    <div class="hb-skillholder" data-percent="50%">
+                                                        <div class="hb-skillbar"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="hb-skill">
+                                                    <div class="hb-skillholder" data-percent="90%">
+                                                        <div class="hb-skillbar"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="hb-skill">
+                                                    <div class="hb-skillholder" data-percent="0%">
+                                                        <div class="hb-skillbar"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="overallrating pull-right">
+                                            <div class="overallratingbox">
+		                                			<span class="hb-stars">
+														<span></span>
+													</span>
+                                                <h3>4.3</h3>
+                                                <em>Overall rating</em>
+                                            </div>
+                                        </div>
+                                    </div>
+								<div class="reviews">
+                                    <h4>{{ propertyReviewDict|length }} Reviews</h4>
+                                        <ul class="hb-commentlist">
+                                            {% for i in propertyReviewDict %}
+                                            <li>
+                                                <div class="hb-comment">
+{#                                                    <figure class="hb-author-img">#}
+{#                                                        <a href="agencies-detail.html"><img#}
+{#                                                                src="../../static/userResources/images/comment-img.jpg"#}
+{#                                                                alt="image description"></a>#}
+{#                                                    </figure>#}
+                                                    <div class="hb-comment-box">
+                                                        <div class="hb-comment-head">
+                                                            <div class="pull-left">
+                                                                <h4>{{ i.registerFirstName }} {{ registerLastName }}</h4>
+                                                            </div>
+                                                            <div class="pull-right">
+
+                                                                        {% if i.propertyReviewRating == "1" %}
+                                                                            <span class="hb-stars" style="content: ' \f005 \f006 \f006 \f006 \f006'; ">
+																		        <span style="content: ' \f005 \f006 \f006 \f006 \f006'; "></span>
+                                                                            </span>
+                                                                        {% elif i.propertyReviewRating == "2" %}
+                                                                            <span class="hb-stars" style="content: '\f005 \f005 \f006 \f006 \f006';">
+                                                                                <span style="content: '\f005 \f005 \f006 \f006 \f006';"></span>
+                                                                            </span>
+                                                                        {% elif i.propertyReviewRating == "3" %}
+                                                                            <span class="hb-stars" style="content: '\f005 \f005 \f005 \f006 \f006';">
+                                                                                <span style="content: '\f005 \f005 \f005 \f006 \f006';"></span>
+                                                                            </span>
+                                                                        {% elif i.propertyReviewRating == "4" %}
+                                                                            <span class="hb-stars" style=".hb-stars::before{content: '\f005 \f005 \f005 \f001 \f006';}">
+                                                                                <span style="content: '\f005 \f005 \f005 \f001 \f006';"></span>
+                                                                            </span>
+                                                                        {% elif i.propertyReviewRating == "5" %}
+                                                                            <span class="hb-stars">
+                                                                                <span></span>
+                                                                            </span>
+                                                                        {% endif %}
+
+                                                                <em>{{ i.propertyReviewDate }}</em>
+                                                            </div>
+                                                        </div>
+                                                        <div class="description">
+                                                            <p>{{ i.propertyReviewDescription }}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+{#
+                                    </div>
+                                </section>
+                                {% include 'user/propertyComment.html' %}
+                            </article>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-4">
+                            <aside id="sidebar">
+                                <!-- contactFormPage -->
+                                <section class="contactFormPage widget">
+                                    <div class="hb-headarea">
+                                        <div class="holder">
+                                            <figure class="hb-author-img pull-left">
+                                                <a href="#"><img src="../../static/userResources/images/comment-img.jpg"
+                                                                 alt="image description"></a>
+                                            </figure>
+                                            <div class="pull-left">
+                                                <div class="hb-headcontent">
+                                                    <h3>Bostan Homes</h3>
+                                                    <span>Ali Tufan</span>
+                                                    <a href="#">View Listings</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hb-numberbox text-center">
+                                            <h3><i class="fi flaticon-24-hours"></i>+1 246 345 0695</h3>
+                                        </div>
+                                    </div>
+                                    <form class="widgetCalcForm">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <div class="form-group">
+                                                    <input type="text" placeholder="Your Name" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <div class="form-group">
+                                                    <input type="tel" placeholder="Phone" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <div class="form-group">
+                                                    <input type="email" placeholder="Email" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control"
+                                                      placeholder="Hi Jennie Wilson, I saw your profile on LemanHouse and wanted to see if you could help me"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btnDark fontNeuron buttonXL">Submit</button>
+                                    </form>
+                                </section>
+                                <!-- widgetCalc -->
+                                <section class="widget widgetPadding widgetCalc bgWhite">
+                                    <h3 class="fontNeuron fwBold text-capitalize">Mortgage Calculator</h3>
+                                    <!-- widgetCalcForm -->
+                                    <form action="#" class="widgetCalcForm">
+                                        <div class="form-group">
+                                            <span class="icnInput small fas fa-dollar-sign"></span>
+                                            <input type="text" class="form-control elemenBlock"
+                                                   placeholder="Property price">
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="icnInput small fas fa-dollar-sign"></span>
+                                            <input type="text" class="form-control elemenBlock" placeholder="Deposit">
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="icnInput small fas fa-percent"></span>
+                                            <input type="text" class="form-control elemenBlock"
+                                                   placeholder="Annual Interest">
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="icnInput small far fa-calendar-alt"></span>
+                                            <input type="text" class="form-control elemenBlock" placeholder="Years">
+                                        </div>
+                                        <button type="submit"
+                                                class="elemenBlock btn btnSecondary fontNeuron text-uppercase">CALCULATE
+                                        </button>
+                                        <p><span class="text-primary elemenBlock text-center textCount">Monthly Payment: $969.04</span>
+                                        </p>
+                                    </form>
+                                </section>
+                                <!-- widgetRecentPosts -->
+                                <section class="widget widgetPadding widgetRecentPosts bgWhite">
+                                    <h3 class="fontNeuron fwBold text-capitalize">Recent Properties</h3>
+                                    <!-- widgetRecentPostsList -->
+                                    <ul class="list-unstyled widgetRecentPostsList padlReset">
+                                        <li>
+                                            <div class="alignleft">
+                                                <a href="#"><img src="../../static/userResources/images/img29.jpg"
+                                                                 alt="image description"></a>
+                                            </div>
+                                            <div class="descrWrap">
+                                                <h4 class="fontNeuron fwBold"><a href="#">Villa on Hollywood</a></h4>
+                                                <strong class="price elemenBlock fwSemi fontNeuron">$ 920,000</strong>
+                                                <p>778 Country St. Panama City, FL</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="alignleft">
+                                                <a href="#"><img src="../../static/userResources/images/img29.jpg"
+                                                                 alt="image description"></a>
+                                            </div>
+                                            <div class="descrWrap">
+                                                <h4 class="fontNeuron fwBold"><a href="#">4 Bedroom New House</a></h4>
+                                                <strong class="price elemenBlock fwSemi fontNeuron">$ 467,000</strong>
+                                                <p>London, United Kingdom</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="alignleft">
+                                                <a href="#"><img src="../../static/userResources/images/img30.jpg"
+                                                                 alt="image description"></a>
+                                            </div>
+                                            <div class="descrWrap">
+                                                <h4 class="fontNeuron fwBold"><a href="#">Eagle Apartments</a></h4>
+                                                <strong class="price elemenBlock fwSemi fontNeuron">$ 467,000</strong>
+                                                <p>9364 School St. Lynchburg, NY</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </aside>
+                        </div>
+                        <div class="col-xs-12">
+                            <header class="rowHead">
+                                <h1 class="fontNeuron blockH text-uppercase"><span class="bdrBottom">SMILAR</span> <span
+                                        class="textSecondary">PROPERTIES</span></h1>
+                            </header>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col isoCol sale">
+                            <!-- postColumn -->
+                            <article class="postColumn hasOver bgWhite">
+                                <div class="aligncenter">
+                                    <!-- postColumnImageSlider -->
+                                    <div class="slick-carousel slickSlider postColumnImageSlider">
+                                        <div>
+                                            <div class="imgHolder">
+                                                <a href="properties-single1.html">
+                                                    <img src="../../static/userResources/images/img04.jpg"
+                                                         alt="image description">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="imgHolder">
+                                                <a href="properties-single1.html">
+                                                    <img src="../../static/userResources/images/img04.jpg"
+                                                         alt="image description">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="imgHolder">
+                                                <a href="properties-single1.html">
+                                                    <img src="../../static/userResources/images/img04.jpg"
+                                                         alt="image description">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- postHoverLinskList -->
+                                    <ul class="list-unstyled postHoverLinskList">
+                                        <li><a href="#"><i class="fi flaticon-repeat"></i></a></li>
+                                        <li class="hasOver">
+                                            <a href="#"><i class="fi flaticon-share"></i></a>
+                                            <!-- postColumnSocial -->
+                                            <ul class="list-unstyled socialNetworks postColumnSocial">
+                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-google"></i></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <!-- linkToFavourite -->
+                                    <a href="#"
+                                       class="linkToFavourite roundedCircle bg-primary textWhite icnHeartBeatAnim"><i
+                                            class="far fa-heart"></i></a>
+                                </div>
+                                <h2 class="fontNeuron text-capitalize"><a href="properties-single1.html">Luxury Family
+                                    Home</a></h2>
+                                <address>
+                                    <span class="icn"><i class="fi flaticon-pin-1"></i></span>
+                                    <p>The Village, Jersey City, NJ 07302, USA </p>
+                                </address>
+                                <span class="btn btnSmall btn-success text-capitalize">For Sale</span>
+                                <h3 class="fontNeuron fwSemi"><span class="textSecondary">$ 490,000</span> <span
+                                        class="textUnit fwNormal">/ monthly</span></h3>
+                                <!-- postColumnFoot -->
+                                <footer class="postColumnFoot">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <strong class="fwNormal elemenBlock text-primary">Area</strong>
+                                            <strong class="fwNormal elemenBlock">2100 m2</strong>
+                                        </li>
+                                        <li>
+                                            <strong class="fwNormal elemenBlock text-primary">Beds</strong>
+                                            <strong class="fwNormal elemenBlock">3</strong>
+                                        </li>
+                                        <li>
+                                            <strong class="fwNormal elemenBlock text-primary">Baths</strong>
+                                            <strong class="fwNormal elemenBlock">2</strong>
+                                        </li>
+                                        <li>
+                                            <strong class="fwNormal elemenBlock text-primary">Garages</strong>
+                                            <strong class="fwNormal elemenBlock">1</strong>
+                                        </li>
+                                    </ul>
+                                </footer>
+                            </article>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col isoCol rent">
+                            <!-- postColumn -->
+                            <article class="postColumn hasOver bgWhite">
+                                <div class="aligncenter">
+                                    <!-- postColumnImageSlider -->
+                                    <div class="slick-carousel slickSlider postColumnImageSlider">
+                                        <div>
+                                            <div class="imgHolder">
+                                                <a href="properties-single1.html">
+                                                    <img src="../../static/userResources/images/img05.jpg"
+                                                         alt="image description">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="imgHolder">
+                                                <a href="properties-single1.html">
+                                                    <img src="../../static/userResources/images/img05.jpg"
+                                                         alt="image description">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="imgHolder">
+                                                <a href="properties-single1.html">
+                                                    <img src="../../static/userResources/images/img05.jpg"
+                                                         alt="image description">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- postHoverLinskList -->
+                                    <ul class="list-unstyled postHoverLinskList">
+                                        <li><a href="#"><i class="fi flaticon-repeat"></i></a></li>
+                                        <li class="hasOver">
+                                            <a href="#"><i class="fi flaticon-share"></i></a>
+                                            <!-- postColumnSocial -->
+                                            <ul class="list-unstyled socialNetworks postColumnSocial">
+                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-google"></i></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <!-- linkToFavourite -->
+                                    <a href="#"
+                                       class="linkToFavourite roundedCircle bg-primary textWhite icnHeartBeatAnim"><i
+                                            class="far fa-heart"></i></a>
+                                </div>
+                                <h2 class="fontNeuron text-capitalize"><a href="properties-single1.html">Meridian
+                                    Villas</a></h2>
+                                <address>
+                                    <span class="icn"><i class="fi flaticon-pin-1"></i></span>
+                                    <p>London, United Kingdom</p>
+                                </address>
+                                <span class="btn btnSmall btn-info text-capitalize">For Rent</span>
+                                <h3 class="fontNeuron fwSemi"><span class="textSecondary">$ 920,000</span> <span
+                                        class="textUnit fwNormal">/ monthly</span></h3>
+                                <!-- postColumnFoot -->
+                                <footer class="postColumnFoot">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <strong class="fwNormal elemenBlock text-primary">Area</strong>
+                                            <strong class="fwNormal elemenBlock">2100 m2</strong>
+                                        </li>
+                                        <li>
+                                            <strong class="fwNormal elemenBlock text-primary">Beds</strong>
+                                            <strong class="fwNormal elemenBlock">3</strong>
+                                        </li>
+                                        <li>
+                                            <strong class="fwNormal elemenBlock text-primary">Baths</strong>
+                                            <strong class="fwNormal elemenBlock">2</strong>
+                                        </li>
+                                        <li>
+                                            <strong class="fwNormal elemenBlock text-primary">Garages</strong>
+                                            <strong class="fwNormal elemenBlock">1</strong>
+                                        </li>
+                                    </ul>
+                                </footer>
+                            </article>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col isoCol rent">
+                            <!-- postColumn -->
+                            <article class="postColumn hasOver bgWhite">
+                                <div class="aligncenter">
+                                    <!-- postColumnImageSlider -->
+                                    <div class="slick-carousel slickSlider postColumnImageSlider">
+                                        <div>
+                                            <div class="imgHolder">
+                                                <a href="properties-single1.html">
+                                                    <img src="../../static/userResources/images/img07.jpg"
+                                                         alt="image description">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="imgHolder">
+                                                <a href="properties-single1.html">
+                                                    <img src="../../static/userResources/images/img05.jpg"
+                                                         alt="image description">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="imgHolder">
+                                                <a href="properties-single1.html">
+                                                    <img src="../../static/userResources/images/img07.jpg"
+                                                         alt="image description">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- postHoverLinskList -->
+                                    <ul class="list-unstyled postHoverLinskList">
+                                        <li><a href="#"><i class="fi flaticon-repeat"></i></a></li>
+                                        <li class="hasOver">
+                                            <a href="#"><i class="fi flaticon-share"></i></a>
+                                            <!-- postColumnSocial -->
+                                            <ul class="list-unstyled socialNetworks postColumnSocial">
+                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-google"></i></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <!-- linkToFavourite -->
+                                    <a href="#"
+                                       class="linkToFavourite roundedCircle bg-primary textWhite icnHeartBeatAnim"><i
+                                            class="far fa-heart"></i></a>
+                                </div>
+                                <h2 class="fontNeuron text-capitalize"><a href="properties-single1.html">Elegant studio
+                                    flat</a></h2>
+                                <address>
+                                    <span class="icn"><i class="fi flaticon-pin-1"></i></span>
+                                    <p>The Village, Jersey City, NJ 07302, USA</p>
+                                </address>
+                                <span class="btn btnSmall btn-info text-capitalize">For Rent</span>
+                                <h3 class="fontNeuron fwSemi"><span class="textSecondary">$ 490,000</span> <span
+                                        class="textUnit fwNormal">/ monthly</span></h3>
+                                <!-- postColumnFoot -->
+                                <footer class="postColumnFoot">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <strong class="fwNormal elemenBlock text-primary">Area</strong>
+                                            <strong class="fwNormal elemenBlock">2100 m2</strong>
+                                        </li>
+                                        <li>
+                                            <strong class="fwNormal elemenBlock text-primary">Beds</strong>
+                                            <strong class="fwNormal elemenBlock">3</strong>
+                                        </li>
+                                        <li>
+                                            <strong class="fwNormal elemenBlock text-primary">Baths</strong>
+                                            <strong class="fwNormal elemenBlock">2</strong>
+                                        </li>
+                                        <li>
+                                            <strong class="fwNormal elemenBlock text-primary">Garages</strong>
+                                            <strong class="fwNormal elemenBlock">1</strong>
+                                        </li>
+                                    </ul>
+                                </footer>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <!-- pageFooterBlock -->
+        {% include 'user/footer.html' %}
+    </div>
+    <!-- pagePopupWrap -->
+    <div class="popup-holder">
+        <div id="popup1" class="lightbox-demo">
+            <!-- popupLoginFrom -->
+            <form action="#" class="popupHolderWrap bgLightDark center-block popupLarge popupLoginFrom">
+                <ul class="list-unstyled popupTabsetList text-center fwBold text-uppercase fontNeuron">
+                    <li class="active"><a href="#tab01">LOGIN</a></li>
+                    <li><a href="#tab02">REGISTER</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="tab01" class="tab-active">
+                        <div class="popupColsHolder">
+                            <div class="col bgWhite">
+                                <div class="form-group">
+                                    <input type="text" class="form-control elemenBlock" placeholder="User Namer">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control elemenBlock" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <label class="fwNormal customLabelCheck">
+                                        <input type="checkbox" class="customFormInputReset">
+                                        <span class="fakeCheckbox"></span>
+                                        <span class="fakeLabel">Remember me</span>
+                                    </label>
+                                </div>
+                                <button type="submit"
+                                        class="btn btnSecondary elemenBlock fontNeuron fwNormal text-uppercase btnSubmit">
+                                    LOGIN
+                                </button>
+                                <a href="#" class="linkForget">Forgot Password?</a>
+                            </div>
+                            <div class="col">
+                                <p>You Can Login using your facebook Profile or Google account</p>
+                                <button type="button" class="btnSocial btnFb elemenBlock"><i
+                                        class="fab fa-facebook-f btnIco"></i> Facebook Connect
+                                </button>
+                                <button type="button" class="btnSocial btnTw elemenBlock"><i
+                                        class="fab fa-twitter btnIco"></i> Twitter Connect
+                                </button>
+                                <button type="button" class="btnSocial btnG elemenBlock"><i
+                                        class="fab fa-google btnIco"></i> Google Connect
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab02">
+                        <div class="popupColsHolder">
+                            <div class="col bgWhite">
+                                <div class="form-group">
+                                    <input type="text" class="form-control elemenBlock" placeholder="Full Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control elemenBlock" placeholder="User Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control elemenBlock" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control elemenBlock"
+                                           placeholder="Confirm Password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control elemenBlock" placeholder="Email Address">
+                                </div>
+                                <div class="form-group">
+                                    <select data-placeholder="Type" class="chosen-select">
+                                        <option value="1">For Rent</option>
+                                        <option value="2">For Sale</option>
+                                        <option value="3">House</option>
+                                        <option value="4">Property</option>
+                                        <option value="5">Real Estate</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="fwNormal customLabelCheck">
+                                        <input type="checkbox" class="customFormInputReset" checked>
+                                        <span class="fakeCheckbox"></span>
+                                        <span class="fakeLabel">I have read and agree to the Term of Service.</span>
+                                    </label>
+                                </div>
+                                <button type="submit"
+                                        class="btn btn-primary elemenBlock fontNeuron fwNormal text-uppercase btnSubmit">
+                                    REGISTER
+                                </button>
+                            </div>
+                            <div class="col">
+                                <p>You Can Login using your facebook Profile or Google account</p>
+                                <button type="button" class="btnSocial btnFb elemenBlock"><i
+                                        class="fab fa-facebook-f btnIco"></i> Facebook Connect
+                                </button>
+                                <button type="button" class="btnSocial btnTw elemenBlock"><i
+                                        class="fab fa-twitter btnIco"></i> Twitter Connect
+                                </button>
+                                <button type="button" class="btnSocial btnG elemenBlock"><i
+                                        class="fab fa-google btnIco"></i> Google Connect
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- include jQuery library -->
+<script src="../../static/userResources/js/jquery.js"></script>
+<script src="../../static/userResources/js/plugins.js"></script>
+<!-- include bootstrap JavaScript -->
+<script src="../../static/userResources/js/bootstrap-slider.min.js"></script>
+<!-- include custom JavaScript -->
+<script src="../../static/userResources/js/jquery.main.js"></script>
+<script type="text/javascript" src="../../static/userResources/js/init.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View State | Admin</title>
+
+    <!-- plugins:css -->
+  <link rel="stylesheet" href="../../static/adminResources/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../static/adminResources/css/simple-line-icons.css">
+  <link rel="stylesheet" href="../../static/adminResources/css/flag-icon.min.css">
+  <link rel="stylesheet" href="../../static/adminResources/css/perfect-scrollbar.min.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="../../static/adminResources/css/dataTables.bootstrap4.css" />
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="../../static/adminResources/css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="../../static/adminResources/images/favicon.png" />
+
+</head>
+<body>
+<div class="container-scroller">
+    {% include 'admin/header.html' %}}
+
+    <div class="container-fluid page-body-wrapper">
+        <div class="row row-offcanvas row-offcanvas-right">
+            {% include 'admin/menu.html' %}
+
+            {% include 'admin/setting-panel.html' %}
+            <div class="content-wrapper">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">View States</h2>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table id="order-listing" class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>State Name</th>
+                                            <th>State Description</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+{#                                        {{ stateDict }}#}
+                                        {% for i in stateDict  %}
+
+                                            <tr>
+                                                <td>{{ i.stateName }}</td>
+                                                <td>{{ i.stateDescription }}</td>
+
+                                                <td>
+                                                    <a href="/editState?stateId={{ i.stateId }}">update</a>
+
+                                                    <a href="/deleteState?stateId={{ i.stateId }}">delete
+
+                                                    </a>
+                                                </td>
+
+                                            </tr>
+                                        {% endfor %}
+                                        {#<tr>
+                                            <td>10</td>
+                                            <td>2003/12/26</td>
+                                            <td>Tom</td>
+                                            <td>
+                                                <label class="badge badge-danger">Pending</label>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-outline-primary">View</button>
+                                            </td>
+                                        </tr>#}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include 'admin/footer.html' %}
+    </div>
+</div>
+</div>
+
+<!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="../../static/adminResources/js/jquery.min.js"></script>
+  <script src="../../static/adminResources/js/popper.min.js"></script>
+  <script src="../../static/adminResources/js/bootstrap.min.js"></script>
+  <script src="../../static/adminResources/js/perfect-scrollbar.jquery.min.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <script src="../../static/adminResources/js/jquery.dataTables.js"></script>
+  <script src="../../static/adminResources/js/dataTables.bootstrap4.js"></script>
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="../../static/adminResources/js/off-canvas.js"></script>
+  <script src="../../static/adminResources/js/hoverable-collapse.js"></script>
+  <script src="../../static/adminResources/js/misc.js"></script>
+  <script src="../../static/adminResources/js/settings.js"></script>
+  <script src="../../static/adminResources/js/todolist.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="../../static/adminResources/js/data-table.js"></script>
+  <!-- End custom js for this page-->
+</body>
+</html>

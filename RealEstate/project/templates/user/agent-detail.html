@@ -1,0 +1,695 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- set the encoding of your site -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- set the page title -->
+	<title>LemanHouse - Real Estate HTML Template</title>
+	<!-- include google roboto font cdn link -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+	<!-- include the site bootstrap stylesheet -->
+	<link rel="stylesheet" href="../../static/userResources/css/bootstrap.css">
+	<!-- include the site stylesheet -->
+	<link rel="stylesheet" href="../../static/userResources/css/fancybox.css">
+	<!-- include the site stylesheet -->
+	<link rel="stylesheet" href="../../static/userResources/css/style.css">
+</head>
+<body>
+	<!-- pageWrapper -->
+	<div id="pageWrapper">
+		<!-- pageMenuPushWrap -->
+		<div class="pageMenuPushWrap pageMenuPushWrap1">
+			<!-- bgBaseWrap -->
+			<div class="bgBaseWrap">
+				<!-- pageHeader -->
+				{% include 'user/footer.html' %}
+				<!-- main -->
+				<main>
+					<!-- findFormBlock -->
+					<form action="#" class="findFormBlock findFormBlock2 bgLightDark hasShadowTop offsetHeaderTop">
+						<div class="container">
+							<div class="row align-center d-flex">
+								<div class="col-xs-12 col-sm-5 col-md-4 col-lg-5">
+									<div class="form-group">
+										<input type="text" class="form-control elemenBlock noBdr sizeMedium" placeholder="Enter address e.g. street, city and state or zip">
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-4 col-md-2">
+									<div class="form-group">
+										<i class="fi flaticon-target icnInput"></i>
+										<input type="text" class="form-control elemenBlock noBdr sizeMedium" placeholder="All Cities">
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-3 col-md-2">
+									<div class="form-group">
+										<select data-placeholder="All Areas" class="chosen-select noBdr sizeMedium">
+											<option value="1">All Areas</option>
+											<option value="2">All Areas</option>
+											<option value="2">All Areas</option>
+											<option value="2">All Areas</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-xs-12 col-md-4 col-lg-3">
+									<div class="btnsWrap">
+										<!-- otherFeaturesOpener -->
+										<a class="btnPlus otherFeaturesOpener text-capitalize noTopBottom" role="button" data-toggle="collapse" href="#otherFeaturescollapse" aria-expanded="false" aria-controls="otherFeaturescollapse">
+											<i class="fas btnIcn fa-plus-circle text-info opener"></i>
+											<i class="fas fa-minus-circle closer btnIcn text-info"></i>
+											Advanced
+										</a>
+										<button type="button" class="btn btnDark buttonSmall text-uppercase fontNeuron hidden-xs">SEARCH</button>
+									</div>
+								</div>
+							</div>
+							<!-- orderRow -->
+							<div class="row">
+								<div class="col-xs-12">
+									<!-- otherFeaturesCollapse -->
+									<div class="collapse otherFeaturesCollapse" id="otherFeaturescollapse">
+										<!-- checkList -->
+										<ul class="list-unstyled checkList text-primary">
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">Air conditioning</span>
+												</label>
+											</li>
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">Cofee pot</span>
+												</label>
+											</li>
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">Fan</span>
+												</label>
+											</li>
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">Hi-fi</span>
+												</label>
+											</li>
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">Balcony</span>
+												</label>
+											</li>
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">Computer</span>
+												</label>
+											</li>
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">Fridge</span>
+												</label>
+											</li>
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">Internet</span>
+												</label>
+											</li>
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">Bedding</span>
+												</label>
+											</li>
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">Cot</span>
+												</label>
+											</li>
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">Grill</span>
+												</label>
+											</li>
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">Iron</span>
+												</label>
+											</li>
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">Cable TV</span>
+												</label>
+											</li>
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">Dishwasher</span>
+												</label>
+											</li>
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">Hairdryer</span>
+												</label>
+											</li>
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">Juicer</span>
+												</label>
+											</li>
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">Cleaning after exit</span>
+												</label>
+											</li>
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">DVD</span>
+												</label>
+											</li>
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">Heating</span>
+												</label>
+											</li>
+											<li>
+												<label class="fwNormal customLabelCheck">
+													<input type="checkbox" class="customFormInputReset">
+													<span class="fakeCheckbox"></span>
+													<span class="fakeLabel">Lift</span>
+												</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+									<button type="button" class="btn btnDark text-uppercase fontNeuron">SEARCH</button>
+								</div>
+							</div>
+						</div>
+					</form>
+					<!-- content -->
+					<section id="content" class="container pabIndent">
+						<!-- contentFiltersHeadingWrap -->
+						<header class="contentFiltersHeadingWrap row">
+							<div class="col-xs-12 col-sm-10">
+								<!-- breadcrumb -->
+								<ol class="breadcrumb breadcrumb1">
+									<li><a href="#">Home</a></li>
+									<li class="active">Agent</li>
+								</ol>
+								<h1 class="fontNeuron">Agent Listing</h1>
+							</div>
+							<div class="col-xs-12 col-sm-2">
+								<!-- viewFilterLinks -->
+								<ul class="list-unstyled viewFilterLinks">
+									<li><a href="#"><i class="fi flaticon-share"></i></a></li>
+									<li><a href="#"><i class="fi flaticon-printer"></i></a></li>
+								</ul>
+							</div>
+						</header>
+						<!-- userProfile -->
+                      <div class="userProfile">
+                        <div class="row">
+                          <div class="col-xs-12 col-sm-12 col-lg-8">
+                            <!-- accountData -->
+                            <div class="accountData style2">
+	                            <div class="accountHolder">
+	                              <div class="imgProfile">
+	                                <div class="imgThumbnail">
+	                                  <img src="../../static/userResources/images/img39.jpg" alt="image description">
+	                                </div>
+	                              </div>
+	                              <div class="accountContent">
+	                              	<strong class="title fontNeuron">Jennie Wilson</strong>
+	                              	<span class="sub-title">Sales Executive</span>
+	                              	<p>Ut euismod ultricies sollicitudin. Curabitur sed dapibus neque. Nam in mauris quis libero sodales eleifend. tristique turpis, et iaculis mi tortor finibus.</p>
+	                              	<div class="contactInfo">
+										<address class="adr">
+											<div class="item">
+												<i class="fi flaticon-24-hours"></i>
+												<span class="text"><a href="tel:+12463450695">+1 246-345-0695</a></span>
+											</div>
+											<div class="item">
+												<i class="fi flaticon-mail"></i>
+												<span class="text"><a href="mailto:info@LemanHouse.com">info@LemanHouse.com</a></span>
+											</div>
+										</address>
+									</div>
+									<ul class="list-unstyled socialNetworks profileColumnSocial">
+										<li><a href="#" tabindex="0"><i class="fab fa-facebook-f"></i></a></li>
+										<li><a href="#" tabindex="0"><i class="fab fa-twitter"></i></a></li>
+										<li><a href="#" tabindex="0"><i class="fab fa-instagram"></i></a></li>
+										<li><a href="#" tabindex="0"><i class="fab fa-google"></i></a></li>
+									</ul>
+									<span class="btn btnSmall btn-success text-capitalize">For Sale: 12</span>
+									<span class="btn btnSmall btn-info text-capitalize">For Rent: 14</span>
+	                              </div>
+	                            </div>
+                            </div>
+                            <div class="accountData">
+                              <form>
+                                <div class="head">
+                                  <h4 class="fontNeuron">Biography</h4>
+                                </div>
+                            	<p>Emmy also enjoys spending time with her 2 King Charles Cavalier Spaniels, participating in Motocross events with Tye as well as sponsoring local community events.</p>
+                            	<p>– 2015 Real Estate Results Network – Boutique Principal of the Year – Winner</p>
+                            	<p>– 2015 Real Estate Results Network – QLD Agent of the Year – Winner</p>
+                            	<p>– 2015 Real Estate Results Network – Regional Boutique Agency of the Year – Winner</p>
+                              </form>
+                            </div>
+                            <header class="row rowHead rowHead2">
+								<div class="col-xs-12">
+									<!-- postsFiltersList -->
+									<ul class="list-unstyled postsFiltersList postsFiltersList2 text-capitalize text-center isoFiltersList pull-right">
+										<li class="active"><a href="#">All</a></li>
+										<li><a href="#" data-filter=".rent">For Rent</a></li>
+										<li><a href="#" data-filter=".sale">For Sale</a></li>
+									</ul>
+								</div>
+							</header>
+                            <article class="postColumn__ListView hasOver bgWhite">
+								<div class="alignleft noShrink">
+									<!-- postColumnImageSlider -->
+									<div class="slick-carousel slickSlider postColumnImageSlider">
+										<div>
+											<div class="imgHolder">
+												<a href="properties-single1.html">
+													<img src="../../static/userResources/images/img31.jpg" alt="image description">
+												</a>
+											</div>
+										</div>
+										<div>
+											<div class="imgHolder">
+												<a href="properties-single1.html">
+													<img src="../../static/userResources/images/img31.jpg" alt="image description">
+												</a>
+											</div>
+										</div>
+										<div>
+											<div class="imgHolder">
+												<a href="properties-single1.html">
+													<img src="../../static/userResources/images/img31.jpg" alt="image description">
+												</a>
+											</div>
+										</div>
+									</div>
+									<!-- postHoverLinskList -->
+									<ul class="list-unstyled postHoverLinskList">
+										<li><a href="#"><i class="fi flaticon-repeat"></i></a></li>
+										<li class="hasOver">
+											<a href="#"><i class="fi flaticon-share"></i></a>
+											<!-- postColumnSocial -->
+											<ul class="list-unstyled socialNetworks postColumnSocial">
+												<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+												<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+												<li><a href="#"><i class="fab fa-google"></i></a></li>
+											</ul>
+										</li>
+									</ul>
+									<!-- linkToFavourite -->
+									<a href="#" class="linkToFavourite roundedCircle bg-primary textWhite icnHeartBeatAnim"><i class="far fa-heart"></i></a>
+								</div>
+								<div class="descrWrap">
+									<h2 class="fontNeuron text-capitalize"><a href="properties-single1.html">Elegant studio flat</a></h2>
+									<address>
+										<span class="icn"><i class="fi flaticon-pin-1"></i></span>
+										<p>The Village, Jersey City, NJ 07302, USA </p>
+									</address>
+									<div class="stampWrap">
+										<span class="btn btnSmall btn-success text-capitalize">For Sale</span>
+										<time datetime="2011-01-12" class="timing">1 day ago</time>
+									</div>
+									<div class="priceWrap">
+										<h3 class="fontNeuron fwSemi"><span class="textSecondary">$ 490,000</span> <span class="textUnit fwNormal">/ monthly</span></h3>
+										<!-- linkDistributer -->
+										<a href="#" class="linkDistributer text-capitalize hidden-xs-ph"><i class="distributerIcn fi flaticon-social"></i> ali tufan</a>
+									</div>
+									<!-- postColumnFoot -->
+									<footer class="postColumnFoot">
+										<ul class="list-unstyled">
+											<li>
+												<strong class="fwNormal elemenBlock text-primary">Area</strong>
+												<strong class="fwNormal elemenBlock">2100 m2</strong>
+											</li>
+											<li>
+												<strong class="fwNormal elemenBlock text-primary">Beds</strong>
+												<strong class="fwNormal elemenBlock">3</strong>
+											</li>
+											<li>
+												<strong class="fwNormal elemenBlock text-primary">Baths</strong>
+												<strong class="fwNormal elemenBlock">2</strong>
+											</li>
+											<li>
+												<strong class="fwNormal elemenBlock text-primary">Garages</strong>
+												<strong class="fwNormal elemenBlock">1</strong>
+											</li>
+										</ul>
+									</footer>
+								</div>
+							</article>
+							<article class="postColumn__ListView hasOver bgWhite">
+								<div class="alignleft noShrink">
+									<!-- postColumnImageSlider -->
+									<div class="slick-carousel slickSlider postColumnImageSlider">
+										<div>
+											<div class="imgHolder">
+												<a href="properties-single1.html">
+													<img src="../../static/userResources/images/img33.jpg" alt="image description">
+												</a>
+											</div>
+										</div>
+										<div>
+											<div class="imgHolder">
+												<a href="properties-single1.html">
+													<img src="../../static/userResources/images/img33.jpg" alt="image description">
+												</a>
+											</div>
+										</div>
+										<div>
+											<div class="imgHolder">
+												<a href="properties-single1.html">
+													<img src="../../static/userResources/images/img33.jpg" alt="image description">
+												</a>
+											</div>
+										</div>
+									</div>
+									<!-- postHoverLinskList -->
+									<ul class="list-unstyled postHoverLinskList">
+										<li><a href="#"><i class="fi flaticon-repeat"></i></a></li>
+										<li class="hasOver">
+											<a href="#"><i class="fi flaticon-share"></i></a>
+											<!-- postColumnSocial -->
+											<ul class="list-unstyled socialNetworks postColumnSocial">
+												<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+												<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+												<li><a href="#"><i class="fab fa-google"></i></a></li>
+											</ul>
+										</li>
+									</ul>
+									<!-- linkToFavourite -->
+									<a href="#" class="linkToFavourite roundedCircle bg-primary textWhite icnHeartBeatAnim"><i class="far fa-heart"></i></a>
+								</div>
+								<div class="descrWrap">
+									<h2 class="fontNeuron text-capitalize"><a href="properties-single1.html">4 Bedroom New House For Sale</a></h2>
+									<address>
+										<span class="icn"><i class="fi flaticon-pin-1"></i></span>
+										<p>The Village, Jersey City, NJ 07302, USA </p>
+									</address>
+									<div class="stampWrap">
+										<span class="btn btnSmall btn-success text-capitalize">For Sale</span>
+										<time datetime="2011-01-12" class="timing">1 day ago</time>
+									</div>
+									<div class="priceWrap">
+										<h3 class="fontNeuron fwSemi"><span class="textSecondary">$ 490,000</span> <span class="textUnit fwNormal">/ monthly</span></h3>
+										<!-- linkDistributer -->
+										<a href="#" class="linkDistributer text-capitalize hidden-xs-ph"><i class="distributerIcn fi flaticon-social"></i> ali tufan</a>
+									</div>
+									<!-- postColumnFoot -->
+									<footer class="postColumnFoot">
+										<ul class="list-unstyled">
+											<li>
+												<strong class="fwNormal elemenBlock text-primary">Area</strong>
+												<strong class="fwNormal elemenBlock">2100 m2</strong>
+											</li>
+											<li>
+												<strong class="fwNormal elemenBlock text-primary">Beds</strong>
+												<strong class="fwNormal elemenBlock">3</strong>
+											</li>
+											<li>
+												<strong class="fwNormal elemenBlock text-primary">Baths</strong>
+												<strong class="fwNormal elemenBlock">2</strong>
+											</li>
+											<li>
+												<strong class="fwNormal elemenBlock text-primary">Garages</strong>
+												<strong class="fwNormal elemenBlock">1</strong>
+											</li>
+										</ul>
+									</footer>
+								</div>
+							</article>
+							<article class="postColumn__ListView hasOver bgWhite">
+								<div class="alignleft noShrink">
+									<!-- postColumnImageSlider -->
+									<div class="slick-carousel slickSlider postColumnImageSlider">
+										<div>
+											<div class="imgHolder">
+												<a href="properties-single1.html">
+													<img src="../../static/userResources/images/img34.jpg" alt="image description">
+												</a>
+											</div>
+										</div>
+										<div>
+											<div class="imgHolder">
+												<a href="properties-single1.html">
+													<img src="../../static/userResources+/images/img34.jpg" alt="image description">
+												</a>
+											</div>
+										</div>
+										<div>
+											<div class="imgHolder">
+												<a href="properties-single1.html">
+													<img src="../../static/userResources/images/img34.jpg" alt="image description">
+												</a>
+											</div>
+										</div>
+									</div>
+									<!-- postHoverLinskList -->
+									<ul class="list-unstyled postHoverLinskList">
+										<li><a href="#"><i class="fi flaticon-repeat"></i></a></li>
+										<li class="hasOver">
+											<a href="#"><i class="fi flaticon-share"></i></a>
+											<!-- postColumnSocial -->
+											<ul class="list-unstyled socialNetworks postColumnSocial">
+												<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+												<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+												<li><a href="#"><i class="fab fa-google"></i></a></li>
+											</ul>
+										</li>
+									</ul>
+									<!-- linkToFavourite -->
+									<a href="#" class="linkToFavourite roundedCircle bg-primary textWhite icnHeartBeatAnim"><i class="far fa-heart"></i></a>
+								</div>
+								<div class="descrWrap">
+									<h2 class="fontNeuron text-capitalize"><a href="properties-single1.html">Villa on Hollywood Boulevard </a></h2>
+									<address>
+										<span class="icn"><i class="fi flaticon-pin-1"></i></span>
+										<p>The Village, Jersey City, NJ 07302, USA </p>
+									</address>
+									<div class="stampWrap">
+										<span class="btn btnSmall btn-success text-capitalize">For Sale</span>
+										<time datetime="2011-01-12" class="timing">1 day ago</time>
+									</div>
+									<div class="priceWrap">
+										<h3 class="fontNeuron fwSemi"><span class="textSecondary">$ 490,000</span> <span class="textUnit fwNormal">/ monthly</span></h3>
+										<!-- linkDistributer -->
+										<a href="#" class="linkDistributer text-capitalize hidden-xs-ph"><i class="distributerIcn fi flaticon-social"></i> ali tufan</a>
+									</div>
+									<!-- postColumnFoot -->
+									<footer class="postColumnFoot">
+										<ul class="list-unstyled">
+											<li>
+												<strong class="fwNormal elemenBlock text-primary">Area</strong>
+												<strong class="fwNormal elemenBlock">2100 m2</strong>
+											</li>
+											<li>
+												<strong class="fwNormal elemenBlock text-primary">Beds</strong>
+												<strong class="fwNormal elemenBlock">3</strong>
+											</li>
+											<li>
+												<strong class="fwNormal elemenBlock text-primary">Baths</strong>
+												<strong class="fwNormal elemenBlock">2</strong>
+											</li>
+											<li>
+												<strong class="fwNormal elemenBlock text-primary">Garages</strong>
+												<strong class="fwNormal elemenBlock">1</strong>
+											</li>
+										</ul>
+									</footer>
+								</div>
+							</article>
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-lg-4">
+                           <!-- contactFormPage -->
+							<div class="contactFormPage">
+								<h4 class="fontNeuron">Contact Jennie Wilson</h4>
+								<form>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="form-group">
+												<input type="text" placeholder="Your Name" class="form-control">
+											</div>
+										</div>
+										<div class="col-xs-12">
+											<div class="form-group">
+												<input type="tel" placeholder="Phone" class="form-control">
+											</div>
+										</div>
+										<div class="col-xs-12">
+											<div class="form-group">
+												<input type="email" placeholder="Email" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<textarea class="form-control" placeholder="Hi Jennie Wilson, I saw your profile on LemanHouse and wanted to see if you could help me"></textarea>
+									</div>
+									<button type="submit" class="btn btnDark fontNeuron buttonXL">Submit</button>
+								</form>
+							</div>
+                          </div>
+                        </div>
+                      </div>
+					</section>
+					<!-- signupFormAside -->
+					<form action="#" class="bgWhite signupFormAside">
+						<div class="container signupFormAsideHolder">
+							<span class="icnAbsolute elemenBlock fi flaticon-message"></span>
+							<div class="col-xs-12 col-md-offset-2 col-md-6">
+								<h3 class="fontNeuron textSecondary">Sign up for our newsletter.</h3>
+								<p>Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="form-group">
+									<input type="email" id="email" class="form-control elemenBlock" placeholder="Your email">
+									<button type="button" class="buttonReset fi flaticon-navigation"></button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</main>
+			</div>
+			<!-- pageFooterBlock -->
+			{% include 'user/footer.html' %}
+		</div>
+		<!-- pagePopupWrap -->
+		<div class="popup-holder">
+			<div id="popup1" class="lightbox-demo">
+				<!-- popupLoginFrom -->
+				<form action="#" class="popupHolderWrap bgLightDark center-block popupLarge popupLoginFrom">
+					<ul class="list-unstyled popupTabsetList text-center fwBold text-uppercase fontNeuron">
+						<li class="active"><a href="#tab01">LOGIN</a></li>
+						<li><a href="#tab02">REGISTER</a></li>
+					</ul>
+					<div class="tab-content">
+						<div id="tab01" class="tab-active">
+							<div class="popupColsHolder">
+								<div class="col bgWhite">
+									<div class="form-group">
+										<input type="text" class="form-control elemenBlock" placeholder="User Namer">
+									</div>
+									<div class="form-group">
+										<input type="password" class="form-control elemenBlock" placeholder="Password">
+									</div>
+									<div class="form-group">
+										<label class="fwNormal customLabelCheck">
+											<input type="checkbox" class="customFormInputReset">
+											<span class="fakeCheckbox"></span>
+											<span class="fakeLabel">Remember me</span>
+										</label>
+									</div>
+									<button type="submit" class="btn btnSecondary elemenBlock fontNeuron fwNormal text-uppercase btnSubmit">LOGIN</button>
+									<a href="#" class="linkForget">Forgot Password?</a>
+								</div>
+								<div class="col">
+									<p>You Can Login using your facebook Profile or Google account</p>
+									<button type="button" class="btnSocial btnFb elemenBlock"><i class="fab fa-facebook-f btnIco"></i> Facebook Connect</button>
+									<button type="button" class="btnSocial btnTw elemenBlock"><i class="fab fa-twitter btnIco"></i> Twitter Connect</button>
+									<button type="button" class="btnSocial btnG elemenBlock"><i class="fab fa-google btnIco"></i> Google Connect</button>
+								</div>
+							</div>
+						</div>
+						<div id="tab02">
+							<div class="popupColsHolder">
+								<div class="col bgWhite">
+									<div class="form-group">
+										<input type="text" class="form-control elemenBlock" placeholder="Full Name">
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control elemenBlock" placeholder="User Name">
+									</div>
+									<div class="form-group">
+										<input type="password" class="form-control elemenBlock" placeholder="Password">
+									</div>
+									<div class="form-group">
+										<input type="password" class="form-control elemenBlock" placeholder="Confirm Password">
+									</div>
+									<div class="form-group">
+										<input type="email" class="form-control elemenBlock" placeholder="Email Address">
+									</div>
+									<div class="form-group">
+										<select data-placeholder="Type" class="chosen-select">
+											<option value="1">For Rent</option>
+											<option value="2">For Sale</option>
+											<option value="3">House</option>
+											<option value="4">Property</option>
+											<option value="5">Real Estate</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="fwNormal customLabelCheck">
+											<input type="checkbox" class="customFormInputReset" checked>
+											<span class="fakeCheckbox"></span>
+											<span class="fakeLabel">I have read and agree to the Term of Service.</span>
+										</label>
+									</div>
+									<button type="submit" class="btn btn-primary elemenBlock fontNeuron fwNormal text-uppercase btnSubmit">REGISTER</button>
+								</div>
+								<div class="col">
+									<p>You Can Login using your facebook Profile or Google account</p>
+									<button type="button" class="btnSocial btnFb elemenBlock"><i class="fab fa-facebook-f btnIco"></i> Facebook Connect</button>
+									<button type="button" class="btnSocial btnTw elemenBlock"><i class="fab fa-twitter btnIco"></i> Twitter Connect</button>
+									<button type="button" class="btnSocial btnG elemenBlock"><i class="fab fa-google btnIco"></i> Google Connect</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- include jQuery library -->
+	<script src="../../static/userResources/js/jquery.js"></script>
+	<script src="../../static/userResources/js/plugins.js"></script>
+	<!-- include bootstrap JavaScript -->
+	<script src="../../static/userResources/js/bootstrap-slider.min.js"></script>
+	<!-- include custom JavaScript -->
+	<script src="../../static/userResources/js/jquery.main.js"></script>
+	<script type="text/javascript" src="../../static/userResources/js/init.js"></script>
+</body>
+</html>

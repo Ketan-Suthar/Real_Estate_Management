@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Property SubCategory | Admin</title>
+
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../../static/adminResources/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/simple-line-icons.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/perfect-scrollbar.min.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="../../static/adminResources/css/dataTables.bootstrap4.css"/>
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../../static/adminResources/css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="../../static/adminResources/images/favicon.png"/>
+
+
+</head>
+<body>
+<div class="container-scroller">
+    {% include 'admin/header.html' %}}
+
+    <div class="container-fluid page-body-wrapper">
+        <div class="row row-offcanvas row-offcanvas-right">
+            {% include 'admin/menu.html' %}
+
+            {% include 'admin/setting-panel.html' %}
+            <div class="content-wrapper">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Property Reply</h2>
+                        <div class="col-12 grid-margin">
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <table id="order-listing" class="table">
+                                            <thead><h4 style="color: #dd4b39">Property Basic Details</h4></thead>
+                                            <tbody>
+                                            <tr>
+                                                <td><b>Property Name</b></td>
+                                                <td colspan="4">{{ propertyDict[0].propertyName }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Category Name</b></td>
+                                                <td>{{ propertyDict[0].propertyCategoryName }}</td>
+                                                <td></td>
+                                                <td><b>Subategory Name</b></td>
+                                                <td>{{ propertyDict[0].propertySubcategoryName }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Owner Type</b></td>
+                                                <td>{{ propertyDict[0].propertyOwnerType }}</td>
+                                                <td></td>
+                                                <td><b>Post For</b></td>
+                                                <td>{{ propertyDict[0].propertyListFor }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Date</b></td>
+                                                <td>{{ propertyDict[0].propertyAmenitiesDate }}</td>
+                                                <td></td>
+                                                <td><b>Time</b></td>
+                                                <td>{{ propertyDict[0].propertyAmenitiesTime }}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <table id="order-listing" class="table">
+                                            <thead><h4 style="color: #dd4b39">Property Address Details</h4></thead>
+                                            <tbody>
+                                            <tr>
+                                                <td><b>Street</b></td>
+                                                <td>{{ propertyDict[0].propertyStreet }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Locality</b></td>
+                                                <td>{{ propertyDict[0].propertyLocality }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>City</b></td>
+                                                <td>{{ propertyDict[0].cityName }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>State</b></td>
+                                                <td>{{ propertyDict[0].stateName }}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <table id="order-listing" class="table">
+                                            <thead><h4 style="color: #dd4b39">Property Details</h4></thead>
+                                            <tbody>
+                                            <tr>
+                                                <td><b>Area</b></td>
+                                                <td>{{ propertyDict[0].propertyBuildUpArea }} {{ propertyDict[0].propertyBuildUpAreaUnit }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>RERA No.</b></td>
+                                                <td>{{ propertyDict[0].propertyRERANo }}</td>
+                                            </tr>
+                                            {% if propertyDict[0].propertyCategoryName == 'residential' %}
+                                                <tr>
+                                                    <td><b>Bedrooms</b></td>
+                                                    <td>{{ propertyDict[0].propertyBedrooms }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Bathrooms</b></td>
+                                                    <td>{{ propertyDict[0].propertyBathrooms }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Balconies</b></td>
+                                                    <td>{{ propertyDict[0].propertyBalconies }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Other Rooms</b></td>
+                                                    <td>{{ propertyDict[0].propertyOtherRooms }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Furnishing</b></td>
+                                                    <td>{{ propertyDict[0].propertyFurnishing }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>On The Floor</b></td>
+                                                    <td>{{ propertyDict[0].propertyOnFloor }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Total Floors</b></td>
+                                                    <td>{{ propertyDict[0].propertyTotalFloors }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Parking</b></td>
+                                                    <td>{{ propertyDict[0].propertyParking }}</td>
+                                                </tr>
+                                            {% elif propertyDict[0].propertyCategoryName == 'commercial' %}
+                                                {% if propertyDict[0].propertySubcategoryName == 'hotel' or propertyDict[0].propertySubcategoryName == 'resort' %}
+                                                    <tr>
+                                                        <td><b>Quality Rating</b></td>
+                                                        <td>{{ propertyDict[0].propertyQualityRating }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Washrooms</b></td>
+                                                        <td>{{ propertyDict[0].propertyWashrooms }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Total Rooms</b></td>
+                                                        <td>{{ propertyDict[0].propertyTotalRooms }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Other Rooms</b></td>
+                                                        <td>{{ propertyDict[0].propertyOtherRooms }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Parking</b></td>
+                                                        <td>{{ propertyDict[0].propertyParking }}</td>
+                                                    </tr>
+                                                {% else %}
+                                                    <tr>
+                                                        <td><b>Washrooms</b></td>
+                                                        <td>{{ propertyDict[0].propertyWashrooms }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Parking</b></td>
+                                                        <td>{{ propertyDict[0].propertyParking }}</td>
+                                                    </tr>
+                                                {% endif %}
+                                            {% endif %}
+                                            <tr>
+                                                <td><b>Description</b></td>
+                                                <td>{{ propertyDict[0].propertyDescription }}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <table id="order-listing" class="table">
+                                            <thead><h4 style="color: #dd4b39">Property Pricing Details</h4></thead>
+                                            <tbody>
+                                            {% if propertyDict[0].propertyListFor == 'sell' %}
+                                                <tr>
+                                                    <td><b>Price</b></td>
+                                                    <td>{{ propertyDict[0].propertyPrice }}</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            {% else %}
+                                                <tr>
+                                                    <td><b>Rent</b></td>
+                                                    <td>{{ propertyDict[0].propertyMonthlyRent }}</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            {% endif %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="card-body">
+
+                                    </div>
+
+
+                                </div>
+
+                        </div>
+                    </div>
+                    <!-- end of complain table -->
+                </div>
+            </div>
+            <div class="content-wrapper">
+                {% include 'admin/propertyGallery.html' %}
+            </div>
+            <div class="content-wrapper">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <form action="/propertyAdminReply" method="POST">
+                            <input type="hidden" name="propertyId" value="{{ propertyDict[0].propertyId }}">
+                        <div class="card-body">
+                            <b><h3 class="card-title">Reply :</h3></b>
+                            <textarea rows="5" cols="100" placeholder="reply of complain"
+                                      name="propertyReply"></textarea><br>
+
+                            <input class="btn btn-primary" type="radio" name="propertyStatus" value="accepted" required>Accept
+                            <input class="btn btn-danger btn-fw" type="radio" name="propertyStatus" value="rejected">Reject
+                            <input class="btn btn-primary" type="radio" name="propertyStatus" value="cancel">Cancel
+                        </div>
+                        <div class="card-body">
+                            <input class="btn btn-primary" type="submit"  value="Submit">
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+                    {% include 'admin/footer.html' %}
+                </div>
+            </div>
+        </div>
+
+        <!-- container-scroller -->
+        <!-- plugins:js -->
+        <script src="../../static/adminResources/js/jquery.min.js"></script>
+        <script src="../../static/adminResources/js/popper.min.js"></script>
+        <script src="../../static/adminResources/js/bootstrap.min.js"></script>
+        <script src="../../static/adminResources/js/perfect-scrollbar.jquery.min.js"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page-->
+        <script src="../../static/adminResources/js/jquery.dataTables.js"></script>
+        <script src="../../static/adminResources/js/dataTables.bootstrap4.js"></script>
+        <!-- End plugin js for this page-->
+        <!-- inject:js -->
+        <script src="../../static/adminResources/js/off-canvas.js"></script>
+        <script src="../../static/adminResources/js/hoverable-collapse.js"></script>
+        <script src="../../static/adminResources/js/misc.js"></script>
+        <script src="../../static/adminResources/js/settings.js"></script>
+        <script src="../../static/adminResources/js/todolist.js"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page-->
+        <script src="../../static/adminResources/js/data-table.js"></script>
+        <!-- End custom js for this page-->
+        {##}
+        {#{% if (data.project(temp)==0) %}#}
+        {#    <td>#}
+        {#        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">#}
+        {#            {{ temp }}#}
+        {#        </a>#}
+        {#        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"#}
+        {#             aria-labelledby="notificationDropdown" style="background-color: gray">#}
+        {##}
+        {#            <div class="preview-item-content" style="text-align: center;color:white ">#}
+        {#                <h4 class="preview-subject font-weight-medium">Application Error</h4>#}
+        {#            </div>#}
+        {#        </div>#}
+        {#    </td>#}
+        {#{% else %}#}
+        {#    <td>#}
+        {#        {{ temp }}#}
+        {#    </td>#}
+        {#{% endif %}#}
+
+</body>
+</html>

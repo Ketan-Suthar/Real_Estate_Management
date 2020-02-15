@@ -1,0 +1,36 @@
+<section class="accountData contactFormPage">
+    <div class="head">
+        <h4 class="fontNeuron">Your Reviews</h4>
+    </div>
+    <span style="color: red">* login required for review</span>
+    <form action="/insertPropertyReview" method="post">
+        <input type="hidden" name="propertyId" value={{ propertyDict[0]['propertyId'] }}>
+        <input type=hidden value="{{ next or '' }}" name=next>
+
+        <div class="form-group">
+
+            <div class="form-group stars">
+                <input class="star star-5" id="star-5" type="radio" name="propertyReviewRating"
+                       value="5"/>
+                <label class="star star-5" for="star-5"></label>
+                <input class="star star-4" id="star-4" type="radio" name="propertyReviewRating"
+                       value="4"/>
+                <label class="star star-4" for="star-4"></label>
+                <input class="star star-3" id="star-3" type="radio" name="propertyReviewRating"
+                       value="3"/>
+                <label class="star star-3" for="star-3"></label>
+                <input class="star star-2" id="star-2" type="radio" name="propertyReviewRating"
+                       value="2"/>
+                <label class="star star-2" for="star-2"></label>
+                <input class="star star-1" id="star-1" type="radio" name="propertyReviewRating"
+                       value="1"/>
+                <label class="star star-1" for="star-1"></label>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" name="propertyReviewDescription" placeholder="Message"></textarea>
+        </div>
+        <button type="submit" class="btn btnDark fontNeuron buttonXL">Submit</button>
+    </form>
+</section>

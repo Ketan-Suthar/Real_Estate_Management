@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- set the encoding of your site -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- set the page title -->
+    <title>LemanHouse - Feedback</title>
+
+    <!-- rating links -->
+
+    <style type="text/css">
+
+        .rating {
+            float: left;
+        }
+
+        /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t
+           follow these rules. Every browser that supports :checked also supports :not(), so
+           it doesn’t make the test unnecessarily selective */
+        .rating:not(:checked) > input {
+            position: absolute;
+            top: -9999px;
+            clip: rect(0, 0, 0, 0);
+        }
+
+        .rating:not(:checked) > label {
+            float: right;
+            width: 1em;
+            padding: 0 .1em;
+            overflow: hidden;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 200%;
+            line-height: 1.2;
+            color: #ddd;
+            text-shadow: 1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0, 0, 0, .5);
+        }
+
+        .rating:not(:checked) > label:before {
+            content: ' ';
+        }
+
+        .rating > input:checked ~ label {
+            color: #f70;
+            text-shadow: 1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0, 0, 0, .5);
+        }
+
+        .rating:not(:checked) > label:hover,
+        .rating:not(:checked) > label:hover ~ label {
+            color: gold;
+            text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5);
+        }
+
+        .rating > input:checked + label:hover,
+        .rating > input:checked + label:hover ~ label,
+        .rating > input:checked ~ label:hover,
+        .rating > input:checked ~ label:hover ~ label,
+        .rating > label:hover ~ input:checked ~ label {
+            color: #ea0;
+            text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5);
+        }
+
+        .rating > label:active {
+            position: relative;
+            top: 2px;
+            left: 2px;
+        }
+
+    </style>
+
+    <link rel="stylesheet" href="../../static/userResources/css/star.css">
+    <!-- rating links close -->
+
+    <!-- include google roboto font cdn link -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <!-- include the site bootstrap stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/bootstrap.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/fancybox.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/style.css">
+</head>
+<body>
+<!-- pageWrapper -->
+<div id="pageWrapper">
+    <!-- pageMenuPushWrap -->
+    <div class="pageMenuPushWrap pageMenuPushWrap1">
+        <!-- bgBaseWrap -->
+        <div class="bgBaseWrap">
+            <!-- pageHeader -->
+            {% include 'user/header.html' %}
+            <!-- main -->
+            <main>
+                <!-- mapFull -->
+                {#                <div class="map-area mapPlacer">#}
+                {#                    <div id="map-container">#}
+                {#                        <div id="map_div">&nbsp;</div>#}
+                {#                    </div>#}
+                {#                </div>#}
+                <!-- content -->
+                <section id="content" class="container pabIndent">
+                    <div class="container">
+                        <!-- contentFiltersHeadingWrap -->
+                        <header class="contentFiltersHeadingWrap row">
+                            <div class="col-xs-12 col-sm-10">
+                                <!-- breadcrumb -->
+                                <!--
+                                <ol class="breadcrumb breadcrumb1">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Pages</a></li>
+                                    <li class="active">Feedback</li>
+                                </ol> -->
+                                <h1 class="fontNeuron">Complain</h1>
+                            </div>
+                            <div class="col-xs-12 col-sm-2">
+                                <!-- viewFilterLinks -->
+                                <ul class="list-unstyled viewFilterLinks">
+                                    <li><a href="#"><i class="fi flaticon-share"></i></a></li>
+                                    <li><a href="#"><i class="fi flaticon-printer"></i></a></li>
+                                </ul>
+                            </div>
+                        </header>
+                        <!-- contactMain -->
+
+                        <form action="/insertComplain" method="post"
+                              class="popupHolderWrap bgLightDark center-block popupLarge popupLoginFrom">
+
+                            <div class="tab-content">
+                                <div id="tab01" class="tab-active">
+                                    <div class="popupColsHolder">
+                                        <div class="col bgWhite">
+
+                                            <div class="form-group">
+                                                <input type="text" class="form-control elemenBlock" name="complainSubject" placeholder="Subject">
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <textarea cols="10" rows="5" class="form-control elemenBlock" name="complainDescription" placeholder="Complain Message">
+
+                                                </textarea>
+                                            </div>
+
+                                            <button type="submit"
+                                                    class="btn btnSecondary elemenBlock fontNeuron fwNormal text-uppercase btnSubmit">
+                                                Submit
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </section>
+                <!-- signupFormAside -->
+                <form action="#" class="bgWhite signupFormAside">
+                    <div class="container signupFormAsideHolder">
+                        <span class="icnAbsolute elemenBlock fi flaticon-message"></span>
+                        <div class="col-xs-12 col-md-offset-2 col-md-6">
+                            <h3 class="fontNeuron textSecondary">Sign up for our newsletter.</h3>
+                            <p>Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <div class="form-group">
+                                <input type="email" id="email" class="form-control elemenBlock"
+                                       placeholder="Your email">
+                                <button type="button" class="buttonReset fi flaticon-navigation"></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </main>
+        </div>
+        <!-- pageFooterBlock -->
+        {% include 'user/footer.html' %}
+    </div>
+    <!-- pagePopupWrap -->
+    <div class="popup-holder">
+        <div id="popup1" class="lightbox-demo">
+            <!-- popupLoginFrom -->
+            <form action="#" class="popupHolderWrap bgLightDark center-block popupLarge popupLoginFrom">
+                <ul class="list-unstyled popupTabsetList text-center fwBold text-uppercase fontNeuron">
+                    <li class="active"><a href="#tab01">LOGIN</a></li>
+                    <li><a href="#tab02">REGISTER</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="tab01" class="tab-active">
+                        <div class="popupColsHolder">
+                            <div class="col bgWhite">
+                                <div class="form-group">
+                                    <input type="text" class="form-control elemenBlock" placeholder="User Namer">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control elemenBlock" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <label class="fwNormal customLabelCheck">
+                                        <input type="checkbox" class="customFormInputReset">
+                                        <span class="fakeCheckbox"></span>
+                                        <span class="fakeLabel">Remember me</span>
+                                    </label>
+                                </div>
+                                <button type="submit"
+                                        class="btn btnSecondary elemenBlock fontNeuron fwNormal text-uppercase btnSubmit">
+                                    LOGIN
+                                </button>
+                                <a href="#" class="linkForget">Forgot Password?</a>
+                            </div>
+                            <div class="col">
+                                <p>You Can Login using your facebook Profile or Google account</p>
+                                <button type="button" class="btnSocial btnFb elemenBlock"><i
+                                        class="fab fa-facebook-f btnIco"></i> Facebook Connect
+                                </button>
+                                <button type="button" class="btnSocial btnTw elemenBlock"><i
+                                        class="fab fa-twitter btnIco"></i> Twitter Connect
+                                </button>
+                                <button type="button" class="btnSocial btnG elemenBlock"><i
+                                        class="fab fa-google btnIco"></i> Google Connect
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab02">
+                        <div class="popupColsHolder">
+                            <div class="col bgWhite">
+                                <div class="form-group">
+                                    <input type="text" class="form-control elemenBlock" placeholder="Full Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control elemenBlock" placeholder="User Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control elemenBlock" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control elemenBlock"
+                                           placeholder="Confirm Password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control elemenBlock" placeholder="Email Address">
+                                </div>
+                                <div class="form-group">
+                                    <select data-placeholder="Type" class="chosen-select">
+                                        <option value="1">For Rent</option>
+                                        <option value="2">For Sale</option>
+                                        <option value="3">House</option>
+                                        <option value="4">Property</option>
+                                        <option value="5">Real Estate</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="fwNormal customLabelCheck">
+                                        <input type="checkbox" class="customFormInputReset" checked>
+                                        <span class="fakeCheckbox"></span>
+                                        <span class="fakeLabel">I have read and agree to the Term of Service.</span>
+                                    </label>
+                                </div>
+                                <button type="submit"
+                                        class="btn btn-primary elemenBlock fontNeuron fwNormal text-uppercase btnSubmit">
+                                    REGISTER
+                                </button>
+                            </div>
+                            <div class="col">
+                                <p>You Can Login using your facebook Profile or Google account</p>
+                                <button type="button" class="btnSocial btnFb elemenBlock"><i
+                                        class="fab fa-facebook-f btnIco"></i> Facebook Connect
+                                </button>
+                                <button type="button" class="btnSocial btnTw elemenBlock"><i
+                                        class="fab fa-twitter btnIco"></i> Twitter Connect
+                                </button>
+                                <button type="button" class="btnSocial btnG elemenBlock"><i
+                                        class="fab fa-google btnIco"></i> Google Connect
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- include jQuery library -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAziipzIN4zP3UtFIBC3-e6NcNfY2vIG48&callback=myMap"></script>
+<!-- include jQuery library -->
+<script src="../../static/userResources/js/jquery.js"></script>
+<script src="../../static/userResources/js/plugins.js"></script>
+<!-- include bootstrap JavaScript -->
+<script src="../../static/userResources/js/bootstrap-slider.min.js"></script>
+<!-- include custom JavaScript -->
+<script src="../../static/userResources/js/jquery.main.js"></script>
+<script type="text/javascript" src="../../static/userResources/js/map2.js"></script>
+<script type="text/javascript" src="../../static/userResources/js/init.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Complain | User</title>
+
+    <!-- set the encoding of your site -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- set the page title -->
+    <title>LemanHouse - Real Estate HTML Template</title>
+    <!-- include google roboto font cdn link -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <!-- include the site bootstrap stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/bootstrap.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/fancybox.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/style.css">
+</head>
+
+</head>
+<body>
+
+<div id="pageWrapper">
+    <!-- pageMenuPushWrap -->
+    <div class="pageMenuPushWrap pageMenuPushWrap1">
+        <!-- bgBaseWrap -->
+        <div class="bgBaseWrap">
+            <!-- pageHeader -->
+
+            {% include 'user/header.html' %}
+
+            <section class="mostPostsBlock bgWhite">
+                <div class="container">
+
+                    <h1 class="fontNeuron blockH text-uppercase"><span class="bdrBottom">Complain</span></h1>
+{#                    {{ complainDict }}#}
+                    <h4>
+                    <table id="order-listing" class="table">
+
+                        <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Description</th>
+
+{#                            {% if i.complainStatus == 'pendind' %}#}
+                                    <th>Status</th>
+{#                            {% else %}#}
+{#                                    <th>Reply</th>#}
+{#                            {% endif %}#}
+
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in complainDict %}
+                            <tr>
+                                <td>{{ i.complainSubject }}</td>
+                                <td>{{ i.complainDescription }}</td>
+
+                                {% if i.complainStatus == 'pendind' %}
+                                    <td>{{ i.complainStatus }}</td>
+                                {% else %}
+                                    <td>{{ i.complainReply }}</td>
+                                {% endif %}
+
+                                <td>{{ i.complainDate }}</td>
+                                <td>{{ i.complainTime }}</td>
+
+                                <td>
+                                    <a href="/viewFeedback?feedbackId={{ i.feedbackId }}">Delete</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                    </h4>
+                </div>
+            </section>
+
+        </div>
+
+        {% include 'user/footer.html' %}
+    </div>
+</div>
+<!-- include jQuery library -->
+<script src="../../static/userResources/js/jquery.js"></script>
+<script src="../../static/userResources/js/plugins.js"></script>
+<!-- include bootstrap JavaScript -->
+<script src="../../static/userResources/js/bootstrap-slider.min.js"></script>
+<!-- include custom JavaScript -->
+<script src="../../static/userResources/js/jquery.main.js"></script>
+<script type="text/javascript" src="../../static/userResources/js/init.js"></script>
+
+</body>
+</html>

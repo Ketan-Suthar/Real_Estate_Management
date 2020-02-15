@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- set the encoding of your site -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- set the page title -->
+    <title>LemanHouse - Real Estate HTML Template</title>
+    <!-- include google roboto font cdn link -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <!-- include the site bootstrap stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/bootstrap.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/fancybox.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/style.css">
+</head>
+<body>
+<!-- pageWrapper -->
+<div id="pageWrapper">
+    <!-- pageMenuPushWrap -->
+    <div class="pageMenuPushWrap pageMenuPushWrap1">
+        <!-- bgBaseWrap -->
+        <div class="bgBaseWrap">
+            <!-- pageHeader -->
+            {% include 'user/header.html' %}
+            <!-- main -->
+            <main>
+                <!-- findFormBlock -->
+                <form action="#" class="findFormBlock findFormBlock2 bgLightDark hasShadowTop offsetHeaderTop">
+                    <div class="container">
+                        <div class="row align-center d-flex">
+                            <div class="col-xs-12 col-sm-5 col-md-4 col-lg-5">
+                                <div class="form-group">
+                                    <input type="text" class="form-control elemenBlock noBdr sizeMedium"
+                                           placeholder="Enter address e.g. street, city and state or zip">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-2">
+                                <div class="form-group">
+                                    <i class="fi flaticon-target icnInput"></i>
+                                    <input type="text" class="form-control elemenBlock noBdr sizeMedium"
+                                           placeholder="All Cities">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-3 col-md-2">
+                                <div class="form-group">
+                                    <select data-placeholder="All Areas" class="chosen-select noBdr sizeMedium">
+                                        <option value="1">All Areas</option>
+                                        <option value="2">All Areas</option>
+                                        <option value="2">All Areas</option>
+                                        <option value="2">All Areas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-4 col-lg-3">
+                                <div class="btnsWrap">
+                                    <!-- otherFeaturesOpener -->
+                                    <a class="btnPlus otherFeaturesOpener text-capitalize noTopBottom" role="button"
+                                       data-toggle="collapse" href="#otherFeaturescollapse" aria-expanded="false"
+                                       aria-controls="otherFeaturescollapse">
+                                        <i class="fas btnIcn fa-plus-circle text-info opener"></i>
+                                        <i class="fas fa-minus-circle closer btnIcn text-info"></i>
+                                        Advanced
+                                    </a>
+                                    <button type="button"
+                                            class="btn btnDark buttonSmall text-uppercase fontNeuron hidden-xs">SEARCH
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- orderRow -->
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <!-- otherFeaturesCollapse -->
+                                <div class="collapse otherFeaturesCollapse" id="otherFeaturescollapse">
+                                    <!-- checkList -->
+                                    <ul class="list-unstyled checkList text-primary">
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Air conditioning</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Cofee pot</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Fan</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Hi-fi</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Balcony</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Computer</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Fridge</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Internet</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Bedding</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Cot</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Grill</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Iron</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Cable TV</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Dishwasher</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Hairdryer</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Juicer</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Cleaning after exit</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">DVD</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Heating</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Lift</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                                <button type="button" class="btn btnDark text-uppercase fontNeuron">SEARCH</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- content -->
+                <section id="content" class="container pabIndent">
+                    <!-- contentFiltersHeadingWrap -->
+                    <header class="contentFiltersHeadingWrap row">
+                        <div class="col-xs-12 col-sm-10">
+                            <!-- breadcrumb -->
+                            <ol class="breadcrumb breadcrumb1">
+                                <li><a href="{{ url_for('home') }}">Home</a></li>
+                                <li><a href="{{ url_for('userProfile') }}" class="active">profile</a></li>
+                            </ol>
+                            <h1 class="fontNeuron">User Profile</h1>
+                        </div>
+                        {#							<div class="col-xs-12 col-sm-2">#}
+                        {#								<!-- viewFilterLinks -->#}
+                        {#								<ul class="list-unstyled viewFilterLinks">#}
+                        {#									<li><a href="#"><i class="fi flaticon-share"></i></a></li>#}
+                        {#									<li><a href="#"><i class="fi flaticon-printer"></i></a></li>#}
+                        {#								</ul>#}
+                        {#							</div>#}
+                    </header>
+                    <!-- userProfile -->
+                    <div class="userProfile">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-lg-3">
+                                <!-- profileSidebar -->
+                                <aside class="profileSidebar">
+                                    <header class="head">
+                                        {#                                <div class="imgProfile">#}
+                                        {#                                  <img src="../../static/userResources/images/img-profile2.jpg" alt="" width="74" height="74">#}
+                                        {#                                </div>#}
+                                        <div class="info">
+                                            <h4><span
+                                                    class="text"><b>{{ loginDict[0].registerFirstName|capitalize }} {{ loginDict[0].registerLastName|capitalize }}</b></span>
+                                            </h4>
+                                            <span class="text"><a href="#changePassword"
+                                                                  class="link">Change Password</a></span>
+                                        </div>
+                                    </header>
+                                    <ul class="navUser list-unstyled">
+                                        <li>
+                                            <a href="{{ url_for('userProfile') }}" class="active">
+                                                <i class="far fa-user"></i>
+                                                <span>Account Settings</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url_for('userProperties') }}">
+                                                <i class="fi flaticon-house"></i>
+                                                <span>My Properties</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url_for('userFavouriteProperties') }}">
+                                                <i class="far fa-heart"></i>
+                                                <span>Favorited Properties</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url_for('loadPostProperty') }}">
+                                                <i class="fa fa-plus"></i>
+                                                <span>Submit Property</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url_for('logout') }}">
+                                                <i class="fa fa-sign-out-alt"></i>
+                                                <span>Logout</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </aside>
+                            </div>
+                            <div class="col-xs-12 col-sm-8 col-lg-9">
+                                <!-- accountData -->
+                                <div class="accountData">
+                                    <form action="/updateProfile" method="post" onsubmit="return validation()">
+                                        <div class="head">
+                                            <h4 class="fontNeuron">Account Settings</h4>
+                                        </div>
+                                        {% with messages = get_flashed_messages(with_categories=true) %}
+                                            {% if messages %}
+                                                {% for category, message in messages %}
+                                                    <h5 class="font-weight-light" style="color: red">{{ message }}</h5>
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endwith %}
+
+                                        <div class="accountHolder">
+                                            {#                                  <div class="imgProfile">#}
+                                            {#                                    <div class="imgThumbnail">#}
+                                            {#                                      <img src="../../static/userResources/images/img-profile2.jpg" alt="" width="200" height="200">#}
+                                            {#                                      <div class="btnArea">#}
+                                            {#                                        <a href="#" class="btn btn-info"><i class="fa fa-upload"></i> Upload Photo</a>#}
+                                            {#                                      </div>#}
+                                            {#                                    </div>#}
+                                            {#                                    <span class="text text-center">*minimum 200px x 200px</span>#}
+                                            {#                                  </div>#}
+                                            <div class="accountContent">
+                                                <div class="form-group">
+                                                    <label for="itemN-1">First Name</label>
+                                                    <input type="text" name="registerFirstName" class="form-control"
+                                                           value="{{ loginDict[0].registerFirstName }}" id="registerFirstName" onkeyup="validation()">
+                                                    <span id="fn_error" style="color: red"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="itemN-1">Last Name</label>
+                                                    <input type="text" name="registerLastName" class="form-control"
+                                                           value="{{ loginDict[0].registerLastName }}" id="registerLastName" onkeyup="validation()">
+                                                    <span id="ln_error" style="color: red"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="itemN-2">Email</label>
+                                                    <input type="email" class="form-control" name="registerEmailId"
+                                                           value="{{ loginDict[0].loginEmailId }}" id="registerEmailId" onkeyup="validation()">
+                                                    <span id="email_error" style="color: red"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="itemN-3">Phone</label>
+                                                    <input type="tel" class="form-control" name="registerContact"
+                                                           value="{{ loginDict[0].registerContact }}" id="registerContact" onkeyup="validation()">
+                                                    <span id="contact_error" style="color: red"></span>
+                                                </div>
+                                                {#                                    <div class="form-group">#}
+                                                {#                                      <label for="itemN-4">Biography</label>#}
+                                                {#                                      <textarea id="itemN-4" class="form-control" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et dui vestibulum, bibendum purus sit amet, vulputate mauris. Ut adipiscing gravida tincidunt. Duis euismod placerat rhoncus.Phasellus mollis imperdiet placerat"></textarea>#}
+                                                {#                                    </div>#}
+                                                <button type="submit"
+                                                        class="btn alighRight btnSecondary buttonL fontNeuron">Update
+                                                    Profile
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- accountData -->
+                                <div class="accountData" id="changePassword">
+                                    <form>
+                                        <div class="head">
+                                            <h4 class="fontNeuron">Change Password</h4>
+                                        </div>
+                                        <div class="accountHolder">
+                                            <div class="accountContent">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="itemN-5">Current Password</label>
+                                                            <input type="password" class="form-control"
+                                                                   placeholder="www.facebook.com/PolygonTheme"
+                                                                   id="itemN-5">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="itemN-6">New Password</label>
+                                                            <input type="password" class="form-control"
+                                                                   placeholder="PolygonTheme" id="itemN-6">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="itemN-7">Confirm New Password</label>
+                                                            <input type="password" class="form-control"
+                                                                   placeholder="PolygonTheme" id="itemN-7">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="submit"
+                                                        class="btn alighRight btnSecondary buttonL fontNeuron">Change
+                                                    Password
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- accountData -->
+                                {#                            <div class="accountData">#}
+                                {#                              <form>#}
+                                {#                                <div class="head">#}
+                                {#                                  <h4 class="fontNeuron">Social Profiles</h4>#}
+                                {#                                </div>#}
+                                {#                                <div class="accountHolder">#}
+                                {#                                  <div class="accountContent">#}
+                                {#                                    <div class="row">#}
+                                {#                                      <div class="col-xs-12 col-md-6">#}
+                                {#                                        <div class="form-group">#}
+                                {#                                          <label for="itemN-8">Facebook URL</label>#}
+                                {#                                          <input type="text" class="form-control" placeholder="www.facebook.com/PolygonTheme" id="itemN-8">#}
+                                {#                                        </div>#}
+                                {#                                      </div>#}
+                                {#                                       <div class="col-xs-12 col-md-6">#}
+                                {#                                        <div class="form-group">#}
+                                {#                                          <label for="itemN-9">Twitter URL</label>#}
+                                {#                                          <input type="text" class="form-control" placeholder="PolygonTheme" id="itemN-9">#}
+                                {#                                        </div>#}
+                                {#                                      </div>#}
+                                {#                                    </div>#}
+                                {#                                    <div class="row">#}
+                                {#                                      <div class="col-xs-12 col-md-6">#}
+                                {#                                        <div class="form-group">#}
+                                {#                                          <label for="itemN-10">Linkedin URL</label>#}
+                                {#                                          <input type="text" class="form-control" placeholder="PolygonTheme" id="itemN-10">#}
+                                {#                                        </div>#}
+                                {#                                      </div>#}
+                                {#                                      <div class="col-xs-12 col-sm-6">#}
+                                {#                                        <div class="form-group">#}
+                                {#                                          <label for="itemN-11">Instagram URL</label>#}
+                                {#                                          <input type="text" class="form-control" placeholder="PolygonTheme" id="itemN-11">#}
+                                {#                                        </div>#}
+                                {#                                      </div>#}
+                                {#                                    </div>#}
+                                {#                                    <div class="row">#}
+                                {#                                      <div class="col-xs-12 col-md-6">#}
+                                {#                                        <div class="form-group">#}
+                                {#                                          <label for="itemN-12">Google Plus URL</label>#}
+                                {#                                          <input type="text" class="form-control" placeholder="PolygonTheme" id="itemN-12">#}
+                                {#                                        </div>#}
+                                {#                                      </div>#}
+                                {#                                      <div class="col-xs-12 col-md-6">#}
+                                {#                                        <div class="form-group">#}
+                                {#                                          <label for="itemN-13">Skype</label>#}
+                                {#                                          <input type="text" class="form-control" placeholder="PolygonTheme" id="itemN-13">#}
+                                {#                                        </div>#}
+                                {#                                      </div>#}
+                                {#                                    </div>#}
+                                {#                                    <button type="submit" class="btn alighRight btnSecondary buttonL fontNeuron">Save Changes</button>#}
+                                {#                                  </div>#}
+                                {#                                </div>#}
+                                {#                              </form>#}
+                                {#                            </div>#}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- signupFormAside -->
+                {#					<form action="#" class="bgWhite signupFormAside">#}
+                {#						<div class="container signupFormAsideHolder">#}
+                {#							<span class="icnAbsolute elemenBlock fi flaticon-message"></span>#}
+                {#							<div class="col-xs-12 col-md-offset-2 col-md-6">#}
+                {#								<h3 class="fontNeuron textSecondary">Sign up for our newsletter.</h3>#}
+                {#								<p>Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>#}
+                {#							</div>#}
+                {#							<div class="col-xs-12 col-md-4">#}
+                {#								<div class="form-group">#}
+                {#									<input type="email" id="email" class="form-control elemenBlock" placeholder="Your email">#}
+                {#									<button type="button" class="buttonReset fi flaticon-navigation"></button>#}
+                {#								</div>#}
+                {#							</div>#}
+                {#						</div>#}
+                {#					</form>#}
+            </main>
+        </div>
+        <!-- pageFooterBlock -->
+        {% include 'user/footer.html' %}
+    </div>
+    <!-- pagePopupWrap -->
+    {#		<div class="popup-holder">#}
+    {#			<div id="popup1" class="lightbox-demo">#}
+    {#				<!-- popupLoginFrom -->#}
+    {#				<form action="#" class="popupHolderWrap bgLightDark center-block popupLarge popupLoginFrom">#}
+    {#					<ul class="list-unstyled popupTabsetList text-center fwBold text-uppercase fontNeuron">#}
+    {#						<li class="active"><a href="#tab01">LOGIN</a></li>#}
+    {#						<li><a href="#tab02">REGISTER</a></li>#}
+    {#					</ul>#}
+    {#					<div class="tab-content">#}
+    {#						<div id="tab01" class="tab-active">#}
+    {#							<div class="popupColsHolder">#}
+    {#								<div class="col bgWhite">#}
+    {#									<div class="form-group">#}
+    {#										<input type="text" class="form-control elemenBlock" placeholder="User Namer">#}
+    {#									</div>#}
+    {#									<div class="form-group">#}
+    {#										<input type="password" class="form-control elemenBlock" placeholder="Password">#}
+    {#									</div>#}
+    {#									<div class="form-group">#}
+    {#										<label class="fwNormal customLabelCheck">#}
+    {#											<input type="checkbox" class="customFormInputReset">#}
+    {#											<span class="fakeCheckbox"></span>#}
+    {#											<span class="fakeLabel">Remember me</span>#}
+    {#										</label>#}
+    {#									</div>#}
+    {#									<button type="submit" class="btn btnSecondary elemenBlock fontNeuron fwNormal text-uppercase btnSubmit">LOGIN</button>#}
+    {#									<a href="#" class="linkForget">Forgot Password?</a>#}
+    {#								</div>#}
+    {#								<div class="col">#}
+    {#									<p>You Can Login using your facebook Profile or Google account</p>#}
+    {#									<button type="button" class="btnSocial btnFb elemenBlock"><i class="fab fa-facebook-f btnIco"></i> Facebook Connect</button>#}
+    {#									<button type="button" class="btnSocial btnTw elemenBlock"><i class="fab fa-twitter btnIco"></i> Twitter Connect</button>#}
+    {#									<button type="button" class="btnSocial btnG elemenBlock"><i class="fab fa-google btnIco"></i> Google Connect</button>#}
+    {#								</div>#}
+    {#							</div>#}
+    {#						</div>#}
+    {#						<div id="tab02">#}
+    {#							<div class="popupColsHolder">#}
+    {#								<div class="col bgWhite">#}
+    {#									<div class="form-group">#}
+    {#										<input type="text" class="form-control elemenBlock" placeholder="Full Name">#}
+    {#									</div>#}
+    {#									<div class="form-group">#}
+    {#										<input type="text" class="form-control elemenBlock" placeholder="User Name">#}
+    {#									</div>#}
+    {#									<div class="form-group">#}
+    {#										<input type="password" class="form-control elemenBlock" placeholder="Password">#}
+    {#									</div>#}
+    {#									<div class="form-group">#}
+    {#										<input type="password" class="form-control elemenBlock" placeholder="Confirm Password">#}
+    {#									</div>#}
+    {#									<div class="form-group">#}
+    {#										<input type="email" class="form-control elemenBlock" placeholder="Email Address">#}
+    {#									</div>#}
+    {#									<div class="form-group">#}
+    {#										<select data-placeholder="Type" class="chosen-select">#}
+    {#											<option value="1">For Rent</option>#}
+    {#											<option value="2">For Sale</option>#}
+    {#											<option value="3">House</option>#}
+    {#											<option value="4">Property</option>#}
+    {#											<option value="5">Real Estate</option>#}
+    {#										</select>#}
+    {#									</div>#}
+    {#									<div class="form-group">#}
+    {#										<label class="fwNormal customLabelCheck">#}
+    {#											<input type="checkbox" class="customFormInputReset" checked>#}
+    {#											<span class="fakeCheckbox"></span>#}
+    {#											<span class="fakeLabel">I have read and agree to the Term of Service.</span>#}
+    {#										</label>#}
+    {#									</div>#}
+    {#									<button type="submit" class="btn btn-primary elemenBlock fontNeuron fwNormal text-uppercase btnSubmit">REGISTER</button>#}
+    {#								</div>#}
+    {#								<div class="col">#}
+    {#									<p>You Can Login using your facebook Profile or Google account</p>#}
+    {#									<button type="button" class="btnSocial btnFb elemenBlock"><i class="fab fa-facebook-f btnIco"></i> Facebook Connect</button>#}
+    {#									<button type="button" class="btnSocial btnTw elemenBlock"><i class="fab fa-twitter btnIco"></i> Twitter Connect</button>#}
+    {#									<button type="button" class="btnSocial btnG elemenBlock"><i class="fab fa-google btnIco"></i> Google Connect</button>#}
+    {#								</div>#}
+    {#							</div>#}
+    {#						</div>#}
+    {#					</div>#}
+    {#				</form>#}
+    {#			</div>#}
+    {#		</div>#}
+</div>
+<!-- include jQuery library -->
+<script src="../../static/userResources/js/jquery.js"></script>
+<script src="../../static/userResources/js/plugins.js"></script>
+<!-- include bootstrap JavaScript -->
+<script src="../../static/userResources/js/bootstrap-slider.min.js"></script>
+<!-- include custom JavaScript -->
+<script src="../../static/userResources/js/jquery.main.js"></script>
+<script type="text/javascript" src="../../static/userResources/js/init.js"></script>
+</body>
+<script type="text/javascript">
+    function validation() {
+        var rfn = document.getElementById('registerFirstName').value;
+        var rln = document.getElementById('registerLastName').value;
+        var remail = document.getElementById('registerEmailId').value;
+        var rcontact = document.getElementById('registerContact').value;
+
+        var fne = document.getElementById('fn_error').value;
+        var lne = document.getElementById('ln_error').value;
+        var emaile = document.getElementById('email_error').value;
+        var contacte = document.getElementById('contact_error').value;
+
+        if (rfn == "") {
+            document.getElementById('fn_error').innerHTML = "*Please enter First Name";
+            return false;
+        }
+        else {
+            document.getElementById("fn_error").innerHTML = "";
+        }
+        if (rln == "") {
+            document.getElementById('ln_error').innerHTML = "*Please enter Last Name";
+            return false;
+        }
+        else {
+            document.getElementById("ln_error").innerHTML = "";
+        }
+        if (remail == "") {
+            document.getElementById('email_error').innerHTML = "*Please enter Email Address";
+            return false;
+        }
+        else {
+            document.getElementById("email_error").innerHTML = "";
+        }
+         if (remail.indexOf('@') <= 0)
+         {
+            document.getElementById('email_error').innerHTML = "*Please enter correct emailid";
+            return false;
+        }
+        else {
+            document.getElementById("email_error").innerHTML = "";
+        }
+
+        if ((remail.charAt(remail.length - 4) != '.'))
+        {
+            document.getElementById('email_error').innerHTML = "*Please enter correct emailid";
+            return false;
+        }
+        else {
+            document.getElementById("email_error").innerHTML = "";
+        }
+        if (rcontact == "") {
+            document.getElementById('contact_error').innerHTML = "*Please enter Contact Number";
+            return false;
+        }
+        else if (isNaN(rcontact)) {
+            document.getElementById('contact_error').innerHTML = "*Please enter only digits";
+            return false;
+        }
+        else if (rcontact.length != 10) {
+            document.getElementById('contact_error').innerHTML = "*Please enter 10 digits";
+            return false;
+        }
+        else if ((rcontact.charAt(0) != '9' ) && (rcontact.charAt(0) != '8') && (rcontact.charAt(0) != '7' ) && (rcontact.charAt(0) != '6'))
+        {
+            document.getElementById('contact_error').innerHTML = "*Please Enter Valid Contact Number";
+            return false;
+        }
+        else {
+            document.getElementById('contact_error').innerHTML = "";
+        }
+    }
+</script>
+</html>

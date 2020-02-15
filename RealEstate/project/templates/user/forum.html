@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- set the encoding of your site -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- set the page title -->
+    <title>Forum | LemanHouse</title>
+    <!-- include google roboto font cdn link -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <!-- include the site bootstrap stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/bootstrap.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/fancybox.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="../../static/userResources/css/style.css">
+</head>
+<body>
+<!-- pageWrapper -->
+<div id="pageWrapper">
+    <!-- pageMenuPushWrap -->
+    <div class="pageMenuPushWrap pageMenuPushWrap1">
+        <!-- bgBaseWrap -->
+        <div class="bgBaseWrap">
+            <!-- pageHeader -->
+            {% include 'user/header.html' %}
+            <!-- main -->
+            <main>
+                <!-- findFormBlock -->
+                <form action="#" class="findFormBlock findFormBlock2 bgLightDark hasShadowTop offsetHeaderTop">
+                    <div class="container">
+                        <div class="row align-center d-flex">
+                            <div class="col-xs-12 col-sm-5 col-md-4 col-lg-5">
+                                <div class="form-group">
+                                    <input type="text" class="form-control elemenBlock noBdr sizeMedium"
+                                           placeholder="Enter address e.g. street, city and state or zip">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-2">
+                                <div class="form-group">
+                                    <i class="fi flaticon-target icnInput"></i>
+                                    <input type="text" class="form-control elemenBlock noBdr sizeMedium"
+                                           placeholder="All Cities">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-3 col-md-2">
+                                <div class="form-group">
+                                    <select data-placeholder="All Areas" class="chosen-select noBdr sizeMedium">
+                                        <option value="1">All Areas</option>
+                                        <option value="2">All Areas</option>
+                                        <option value="2">All Areas</option>
+                                        <option value="2">All Areas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-4 col-lg-3">
+                                <div class="btnsWrap">
+                                    <!-- otherFeaturesOpener -->
+                                    <a class="btnPlus otherFeaturesOpener text-capitalize noTopBottom" role="button"
+                                       data-toggle="collapse" href="#otherFeaturescollapse" aria-expanded="false"
+                                       aria-controls="otherFeaturescollapse">
+                                        <i class="fas btnIcn fa-plus-circle text-info opener"></i>
+                                        <i class="fas fa-minus-circle closer btnIcn text-info"></i>
+                                        Advanced
+                                    </a>
+                                    <button type="button"
+                                            class="btn btnDark buttonSmall text-uppercase fontNeuron hidden-xs">SEARCH
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- orderRow -->
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <!-- otherFeaturesCollapse -->
+                                <div class="collapse otherFeaturesCollapse" id="otherFeaturescollapse">
+                                    <!-- checkList -->
+                                    <ul class="list-unstyled checkList text-primary">
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Air conditioning</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Cofee pot</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Fan</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Hi-fi</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Balcony</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Computer</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Fridge</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Internet</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Bedding</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Cot</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Grill</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Iron</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Cable TV</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Dishwasher</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Hairdryer</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Juicer</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Cleaning after exit</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">DVD</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Heating</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="fwNormal customLabelCheck">
+                                                <input type="checkbox" class="customFormInputReset">
+                                                <span class="fakeCheckbox"></span>
+                                                <span class="fakeLabel">Lift</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                                <button type="button" class="btn btnDark text-uppercase fontNeuron">SEARCH</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- content -->
+                <section id="content" class="container pabIndent">
+                    <!-- contentFiltersHeadingWrap -->
+                    <header class="contentFiltersHeadingWrap row">
+                        <div class="col-xs-12 col-sm-10">
+                            <!-- breadcrumb -->
+                            {#								<ol class="breadcrumb breadcrumb1">#}
+                            {#									<li><a href="#">Home</a></li>#}
+                            {#									<li><a href="#">Pages</a></li>#}
+                            {#									<li class="active">FAQs</li>#}
+                            {#								</ol>#}
+                            <h1 class="fontNeuron">Forum</h1>
+                        </div>
+                        <div class="col-xs-12 col-sm-2">
+                            <!-- viewFilterLinks -->
+                            <ul class="list-unstyled viewFilterLinks">
+                                <a href="#askQuestion" class="lightbox">
+                                    <button type="button"
+                                            class="btn btnDark buttonSmall text-uppercase fontNeuron hidden-xs">ASK
+                                        QUESTION
+                                    </button>
+                                </a>
+                            </ul>
+                        </div>
+                    </header>
+                    <!-- faqsMain -->
+                    <div class="faqsMain">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            {% for i in forumQuestionDict %}
+{#                                <div class="panel-heading" role="tab" id="headingOne" style="clear: both">#}
+{#                                <div class="hb-comment-box">#}
+{#                                    <div class="hb-comment-head">#}
+{#                                        <div class="pull-left">#}
+{#                                            <h4>{{ i.forumQuestion_LoginId }}</h4>#}
+{#                                        </div>#}
+{#                                        <div class="pull-right">#}
+{#                                            <em>{{ i.forumQuestionDate }}</em>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="description">#}
+{#                                        <p>{{ i.forumQuestion }}</p>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                </div>#}
+                                <div class="panel panel-default">
+                                    {#{{ forumQuestionDict }}#}
+                                    <div class="panel-heading" role="tab" id="headingOne" style="clear: both">
+                                        <h4 class="panel-title fontNeuron">
+                                            <a role="button" class="collapsed" data-toggle="collapse"
+                                               data-parent="#accordion" href="#{{ i.forumQuestionId }}"
+                                               aria-expanded="true"
+                                               aria-controls="collapseOne">
+                                                {{ i.forumQuestion }} <span
+                                                    style="font-size: 15px; float: right">{{ i.forumQuestionDate }}-{{ i.forumQuestionTime }}</span>
+                                            </a>
+
+                                            <a href="/loadForumAnswer?forumQuestionId={{ i.forumQuestionId }}">
+                                                <button type="button"
+                                                        class="btn btnDark buttonSmall text-uppercase fontNeuron hidden-xs"
+                                                        style="float: right;">ANSWER
+                                                </button>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    {% if forumAnswerDict %}
+                                        <div id="{{ i.forumQuestionId }}" class="panel-collapse collapse"
+                                                 role="tabpanel"
+                                                 aria-labelledby="headingOne">
+                                            {% for j in forumAnswerDict %}
+                                                <div class="panel-body">
+                                                    {% if j.forumAnswer_ForumQuestionId == i.forumQuestionId %}
+                                                        <p>{{ j.forumAnswer }}</p>
+                                                    {% endif %}
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        <div id="{{ i.forumQuestionId }}" class="panel-collapse collapse"
+                                             role="tabpanel" aria-labelledby="headingOne">
+                                            <div class="panel-body">
+                                                <p style="color: red;">{{ forumAnswerDict[0] }}</p>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+
+                            {% endfor %}
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <h4 class="panel-title fontNeuron">
+                                        <a class="collapsed" role="button" data-toggle="collapse"
+                                           data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
+                                           aria-controls="collapseTwo">
+                                            Is an older home as good a value as a new home? <i
+                                                class="fi flaticon-arrows"></i>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                     aria-labelledby="headingTwo">
+                                    <div class="panel-body">
+                                        <p>Ut euismod ultricies sollicitudin. Curabitur sed dapibus nulla. Nulla eget
+                                            iaculis lectus. Mauris ac maximus neque. Nam in mauris quis libero sodales
+                                            eleifend. Morbi varius, nulla sit amet rutrum elementum, est elit finibus
+                                            tellus, ut tristique elit risus at metus. Sed fermentum, lorem vitae
+                                            efficitur imperdiet, neque velit tristique turpis, et iaculis mi tortor
+                                            finibus turpis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title fontNeuron">
+                                        <a class="collapsed" role="button" data-toggle="collapse"
+                                           data-parent="#accordion" href="#collapseThree" aria-expanded="false"
+                                           aria-controls="collapseThree">
+                                            What is a broker?<i class="fi flaticon-arrows"></i>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                     aria-labelledby="headingThree">
+                                    <div class="panel-body">
+                                        <p>Ut euismod ultricies sollicitudin. Curabitur sed dapibus nulla. Nulla eget
+                                            iaculis lectus. Mauris ac maximus neque. Nam in mauris quis libero sodales
+                                            eleifend. Morbi varius, nulla sit amet rutrum elementum, est elit <a
+                                                    href="#">finibus</a> tellus, ut tristique elit risus at metus. Sed
+                                            fermentum, lorem vitae efficitur imperdiet, neque velit tristique turpis, et
+                                            iaculis mi tortor finibus turpis.</p>
+                                        <h6>Donec luctus lacinia sem potenti aptent est</h6>
+                                        <p>platea, orci tortor dui fringilla curae varius tempor, rhoncus commodo sapien
+                                            auctor himenaeos laoreet maecenas tempor venenatis accumsan lacinia congue
+                                            dolor laoreet, ut nostra nulla nunc aptent dolor quisque, lorem sociosqu
+                                            nunc convallis curabitur faucibus.</p>
+                                        Ornare sagittis ante erat nec ultricies amet aenean netus sodales at, amet
+                                        vehicula quis vel platea mattis vel felis hendrerit ad, at rhoncus tortor
+                                        habitasse venenatis etiam senectus erat sit varius proin ligula lectus mi
+                                        accumsan curabitur orci varius justo nec elit.
+                                    </div>
+                                </div>
+                            </div>
+                            {#                            <div class="panel panel-default">#}
+                            {#                                <div class="panel-heading" role="tab" id="headingFour">#}
+                            {#                                    <h4 class="panel-title fontNeuron">#}
+                            {#                                        <a class="" role="button" data-toggle="collapse" data-parent="#accordion"#}
+                            {#                                           href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">#}
+                            {#                                            What is the difference between being prequalified and preapproved for a#}
+                            {#                                            loan?<i class="fi flaticon-arrows"></i>#}
+                            {#                                        </a>#}
+                            {#                                    </h4>#}
+                            {#                                </div>#}
+                            {#                                <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel"#}
+                            {#                                     aria-labelledby="headingFour">#}
+                            {#                                    <div class="panel-body">#}
+                            {#                                        <p>Ut euismod ultricies sollicitudin. Curabitur sed dapibus nulla. Nulla eget#}
+                            {#                                            iaculis lectus. Mauris ac maximus neque. Nam in mauris quis libero sodales#}
+                            {#                                            eleifend. Morbi varius, nulla sit amet rutrum elementum, est elit <a#}
+                            {#                                                    href="#">finibus</a> tellus, ut tristique elit risus at metus. Sed#}
+                            {#                                            fermentum, lorem vitae efficitur imperdiet, neque velit tristique turpis, et#}
+                            {#                                            iaculis mi tortor finibus turpis.</p>#}
+                            {#                                        <h6>Donec luctus lacinia sem potenti aptent est</h6>#}
+                            {#                                        <p>platea, orci tortor dui fringilla curae varius tempor, rhoncus commodo sapien#}
+                            {#                                            auctor himenaeos laoreet maecenas tempor venenatis accumsan lacinia congue#}
+                            {#                                            dolor laoreet, ut nostra nulla nunc aptent dolor quisque, lorem sociosqu#}
+                            {#                                            nunc convallis curabitur faucibus.</p>#}
+                            {#                                        <p>Ornare sagittis ante erat nec ultricies amet aenean netus sodales at, amet#}
+                            {#                                            vehicula quis vel platea mattis vel felis hendrerit ad, at rhoncus tortor#}
+                            {#                                            habitasse venenatis etiam senectus erat sit varius proin ligula lectus mi#}
+                            {#                                            accumsan curabitur orci varius justo nec elit.</p>#}
+                            {#                                    </div>#}
+                            {#                                </div>#}
+                            {#                            </div>#}
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingFive">
+                                    <h4 class="panel-title fontNeuron">
+                                        <a class="collapsed" role="button" data-toggle="collapse"
+                                           data-parent="#accordion" href="#collapseFive" aria-expanded="false"
+                                           aria-controls="collapseFive">
+                                            Can a home depreciate in value?<i class="fi flaticon-arrows"></i>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel"
+                                     aria-labelledby="headingFive">
+                                    <div class="panel-body">
+                                        <p>Ut euismod ultricies sollicitudin. Curabitur sed dapibus nulla. Nulla eget
+                                            iaculis lectus. Mauris ac maximus neque. Nam in mauris quis libero sodales
+                                            eleifend. Morbi varius, nulla sit amet rutrum elementum, est elit <a
+                                                    href="#">finibus</a> tellus, ut tristique elit risus at metus. Sed
+                                            fermentum, lorem vitae efficitur imperdiet, neque velit tristique turpis, et
+                                            iaculis mi tortor finibus turpis.</p>
+                                        <h6>Donec luctus lacinia sem potenti aptent est</h6>
+                                        <p>platea, orci tortor dui fringilla curae varius tempor, rhoncus commodo sapien
+                                            auctor himenaeos laoreet maecenas tempor venenatis accumsan lacinia congue
+                                            dolor laoreet, ut nostra nulla nunc aptent dolor quisque, lorem sociosqu
+                                            nunc convallis curabitur faucibus.</p>
+                                        Ornare sagittis ante erat nec ultricies amet aenean netus sodales at, amet
+                                        vehicula quis vel platea mattis vel felis hendrerit ad, at rhoncus tortor
+                                        habitasse venenatis etiam senectus erat sit varius proin ligula lectus mi
+                                        accumsan curabitur orci varius justo nec elit.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingSix">
+                                    <h4 class="panel-title fontNeuron">
+                                        <a class="collapsed" role="button" data-toggle="collapse"
+                                           data-parent="#accordion" href="#collapseSix" aria-expanded="false"
+                                           aria-controls="collapseSix">
+                                            Is an older home as good a value as a new home?<i
+                                                class="fi flaticon-arrows"></i>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseSix" class="panel-collapse collapse" role="tabpanel"
+                                     aria-labelledby="headingSix">
+                                    <div class="panel-body">
+                                        <p>Ut euismod ultricies sollicitudin. Curabitur sed dapibus nulla. Nulla eget
+                                            iaculis lectus. Mauris ac maximus neque. Nam in mauris quis libero sodales
+                                            eleifend. Morbi varius, nulla sit amet rutrum elementum, est elit <a
+                                                    href="#">finibus</a> tellus, ut tristique elit risus at metus. Sed
+                                            fermentum, lorem vitae efficitur imperdiet, neque velit tristique turpis, et
+                                            iaculis mi tortor finibus turpis.</p>
+                                        <p>platea, orci tortor dui fringilla curae varius tempor, rhoncus commodo sapien
+                                            auctor himenaeos laoreet maecenas tempor venenatis accumsan lacinia congue
+                                            dolor laoreet, ut nostra nulla nunc aptent dolor quisque, lorem sociosqu
+                                            nunc convallis curabitur faucibus.</p>
+                                        Ornare sagittis ante erat nec ultricies amet aenean netus sodales at, amet
+                                        vehicula quis vel platea mattis vel felis hendrerit ad, at rhoncus tortor
+                                        habitasse venenatis etiam senectus erat sit varius proin ligula lectus mi
+                                        accumsan curabitur orci varius justo nec elit.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingSeven">
+                                    <h4 class="panel-title fontNeuron">
+                                        <a class="collapsed" role="button" data-toggle="collapse"
+                                           data-parent="#accordion" href="#collapseSeven" aria-expanded="false"
+                                           aria-controls="collapseSeven">
+                                            What is a broker?<i class="fi flaticon-arrows"></i>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel"
+                                     aria-labelledby="headingSeven">
+                                    <div class="panel-body">
+                                        <p>Ut euismod ultricies sollicitudin. Curabitur sed dapibus nulla. Nulla eget
+                                            iaculis lectus. Mauris ac maximus neque. Nam in mauris quis libero sodales
+                                            eleifend. Morbi varius, nulla sit amet rutrum elementum, est elit <a
+                                                    href="#">finibus</a> tellus, ut tristique elit risus at metus. Sed
+                                            fermentum, lorem vitae efficitur imperdiet, neque velit tristique turpis, et
+                                            iaculis mi tortor finibus turpis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- signupFormAside -->
+                <form action="#" class="bgWhite signupFormAside">
+                    <div class="container signupFormAsideHolder">
+                        <span class="icnAbsolute elemenBlock fi flaticon-message"></span>
+                        <div class="col-xs-12 col-md-offset-2 col-md-6">
+                            <h3 class="fontNeuron textSecondary">Sign up for our newsletter.</h3>
+                            <p>Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <div class="form-group">
+                                <input type="email" id="email" class="form-control elemenBlock"
+                                       placeholder="Your email">
+                                <button type="button" class="buttonReset fi flaticon-navigation"></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </main>
+        </div>
+        <!-- pageFooterBlock -->
+        {% include 'user/footer.html' %}
+        <!-- pagePopupWrap -->
+        <div class="popup-holder">
+            <div id="askQuestion" class="lightbox-demo">
+                <!-- popupLoginFrom -->
+                <form action="/insertQuestion" method="post"
+                      class="popupHolderWrap bgLightDark center-block popupLarge popupLoginFrom">
+                    <div class="tab-content">
+                        <div class="popupColsHolder">
+                            <div class="col bgWhite">
+                                {#                                <input type="hidden" name="loginId" value="{{ session['loginId'] }}">#}
+                                <div class="form-group">
+                                    <textarea class="form-control elemenBlock" name="forumQuestion" cols="120" rows="10"
+                                              placeholder="write your question here"></textarea>
+                                </div>
+                                <button type="submit"
+                                        class="btn btn-primary elemenBlock fontNeuron fwNormal text-uppercase btnSubmit">
+                                    SUBMIT
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <div id="writeAnswer" class="lightbox-demo">
+                <!-- popupLoginFrom -->
+                <form action="/insertAnswer" method="post"
+                      class="popupHolderWrap bgLightDark center-block popupLarge popupLoginFrom">
+                    <div class="tab-content">
+                        <div class="popupColsHolder">
+                            <div class="col bgWhite">
+                                <div class="form-group">
+                                                        <textarea class="form-control elemenBlock" name="forumQuestion"
+                                                                  cols="120" rows="10"
+                                                                  placeholder="write your question here"></textarea>
+                                </div>
+                                <button type="submit"
+                                        class="btn btn-primary elemenBlock fontNeuron fwNormal text-uppercase btnSubmit">
+                                    SUBMIT
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <!-- include jQuery library -->
+    <script src="../../static/userResources/js/jquery.js"></script>
+    <script src="../../static/userResources/js/plugins.js"></script>
+    <!-- include bootstrap JavaScript -->
+    <script src="../../static/userResources/js/bootstrap-slider.min.js"></script>
+    <!-- include custom JavaScript -->
+    <script src="../../static/userResources/js/jquery.main.js"></script>
+    <script type="text/javascript" src="../../static/userResources/js/init.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Feedback | Admin</title>
+
+        <!-- plugins:css -->
+
+    <link rel="stylesheet" href="../../static/adminResources/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/simple-line-icons.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/perfect-scrollbar.min.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="../../static/adminResources/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../static/adminResources/css/fontawesome-stars.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../../static/adminResources/css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="../../static/adminResources/images/favicon.png"/>
+
+</head>
+<body>
+<div class="container-scroller">
+    {% include 'admin/header.html' %}}
+
+    <div class="container-fluid page-body-wrapper">
+        <div class="row row-offcanvas row-offcanvas-right">
+            {% include 'admin/menu.html' %}
+
+            {% include 'admin/setting-panel.html' %}
+
+            <div class="content-wrapper">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Manage Feedback</h2>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table id="order-listing" class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>Message</th>
+                                            <th>Rating</th>
+                                            <th>From_LoginEmailId</th>
+                                            <th>Date</th>
+                                            <th>Time</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        {% for i in feedbackDict  %}
+
+{#                                            {% if i.propertyActiveStatus == 'active' %}#}
+                                                <tr>
+                                                    <td>{{ i.feedbackMessage }}</td>
+                                                    <td>{{ i.feedbackRating }}</td>
+                                                    <td>{{ i.loginEmailId }}</td>
+                                                    <td>{{ i.feedbackDate }}</td>
+                                                    <td>{{ i.feedbackTime }}</td>
+
+                                                    <td>
+                                                        <a href="/viewFeedback?feedbackId={{ i.feedbackId }}">view</a>
+                                                    </td>
+                                                </tr>
+{#                                            {% endif %}#}
+                                        {% endfor %}
+                                        {#<tr>
+                                            <td>10</td>
+                                            <td>2003/12/26</td>
+                                            <td>Tom</td>
+                                            <td>
+                                                <label class="badge badge-danger">Pending</label>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-outline-primary">View</button>
+                                            </td>
+                                        </tr>#}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+        </div>
+        {% include 'admin/footer.html' %}
+    </div>
+</div>
+</div>
+
+<!-- plugins:js -->
+<script src="../../static/adminResources/js/jquery.min.js"></script>
+<script src="../../static/adminResources/js/popper.min.js"></script>
+<script src="../../static/adminResources/js/bootstrap.min.js"></script>
+<script src="../../static/adminResources/js/perfect-scrollbar.jquery.min.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page-->
+<script src="../../static/adminResources/js/jquery.barrating.min.js"></script>
+<script src="../../static/adminResources/js/Chart.min.js"></script>
+<script src="../../static/adminResources/js/raphael.min.js"></script>
+<script src="../../static/adminResources/js/morris.min.js"></script>
+<script src="../../static/adminResources/js/jquery.sparkline.min.js"></script>
+<!-- End plugin js for this page-->
+<!-- inject:js -->
+<script src="../../static/adminResources/js/off-canvas.js"></script>
+<script src="../../static/adminResources/js/hoverable-collapse.js"></script>
+<script src="../../static/adminResources/js/misc.js"></script>
+<script src="../../static/adminResources/js/settings.js"></script>
+<script src="../../static/adminResources/js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="../../static/adminResources/js/dashboard.js"></script>
+<!-- End custom js for this page-->
+
+</body>
+</html>

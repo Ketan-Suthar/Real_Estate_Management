@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- set the encoding of your site -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- set the page title -->
+	<title>LemanHouse - Real Estate HTML Template</title>
+	<!-- include google roboto font cdn link -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+	<!-- include the site bootstrap stylesheet -->
+	<link rel="stylesheet" href="../../static/userResources/css/bootstrap.css">
+	<!-- include the site stylesheet -->
+	<link rel="stylesheet" href="../../static/userResources/css/fancybox.css">
+	<!-- include the site stylesheet -->
+	<link rel="stylesheet" href="../../static/userResources/css/style.css">
+</head>
+<body>
+	<!-- pageWrapper -->
+	<div id="pageWrapper">
+		<!-- pageMenuPushWrap -->
+		<div class="pageMenuPushWrap pageMenuPushWrap1">
+			<!-- bgBaseWrap -->
+			<div class="bgBaseWrap">
+				<!-- pageHeader -->
+				<header id="pageHeader" class="bgWhite shadow">
+					<!-- pageHeaderWrap -->
+					<div class="pageHeaderWrap">
+						<!-- headerTopBar -->
+						<div class="container">
+							<!-- headerHolder -->
+							<div class="headerHolder">
+                              <!-- logo -->
+                              <div class="logo logoCentered"><a href="home.html"><img src="../../static/userResources/images/logo.png" alt="LemanHouse"></a></div>
+							</div>
+						</div>
+					</div>
+				</header>
+				<!-- main -->
+				<main>
+                  <!-- content -->
+                  <section id="content" class="container pEqual">
+                    <div class="addProperty">
+                      <h1 class="fontNeuron">Add New Property</h1>
+                      <ol class="navSteps">
+                        <li class="completed">
+                          <a href="#">
+                            <span class="text">Basic Info</span>
+                          </a>
+                        </li>
+                          <li class="completed">
+                          <a href="#">
+                            <span class="text">Location</span>
+                          </a>
+                        </li>
+                        <li class="completed">
+                          <a href="#">
+                            <span class="text">Photos &amp; EPC</span>
+                          </a>
+                        </li> 
+
+                        <li class="completed"> 
+                          <a href="#">
+                            <span class="text">Amenities</span>
+                          </a>
+                        </li>
+                        <li class="current">
+                          <a href="#">
+                            <span class="text">Private Notes</span>
+                          </a>
+                        </li>
+                      </ol>
+                      <div class="formContent">
+                        <form>
+                          <header class="contentHead">
+                            <h2 class="fontNeuron">Private Notes</h2>
+                          </header>
+                          <div class="row">
+                            <div class="col-xs-12">
+                              <div class="form-group">
+                                <textarea class="form-control"></textarea>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="btnArea">
+                            <a href="#" class="btn btn-lighter"><i class="fi flaticon-arrows-1"></i> Back</a>
+                            <button type="submit" class="btn btnDark">Submit Property <i class="fi flaticon-arrows"></i></button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- signupFormAside -->
+					<form action="#" class="bgWhite signupFormAside">
+						<div class="container signupFormAsideHolder">
+							<span class="icnAbsolute elemenBlock fi flaticon-message"></span>
+							<div class="col-xs-12 col-md-offset-2 col-md-6">
+								<h3 class="fontNeuron textSecondary">Sign up for our newsletter.</h3>
+								<p>Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="form-group">
+									<input type="email" id="email" class="form-control elemenBlock" placeholder="Your email">
+									<button type="button" class="buttonReset fi flaticon-navigation"></button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</main>
+			</div>
+			<!-- pageFooterBlock -->
+			{% include 'user/footer.html' %}
+		</div>
+	</div>
+	<!-- include jQuery library -->
+	<script src="../../static/userResources/js/jquery.js"></script>
+	<script src="../../static/userResources/js/plugins.js"></script>
+	<!-- include bootstrap JavaScript -->
+	<script src="../../static/userResources/js/bootstrap-slider.min.js"></script>
+	<!-- include custom JavaScript -->
+	<script src="../../static/userResources/js/jquery.main.js"></script>
+	<script type="text/javascript" src="../../static/userResources/js/init.js"></script>
+</body>
+</html>

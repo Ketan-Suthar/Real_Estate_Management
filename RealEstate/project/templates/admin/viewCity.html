@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Property SubCategory | Admin</title>
+
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../../static/adminResources/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/simple-line-icons.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/perfect-scrollbar.min.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="../../static/adminResources/css/dataTables.bootstrap4.css"/>
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../../static/adminResources/css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="../../static/adminResources/images/favicon.png"/>
+
+
+</head>
+<body>
+<div class="container-scroller">
+    {% include 'admin/header.html' %}}
+
+    <div class="container-fluid page-body-wrapper">
+        <div class="row row-offcanvas row-offcanvas-right">
+            {% include 'admin/menu.html' %}
+
+            {% include 'admin/setting-panel.html' %}
+            <div class="content-wrapper">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">View City</h2>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table id="order-listing" class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>City Name</th>
+                                            <th>City Description</th>
+                                            <th>StateName</th>
+                                            <th>Action</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        {% for i in cityDict  %}
+
+                                            <tr>
+                                                <td>{{ i.cityName }}</td>
+                                                <td>{{ i.cityDescription }}</td>
+                                                <td>{{ i.stateName }}</td>
+
+                                                <td>
+                                                    <a href="/editCity?cityId={{ i.cityId }}">update</a>
+
+                                                    <a href="/deleteCity?cityId={{ i.cityId }}">delete</a>
+                                                </td>
+
+                                            </tr>
+                                        {% endfor %}
+                                        {#<tr>
+                                            <td>10</td>
+                                            <td>2003/12/26</td>
+                                            <td>Tom</td>
+                                            <td>
+                                                <label class="badge badge-danger">Pending</label>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-outline-primary">View</button>
+                                            </td>
+                                        </tr>#}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include 'admin/footer.html' %}
+    </div>
+</div>
+</div>
+
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script src="../../static/adminResources/js/jquery.min.js"></script>
+<script src="../../static/adminResources/js/popper.min.js"></script>
+<script src="../../static/adminResources/js/bootstrap.min.js"></script>
+<script src="../../static/adminResources/js/perfect-scrollbar.jquery.min.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page-->
+<script src="../../static/adminResources/js/jquery.dataTables.js"></script>
+<script src="../../static/adminResources/js/dataTables.bootstrap4.js"></script>
+<!-- End plugin js for this page-->
+<!-- inject:js -->
+<script src="../../static/adminResources/js/off-canvas.js"></script>
+<script src="../../static/adminResources/js/hoverable-collapse.js"></script>
+<script src="../../static/adminResources/js/misc.js"></script>
+<script src="../../static/adminResources/js/settings.js"></script>
+<script src="../../static/adminResources/js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="../../static/adminResources/js/data-table.js"></script>
+<!-- End custom js for this page-->
+{##}
+{#{% if (data.project(temp)==0) %}#}
+{#    <td>#}
+{#        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">#}
+{#            {{ temp }}#}
+{#        </a>#}
+{#        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"#}
+{#             aria-labelledby="notificationDropdown" style="background-color: gray">#}
+{##}
+{#            <div class="preview-item-content" style="text-align: center;color:white ">#}
+{#                <h4 class="preview-subject font-weight-medium">Application Error</h4>#}
+{#            </div>#}
+{#        </div>#}
+{#    </td>#}
+{#{% else %}#}
+{#    <td>#}
+{#        {{ temp }}#}
+{#    </td>#}
+{#{% endif %}#}
+
+</body>
+</html>

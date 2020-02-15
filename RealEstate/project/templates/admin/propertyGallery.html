@@ -1,0 +1,124 @@
+{#<div class="content-wrapper" style="min-height: 1445px;">#}
+{% set source = propertyDict[0].propertyGalleryPath %}
+{% if path.isdir(source+'/coverImages') %}
+    <div class="row grid-margin">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Cover Images</h4>
+                    <p class="card-text">
+                        Click on any image to open in lightbox gallery
+                    </p>
+                    <div id="lightgallery" class="row lightGallery">
+                        {% set source = propertyDict[0].propertyGalleryPath+'/coverImages' %}
+                        {% for root, dirnames, filenames in walk(source) %}
+                            {% for filename in filenames %}
+                                {% set imgPath = '../../static/userResources/propertyGallery/'+propertyDict[0].propertyId|string+'/coverImages/'+filename %}
+                                <a href="{{ imgPath }}" class="image-tile"><img height="150px" width="1280px" src="{{ imgPath }}" alt="{{ filename }}"></a>
+
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% set source = propertyDict[0].propertyGalleryPath %}
+{% if path.isdir(source+'/insideImages') %}
+    <div class="row grid-margin">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Inside Images</h4>
+                    <p class="card-text">
+                        Click on any image to open in lightbox gallery
+                    </p>
+                    <div id="lightgallery" class="row lightGallery">
+                        {% set source = propertyDict[0].propertyGalleryPath+'/insideImages' %}
+                        {% for root, dirnames, filenames in walk(source) %}
+                            {% for filename in filenames %}
+                                {% set imgPath = '../../static/userResources/propertyGallery/'+propertyDict[0].propertyId|string+'/insideImages/'+filename %}
+                                <a href="{{ imgPath }}" class="image-tile"><img height="150px" width="1280px" src="{{ imgPath }}" alt="{{ filename }}"></a>
+
+                            {% endfor %}
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% set source = propertyDict[0].propertyGalleryPath %}
+{% if path.isdir(source+'/outsideImages') %}
+    <div class="row grid-margin">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Outside Images</h4>
+                    <p class="card-text">
+                        Click on any image to open in lightbox gallery
+                    </p>
+                    <div id="lightgallery" class="row lightGallery">
+                        {% set source = propertyDict[0].propertyGalleryPath+'/outsideImages' %}
+                        {% for root, dirnames, filenames in walk(source) %}
+                            {% for filename in filenames %}
+                                {% set imgPath = '../../static/userResources/propertyGallery/'+propertyDict[0].propertyId|string+'/outsideImages/'+filename %}
+                                <a href="{{ imgPath }}" class="image-tile"><img height="150px" width="1280px" src="{{ imgPath }}" alt="{{ filename }}"></a>
+
+                            {% endfor %}
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% set source = propertyDict[0].propertyGalleryPath %}
+{% if path.isdir(source+'/floorPlanImages') %}
+    <div class="row grid-margin">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Floor Plan Images</h4>
+                    <p class="card-text">
+                        Click on any image to open in lightbox gallery
+                    </p>
+                    <div id="lightgallery" class="row lightGallery">
+                        {% set source = propertyDict[0].propertyGalleryPath+'/floorPlanImages' %}
+                        {% for root, dirnames, filenames in walk(source) %}
+                            {% for filename in filenames %}
+                                {% set imgPath = '../../static/userResources/propertyGallery/'+propertyDict[0].propertyId|string+'/floorPlanImages/'+filename %}
+                                <a href="{{ imgPath }}" class="image-tile"><img height="150px" width="1280px" src="{{ imgPath }}" alt="{{ filename }}"></a>
+
+                            {% endfor %}
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% if propertyDict[0].propertyVideo != "" %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card px-3">
+            <div class="card-body">
+                <h4 class="card-title">Property Video</h4>
+                <div id="video-gallery" class="row lightGallery">
+                    <a class="image-tile col-xl-3 col-lg-3 col-md-3 col-md-4 col-6" href="{{ propertyDict[0].propertyVideo }}">
+                        <img src="../../static/adminResources/images/logo-mini.svg" alt="image">
+                        <div class="demo-gallery-poster">
+                            <img src="../../static/adminResources/images/play-button.png" alt="play">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{#</div>#}
